@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>國中 2000 單字練習 — 主題單字測驗</title>
+<style>
+  :root {
+    --ink: #2b2620;
+    --paper: #faf6ee;
+    --card: #ffffff;
+    --line: #e4dcc8;
+    --accent: #c0623d;
+    --accent-dark: #9c4b2c;
+    --accent-soft: #f3e2d4;
+    --sky: #5b7d96;
+    --sky-soft: #e7eef2;
+    --muted: #6b6354;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  header.hero {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+
+  header.hero .kicker {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sky);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  header.hero h1 {
+    font-family: Georgia, "Noto Serif TC", "Times New Roman", serif;
+    font-size: 2.1rem;
+    margin: 0 0 12px;
+    letter-spacing: 0.01em;
+  }
+
+  header.hero p {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .divider {
+    width: 64px;
+    height: 3px;
+    background: var(--accent);
+    margin: 22px auto 0;
+    border-radius: 2px;
+  }
+
+  .unit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .unit-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 22px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  }
+  .unit-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(43, 38, 32, 0.08);
+    border-color: var(--accent);
+  }
+  .unit-card:focus-visible {
+    outline: 3px solid var(--sky);
+    outline-offset: 2px;
+  }
+
+  .unit-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-soft);
+  }
+  .unit-icon svg { width: 30px; height: 30px; }
+
+  .unit-body { flex: 1; min-width: 0; }
+
+  .unit-eyebrow {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 3px;
+  }
+
+  .unit-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .unit-meta {
+    font-size: 0.86rem;
+    color: var(--muted);
+  }
+
+  .unit-arrow {
+    flex-shrink: 0;
+    color: var(--sky);
+    font-size: 1.3rem;
+  }
+
+  .unit-card.coming-soon {
+    opacity: 0.6;
+    cursor: default;
+  }
+  .unit-card.coming-soon:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--line);
+  }
+  .unit-card.coming-soon .unit-icon { background: var(--sky-soft); }
+  .unit-card.coming-soon .unit-arrow { color: var(--line); }
+
+  footer {
+    margin-top: 56px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 480px) {
+    header.hero h1 { font-size: 1.6rem; }
+    .unit-card { padding: 18px 16px; gap: 14px; }
+    .unit-icon { width: 46px; height: 46px; border-radius: 12px; }
+    .unit-icon svg { width: 24px; height: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">國中會考 2000 單字題庫</div>
+    <h1>主題單字測驗總覽</h1>
+    <p>挑選一個單元，開始你的拼字練習與選擇題測驗。每完成一個單元，成績會自動記錄起來。</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="unit-grid">
+
+    <a class="unit-card" href="group1.html">
+      <div class="unit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c0623d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <circle cx="8" cy="15" r="1.3" fill="#c0623d" stroke="none"></circle>
+          <circle cx="12" cy="15" r="1.3" fill="#c0623d" stroke="none"></circle>
+          <circle cx="16" cy="15" r="1.3" fill="#c0623d" stroke="none"></circle>
+        </svg>
+      </div>
+      <div class="unit-body">
+        <div class="unit-eyebrow">Group 1</div>
+        <div class="unit-title">月份・星期・時間單位・季節</div>
+        <div class="unit-meta">Months / Days / Time Units / Seasons · 27 個單字 · 30 題選擇題</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </a>
+
+    <a class="unit-card" href="group2.html">
+      <div class="unit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c0623d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 16.5a4 4 0 0 1 .5-7.96A5 5 0 0 1 17 10a3.5 3.5 0 0 1 .5 6.96"></path>
+          <line x1="9" y1="20" x2="9" y2="20.01"></line>
+          <line x1="13" y1="21" x2="13" y2="21.01"></line>
+          <line x1="17" y1="20" x2="17" y2="20.01"></line>
+        </svg>
+      </div>
+      <div class="unit-body">
+        <div class="unit-eyebrow">Group 2</div>
+        <div class="unit-title">天氣與氣候</div>
+        <div class="unit-meta">Weather & Climate · 29 個單字 · 30 題選擇題</div>
+      </div>
+      <div class="unit-arrow">→</div>
+    </a>
+
+    <div class="unit-card coming-soon" aria-disabled="true">
+      <div class="unit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5b7d96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+      <div class="unit-body">
+        <div class="unit-eyebrow">Group 3</div>
+        <div class="unit-title">即將推出 / Coming soon</div>
+        <div class="unit-meta">下一個主題正在準備中</div>
+      </div>
+      <div class="unit-arrow">⋯</div>
+    </div>
+
+  </div>
+
+  <footer>
+    國中 2000 單字題庫主題版 · 依會考英語科 Part 1 單題格式設計
+  </footer>
+</div>
+
+</body>
+</html>

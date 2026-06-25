@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Group 19 Quiz — General Adjectives Part 2</title>
+<style>
+  :root {
+    --ink: #2b2620;
+    --paper: #faf6ee;
+    --card: #ffffff;
+    --line: #e4dcc8;
+    --accent: #c0623d;     /* terracotta - autumn leaf */
+    --accent-dark: #9c4b2c;
+    --accent-soft: #f3e2d4;
+    --good: #3f7a4e;
+    --good-soft: #e3f0e4;
+    --bad: #b3392c;
+    --bad-soft: #fbe6e2;
+    --sky: #5b7d96;        /* muted sky blue for season/time theme */
+    --sky-soft: #e7eef2;
+    --radius: 14px;
+    --maxw: 720px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .app {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px 16px 80px;
+  }
+
+  .back-home-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--sky);
+    text-decoration: none;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .back-home-link:hover { text-decoration: underline; }
+
+  header.top {
+    text-align: center;
+    padding: 18px 0 14px;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 20px;
+  }
+  header.top h1 {
+    font-size: 1.25rem;
+    margin: 0 0 4px;
+    letter-spacing: 0.01em;
+  }
+  header.top p {
+    margin: 0;
+    color: #6b6354;
+    font-size: 0.88rem;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  /* ---------- Start screen ---------- */
+  .start-card h2 { margin-top: 0; }
+  label.field-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 0.92rem;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+  }
+  input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.05s ease, opacity 0.15s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dark); }
+  .btn-primary:disabled { background: #d9cfc0; color: #8a8071; cursor: not-allowed; }
+  .btn-ghost { background: var(--sky-soft); color: var(--sky); }
+  .btn-ghost:hover { background: #d9e6ec; }
+  .btn-block { width: 100%; }
+  .btn-row { display: flex; gap: 10px; margin-top: 14px; }
+
+  /* ---------- Progress ---------- */
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    color: #6b6354;
+  }
+  .progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.25s ease;
+  }
+  .part-pill {
+    display: inline-block;
+    background: var(--sky-soft);
+    color: var(--sky);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* ---------- TTS / sound button ---------- */
+  .sound-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1.5px solid var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .sound-btn:hover { background: var(--accent); color: #fff; }
+  .sound-btn.small {
+    width: 32px; height: 32px; font-size: 0.95rem;
+  }
+
+  /* ---------- Part 1: spelling ---------- */
+  .sentence-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .sentence-text {
+    font-size: 1.08rem;
+    line-height: 1.55;
+  }
+  .sentence-text .blank-marker {
+    display: inline-block;
+    min-width: 70px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .sentence-text .lookup-word {
+    cursor: pointer;
+    border-bottom: 1.5px dotted var(--sky);
+    transition: background 0.12s ease;
+    border-radius: 3px;
+  }
+  .sentence-text .lookup-word:hover {
+    background: var(--sky-soft);
+  }
+  .cn-translation {
+    color: #5c5446;
+    font-size: 0.95rem;
+    background: var(--sky-soft);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+  }
+  .spell-input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .spell-input-row input {
+    flex: 1;
+  }
+  .pos-tag {
+    font-size: 0.78rem;
+    color: var(--sky);
+    font-weight: 700;
+    margin-left: 6px;
+  }
+  .feedback-msg {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+  .feedback-msg.good { background: var(--good-soft); color: var(--good); }
+  .feedback-msg.bad { background: var(--bad-soft); color: var(--bad); }
+  .correct-spelling-hint {
+    margin-top: 6px;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    color: var(--accent-dark);
+    font-weight: 700;
+  }
+
+  /* ---------- Part 2: MCQ ---------- */
+  .mcq-question {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .mcq-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mcq-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 14px;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 1rem;
+    text-align: left;
+    width: 100%;
+  }
+  .mcq-option .opt-letter {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--sky-soft);
+    color: var(--sky);
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .mcq-option .lookup-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: #9c9483;
+    font-size: 0.95rem;
+    padding: 4px 6px;
+  }
+  .mcq-option .lookup-btn:hover { color: var(--sky); }
+  .mcq-option:hover:not(.locked) { border-color: var(--accent); }
+  .mcq-option.selected { border-color: var(--accent); background: var(--accent-soft); }
+  .mcq-option.correct-reveal { border-color: var(--good); background: var(--good-soft); }
+  .mcq-option.wrong-reveal { border-color: var(--bad); background: var(--bad-soft); }
+  .mcq-option.locked { cursor: default; }
+
+  .mcq-feedback-card {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: var(--sky-soft);
+  }
+  .mcq-feedback-card .verdict {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .mcq-feedback-card .verdict.good { color: var(--good); }
+  .mcq-feedback-card .verdict.bad { color: var(--bad); }
+  .option-def-list {
+    font-size: 0.88rem;
+    color: #5c5446;
+    margin: 8px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .option-def-list li { margin-bottom: 3px; }
+  .full-sentence-block {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    font-size: 0.95rem;
+  }
+  .full-sentence-block .cn { color: #5c5446; margin-top: 4px; }
+
+  /* ---------- Lookup popup ---------- */
+  .lookup-popup {
+    position: fixed;
+    z-index: 50;
+    max-width: 260px;
+    background: var(--ink);
+    color: #fff;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  }
+  .lookup-popup a {
+    color: #ffd9c4;
+    text-decoration: underline;
+  }
+  .lookup-popup .lookup-close {
+    display: block;
+    margin-top: 8px;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+  }
+
+  /* ---------- Results ---------- */
+  .score-display {
+    text-align: center;
+    padding: 10px 0 20px;
+  }
+  .score-display .big-num {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .score-display .big-label {
+    color: #6b6354;
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  .results-section h3 {
+    font-size: 0.95rem;
+    margin: 18px 0 8px;
+    color: var(--accent-dark);
+  }
+  .word-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .word-chip {
+    background: var(--bad-soft);
+    color: var(--bad);
+    padding: 5px 11px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .word-chip.none { background: var(--good-soft); color: var(--good); }
+
+  .submit-status {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.88rem;
+    color: #6b6354;
+  }
+  .submit-status.success { color: var(--good); font-weight: 600; }
+  .submit-status.error { color: var(--bad); font-weight: 600; }
+
+  .hidden { display: none !important; }
+
+  @media (max-width: 420px) {
+    .score-display .big-num { font-size: 2.4rem; }
+    .sentence-text { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <a href="index.html" class="back-home-link">← 所有單元 / All units</a>
+  <header class="top">
+    <h1>國中 2000 單字練習 — Group 19</h1>
+    <p id="group-name-label"></p>
+  </header>
+
+  <!-- ===================== START SCREEN ===================== -->
+  <div id="screen-start" class="card start-card">
+    <h2>開始測驗 / Start Quiz</h2>
+    <p>請輸入你的姓名，然後開始測驗。本測驗分為兩個部分：拼字練習與選擇題。</p>
+    <label class="field-label" for="student-name-input">姓名 / Name</label>
+    <input type="text" id="student-name-input" placeholder="請輸入你的姓名">
+    <div class="btn-row">
+      <button class="btn btn-primary btn-block" id="start-btn">開始 Start</button>
+    </div>
+  </div>
+
+  <!-- ===================== PART 1: SPELLING ===================== -->
+  <div id="screen-part1" class="card hidden">
+    <span class="part-pill">PART 1 · 拼字練習</span>
+    <div class="progress-wrap">
+      <span id="p1-progress-label">1 / 40</span>
+      <div class="progress-bar"><div class="progress-fill" id="p1-progress-fill" style="width:0%"></div></div>
+    </div>
+
+    <div class="sentence-block">
+      <button class="sound-btn" id="p1-tts-btn" title="Listen / 播放">🔊</button>
+      <div class="sentence-text" id="p1-sentence"></div>
+    </div>
+    <div class="cn-translation" id="p1-cn"></div>
+
+    <div class="spell-input-row">
+      <input type="text" id="p1-answer-input" placeholder="Type the word here / 在此輸入單字" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <span class="pos-tag" id="p1-pos-tag"></span>
+    </div>
+
+    <div id="p1-feedback" class="feedback-msg hidden"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary btn-block" id="p1-submit-btn">送出 Check</button>
+    </div>
+  </div>
+
+  <!-- ===================== Transition screen ===================== -->
+  <div id="screen-transition" class="card hidden">
+    <h2>Part 1 完成！</h2>
+    <p>做得好！接下來是第二部分：40 題選擇題。</p>
+    <div class="btn-row">
+      <button class="btn btn-primary btn-block" id="start-part2-btn">開始 Part 2</button>
+    </div>
+  </div>
+
+  <!-- ===================== PART 2: MCQ ===================== -->
+  <div id="screen-part2" class="card hidden">
+    <span class="part-pill">PART 2 · 選擇題</span>
+    <div class="progress-wrap">
+      <span id="p2-progress-label">1 / 40</span>
+      <div class="progress-bar"><div class="progress-fill" id="p2-progress-fill" style="width:0%"></div></div>
+    </div>
+
+    <div class="mcq-question">
+      <button class="sound-btn small" id="p2-tts-btn" title="Listen / 播放">🔊</button>
+      <div id="p2-question-text"></div>
+    </div>
+
+    <div class="mcq-options" id="p2-options"></div>
+
+    <div id="p2-feedback" class="mcq-feedback-card hidden"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary btn-block hidden" id="p2-next-btn">下一題 Next</button>
+    </div>
+  </div>
+
+  <!-- ===================== RESULTS ===================== -->
+  <div id="screen-results" class="card hidden">
+    <h2>測驗結果 / Results</h2>
+    <div class="score-display">
+      <div class="big-num" id="result-score">--</div>
+      <div class="big-label">Part 2 正確率 / MCQ Score</div>
+    </div>
+
+    <div class="results-section">
+      <h3>Part 1 拼錯的單字 / Spelling mistakes</h3>
+      <div class="word-chip-list" id="p1-wrong-list"></div>
+    </div>
+    <div class="results-section">
+      <h3>Part 2 答錯的單字 / MCQ mistakes</h3>
+      <div class="word-chip-list" id="p2-wrong-list"></div>
+    </div>
+
+    <div class="submit-status" id="submit-status">正在送出結果...</div>
+  </div>
+</div>
+
+<div id="lookup-popup-container"></div>
+
+<script src="group19-data.js"></script>
+<script src="group19-app.js"></script>
+</body>
+</html>

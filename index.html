@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>國中 2000 單字練習 — 主題單字測驗</title>
+<title>國中 2000 單字練習 — 總目錄 Vocabulary Quiz Index</title>
 <style>
   :root {
     --ink: #2b2620;
@@ -15,7 +15,12 @@
     --accent-soft: #f3e2d4;
     --sky: #5b7d96;
     --sky-soft: #e7eef2;
-    --muted: #6b6354;
+    --good: #3f7a4e;
+    --good-soft: #e3f0e4;
+    --warn: #b3392c;
+    --warn-soft: #fbe6e2;
+    --radius: 14px;
+    --maxw: 760px;
   }
 
   * { box-sizing: border-box; }
@@ -25,215 +30,408 @@
     font-family: -apple-system, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
     background: var(--paper);
     color: var(--ink);
-    line-height: 1.55;
+    line-height: 1.5;
   }
 
-  .wrap {
-    max-width: 880px;
+  .app {
+    max-width: var(--maxw);
     margin: 0 auto;
-    padding: 48px 20px 80px;
+    padding: 24px 16px 80px;
   }
 
-  header.hero {
+  header.top {
     text-align: center;
-    margin-bottom: 44px;
+    padding: 20px 0 16px;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 24px;
   }
-
-  header.hero .kicker {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--sky);
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  header.hero h1 {
-    font-family: Georgia, "Noto Serif TC", "Times New Roman", serif;
-    font-size: 2.1rem;
-    margin: 0 0 12px;
+  header.top h1 {
+    font-size: 1.4rem;
+    margin: 0 0 6px;
     letter-spacing: 0.01em;
   }
-
-  header.hero p {
-    color: var(--muted);
-    font-size: 1rem;
-    max-width: 520px;
-    margin: 0 auto;
+  header.top p {
+    margin: 0;
+    color: #6b6354;
+    font-size: 0.92rem;
+  }
+  header.top .stats {
+    display: inline-flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat-pill {
+    background: var(--sky-soft);
+    color: var(--sky);
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 5px 12px;
+    border-radius: 20px;
   }
 
-  .divider {
-    width: 64px;
-    height: 3px;
-    background: var(--accent);
-    margin: 22px auto 0;
-    border-radius: 2px;
+  .theme-section {
+    margin-bottom: 28px;
   }
-
-  .unit-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .unit-card {
+  .theme-header {
     display: flex;
-    align-items: center;
-    gap: 18px;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1.5px solid var(--line);
+  }
+  .theme-header h2 {
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--accent-dark);
+  }
+  .theme-header .theme-meta {
+    font-size: 0.8rem;
+    color: #948a76;
+    font-weight: 600;
+  }
+
+  .group-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .group-card {
+    display: block;
     background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 22px 22px;
+    border-radius: 10px;
+    padding: 12px 14px;
     text-decoration: none;
     color: var(--ink);
-    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: border-color 0.12s ease, transform 0.05s ease;
   }
-  .unit-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(43, 38, 32, 0.08);
+  .group-card:hover {
     border-color: var(--accent);
+    transform: translateY(-1px);
   }
-  .unit-card:focus-visible {
-    outline: 3px solid var(--sky);
-    outline-offset: 2px;
-  }
-
-  .unit-icon {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent-soft);
-  }
-  .unit-icon svg { width: 30px; height: 30px; }
-
-  .unit-body { flex: 1; min-width: 0; }
-
-  .unit-eyebrow {
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  .group-card:active { transform: scale(0.98); }
+  .group-card .gnum {
+    font-weight: 800;
+    font-size: 0.95rem;
     color: var(--accent-dark);
-    margin-bottom: 3px;
+  }
+  .group-card .gwords {
+    font-size: 0.72rem;
+    color: #948a76;
+    font-weight: 600;
+  }
+  .group-card .gtitle {
+    font-size: 0.78rem;
+    color: #5c5446;
+    margin-top: 2px;
+    line-height: 1.3;
   }
 
-  .unit-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .unit-meta {
-    font-size: 0.86rem;
-    color: var(--muted);
-  }
-
-  .unit-arrow {
-    flex-shrink: 0;
-    color: var(--sky);
-    font-size: 1.3rem;
-  }
-
-  .unit-card.coming-soon {
-    opacity: 0.6;
+  .group-card.placeholder {
+    background: var(--warn-soft);
+    border: 1.5px dashed var(--warn);
+    color: var(--warn);
     cursor: default;
   }
-  .unit-card.coming-soon:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: var(--line);
-  }
-  .unit-card.coming-soon .unit-icon { background: var(--sky-soft); }
-  .unit-card.coming-soon .unit-arrow { color: var(--line); }
+  .group-card.placeholder:hover { transform: none; }
+  .group-card.placeholder .gnum { color: var(--warn); }
+  .group-card.placeholder .gtitle { color: var(--warn); }
 
   footer {
-    margin-top: 56px;
     text-align: center;
-    color: var(--muted);
-    font-size: 0.82rem;
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #948a76;
   }
 
-  @media (max-width: 480px) {
-    header.hero h1 { font-size: 1.6rem; }
-    .unit-card { padding: 18px 16px; gap: 14px; }
-    .unit-icon { width: 46px; height: 46px; border-radius: 12px; }
-    .unit-icon svg { width: 24px; height: 24px; }
+  @media (max-width: 420px) {
+    .group-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header class="hero">
-    <div class="kicker">國中會考 2000 單字題庫</div>
-    <h1>主題單字測驗總覽</h1>
-    <p>挑選一個單元，開始你的拼字練習與選擇題測驗。每完成一個單元，成績會自動記錄起來。</p>
-    <div class="divider"></div>
+<div class="app">
+  <header class="top">
+    <h1>國中 2000 單字練習</h1>
+    <p>2000 Essential Words — Vocabulary Quiz Index</p>
+    <div class="stats">
+      <span class="stat-pill">56 Groups</span>
+      <span class="stat-pill">13 Themes</span>
+      <span class="stat-pill">~2000 Words</span>
+    </div>
   </header>
 
-  <div class="unit-grid">
-
-    <a class="unit-card" href="group1.html">
-      <div class="unit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#c0623d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <circle cx="8" cy="15" r="1.3" fill="#c0623d" stroke="none"></circle>
-          <circle cx="12" cy="15" r="1.3" fill="#c0623d" stroke="none"></circle>
-          <circle cx="16" cy="15" r="1.3" fill="#c0623d" stroke="none"></circle>
-        </svg>
-      </div>
-      <div class="unit-body">
-        <div class="unit-eyebrow">Group 1</div>
-        <div class="unit-title">月份・星期・時間單位・季節</div>
-        <div class="unit-meta">Months / Days / Time Units / Seasons · 27 個單字 · 30 題選擇題</div>
-      </div>
-      <div class="unit-arrow">→</div>
-    </a>
-
-    <a class="unit-card" href="group2.html">
-      <div class="unit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#c0623d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 16.5a4 4 0 0 1 .5-7.96A5 5 0 0 1 17 10a3.5 3.5 0 0 1 .5 6.96"></path>
-          <line x1="9" y1="20" x2="9" y2="20.01"></line>
-          <line x1="13" y1="21" x2="13" y2="21.01"></line>
-          <line x1="17" y1="20" x2="17" y2="20.01"></line>
-        </svg>
-      </div>
-      <div class="unit-body">
-        <div class="unit-eyebrow">Group 2</div>
-        <div class="unit-title">天氣與氣候</div>
-        <div class="unit-meta">Weather & Climate · 29 個單字 · 30 題選擇題</div>
-      </div>
-      <div class="unit-arrow">→</div>
-    </a>
-
-    <div class="unit-card coming-soon" aria-disabled="true">
-      <div class="unit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#5b7d96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-      </div>
-      <div class="unit-body">
-        <div class="unit-eyebrow">Group 3</div>
-        <div class="unit-title">即將推出 / Coming soon</div>
-        <div class="unit-meta">下一個主題正在準備中</div>
-      </div>
-      <div class="unit-arrow">⋯</div>
+  <!-- ===================== Theme 1 ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Time / Calendar / Weather / Nature</h2>
+      <span class="theme-meta">Groups 1–2</span>
     </div>
+    <div class="group-grid">
+      <a class="group-card" href="group1.html">
+        <div class="gnum">Group 1</div>
+        <div class="gtitle">Months / Days / Time Units / Seasons</div>
+      </a>
+      <div class="group-card placeholder" title="Title not yet confirmed">
+        <div class="gnum">Group 2</div>
+        <div class="gtitle">⚠ title to confirm</div>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <!-- ===================== Theme: Animals / Nature (continued) ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Geography / Plants / Animals</h2>
+      <span class="theme-meta">Groups 3–5</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group3.html">
+        <div class="gnum">Group 3</div>
+        <div class="gtitle">Directions / Universe / Geography &amp; Nature</div>
+      </a>
+      <a class="group-card" href="group4.html">
+        <div class="gnum">Group 4</div>
+        <div class="gtitle">Plants / Birds / Farm &amp; Pet Animals</div>
+      </a>
+      <a class="group-card" href="group5.html">
+        <div class="gnum">Group 5</div>
+        <div class="gtitle">Mammals / Reptiles / Sea Creatures / Insects</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Food and Drinks ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Food and Drinks</h2>
+      <span class="theme-meta">Groups 6–7 · 95 words</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group6.html">
+        <div class="gnum">Group 6</div>
+        <div class="gwords">49 words</div>
+        <div class="gtitle">Meals / Meats / Breads / Snacks &amp; Desserts / Condiments</div>
+      </a>
+      <a class="group-card" href="group7.html">
+        <div class="gnum">Group 7</div>
+        <div class="gwords">46 words</div>
+        <div class="gtitle">Fruits / Vegetables / Drinks</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: People / Family / Jobs / Personality ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>People / Family / Jobs / Personality</h2>
+      <span class="theme-meta">Groups 8–10 · 121 words</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group8.html">
+        <div class="gnum">Group 8</div>
+        <div class="gtitle">Family / People / Age / Titles</div>
+      </a>
+      <a class="group-card" href="group9.html">
+        <div class="gnum">Group 9</div>
+        <div class="gwords">34 words</div>
+        <div class="gtitle">Jobs / Professions</div>
+      </a>
+      <a class="group-card" href="group10.html">
+        <div class="gnum">Group 10</div>
+        <div class="gwords">45 words</div>
+        <div class="gtitle">Roles / Characters / Personality</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: School / Work / Media / Communication ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>School / Work / Media / Communication</h2>
+      <span class="theme-meta">Groups 11–14 · 148 words</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group11.html">
+        <div class="gnum">Group 11</div>
+        <div class="gwords">40 words</div>
+        <div class="gtitle">Jobs / Office / Technology / Communication</div>
+      </a>
+      <a class="group-card" href="group12.html">
+        <div class="gnum">Group 12</div>
+        <div class="gwords">35 words</div>
+        <div class="gtitle">School Life</div>
+      </a>
+      <a class="group-card" href="group13.html">
+        <div class="gnum">Group 13</div>
+        <div class="gwords">42 words</div>
+        <div class="gtitle">Work / Business / Money</div>
+      </a>
+      <a class="group-card" href="group14.html">
+        <div class="gnum">Group 14</div>
+        <div class="gwords">31 words</div>
+        <div class="gtitle">Media / Entertainment / Time &amp; Eras</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Describing Words ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Describing Words</h2>
+      <span class="theme-meta">Groups 15–19 · 195 words</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group15.html">
+        <div class="gnum">Group 15</div>
+        <div class="gwords">49 words</div>
+        <div class="gtitle">Personality Traits / Emotions</div>
+      </a>
+      <a class="group-card" href="group16.html">
+        <div class="gnum">Group 16</div>
+        <div class="gwords">16 words</div>
+        <div class="gtitle">Difficulty / Quality / Judgment</div>
+      </a>
+      <a class="group-card" href="group17.html">
+        <div class="gnum">Group 17</div>
+        <div class="gwords">49 words</div>
+        <div class="gtitle">Size / State / Safety / Comparison</div>
+      </a>
+      <a class="group-card" href="group18.html">
+        <div class="gnum">Group 18</div>
+        <div class="gwords">41 words</div>
+        <div class="gtitle">General Adjectives, Part 1</div>
+      </a>
+      <a class="group-card" href="group19.html">
+        <div class="gnum">Group 19</div>
+        <div class="gwords">40 words</div>
+        <div class="gtitle">General Adjectives, Part 2</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Body / Health / Feelings / Clothing / Appearance ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Body / Health / Feelings / Clothing / Appearance</h2>
+      <span class="theme-meta">Groups 20–24</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group20.html"><div class="gnum">Group 20</div></a>
+      <a class="group-card" href="group21.html"><div class="gnum">Group 21</div></a>
+      <a class="group-card" href="group22.html"><div class="gnum">Group 22</div></a>
+      <a class="group-card" href="group23.html"><div class="gnum">Group 23</div></a>
+      <a class="group-card" href="group24.html"><div class="gnum">Group 24</div></a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Sports / Countries / Transportation / Places ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Sports / Countries / Transportation / Places</h2>
+      <span class="theme-meta">Groups 25–31</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group25.html"><div class="gnum">Group 25</div></a>
+      <a class="group-card" href="group26.html"><div class="gnum">Group 26</div></a>
+      <a class="group-card" href="group27.html"><div class="gnum">Group 27</div></a>
+      <a class="group-card" href="group28.html"><div class="gnum">Group 28</div></a>
+      <a class="group-card" href="group29.html"><div class="gnum">Group 29</div></a>
+      <a class="group-card" href="group30.html"><div class="gnum">Group 30</div></a>
+      <a class="group-card" href="group31.html"><div class="gnum">Group 31</div></a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Actions ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Actions</h2>
+      <span class="theme-meta">Groups 34–38 · 252 words</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group34.html"><div class="gnum">Group 34</div></a>
+      <a class="group-card" href="group35.html"><div class="gnum">Group 35</div></a>
+      <a class="group-card" href="group36.html"><div class="gnum">Group 36</div></a>
+      <a class="group-card" href="group37.html"><div class="gnum">Group 37</div></a>
+      <a class="group-card" href="group38.html"><div class="gnum">Group 38</div></a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Home / Household / Objects ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Home / Household / Objects</h2>
+      <span class="theme-meta">Groups 39–43 · 178 words</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group39.html"><div class="gnum">Group 39</div></a>
+      <a class="group-card" href="group40.html"><div class="gnum">Group 40</div></a>
+      <a class="group-card" href="group41.html"><div class="gnum">Group 41</div></a>
+      <a class="group-card" href="group42.html"><div class="gnum">Group 42</div></a>
+      <a class="group-card" href="group43.html"><div class="gnum">Group 43</div></a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Time / Numbers / Measures ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Time / Numbers / Measures</h2>
+      <span class="theme-meta">Groups 44–47 · 123 words</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group44.html"><div class="gnum">Group 44</div></a>
+      <a class="group-card" href="group45.html"><div class="gnum">Group 45</div></a>
+      <a class="group-card" href="group46.html"><div class="gnum">Group 46</div></a>
+      <a class="group-card" href="group47.html"><div class="gnum">Group 47</div></a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Function Words / Common Nouns ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Function Words / Common Nouns</h2>
+      <span class="theme-meta">Groups 48–56 · 269 words · ✓ complete</span>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="group48.html"><div class="gnum">Group 48</div></a>
+      <a class="group-card" href="group49.html"><div class="gnum">Group 49</div></a>
+      <a class="group-card" href="group50.html"><div class="gnum">Group 50</div></a>
+      <a class="group-card" href="group51.html"><div class="gnum">Group 51</div></a>
+      <a class="group-card" href="group52.html"><div class="gnum">Group 52</div></a>
+      <a class="group-card" href="group53.html"><div class="gnum">Group 53</div></a>
+      <a class="group-card" href="group54.html"><div class="gnum">Group 54</div></a>
+      <a class="group-card" href="group55.html"><div class="gnum">Group 55</div></a>
+      <a class="group-card" href="group56.html">
+        <div class="gnum">Group 56</div>
+        <div class="gwords">29 words</div>
+        <div class="gtitle">Descriptive Adjectives, Part 9 (FINAL)</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== Theme: Adverbs / Prepositions (not yet started) ===================== -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <h2>Adverbs / Prepositions</h2>
+      <span class="theme-meta">101 words · not yet started</span>
+    </div>
+    <div class="group-grid">
+      <div class="group-card placeholder">
+        <div class="gnum">—</div>
+        <div class="gtitle">Coming soon</div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    國中 2000 單字題庫主題版 · 依會考英語科 Part 1 單題格式設計
+    國中 2000 單字練習 &middot; 56 of ~57+ groups complete<br>
+    Note: Group 2's title could not be confirmed from project history — placeholder shown above.
   </footer>
 </div>
 

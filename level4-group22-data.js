@@ -1,0 +1,1505 @@
+// 學測6000字 Level 4 Group 22 (infection-intensive) — word-family edition
+const QUIZ_CONFIG = {
+  groupName: "6000字 L4 Group 22 - infection – intensive (word family)",
+  gasEndpoint: "https://script.google.com/macros/s/AKfycbzLUqP-nauSjmiHfPXiK3NAV65tYdjAlwqip38TcGdTKqeR_CijuzHYxZDC-sjtRVrr_w/exec"
+};
+const VOCAB = [
+ {
+  "word": "infection",
+  "answer": "infection",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "感染",
+  "en_def": "an illness caused by germs getting into the body",
+  "sentence": "The doctor said the cut on my hand had a small {{BLANK}}, so I need to clean it and take medicine for a week.",
+  "cn": "醫生說我手上的傷口有輕微感染，所以我需要清潔傷口並吃一週的藥。",
+  "cnMarked": "醫生說我手上的傷口有輕微【感染】，所以我需要清潔傷口並吃一週的藥。",
+  "isHead": true,
+  "level": 4,
+  "family": "infection"
+ },
+ {
+  "word": "infect",
+  "answer": "infect",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "感染；傳染",
+  "en_def": "to pass a disease or germs to a person, animal, or thing",
+  "sentence": "If you cough without covering your mouth, you may {{BLANK}} the people around you, especially on a crowded bus.",
+  "cn": "如果你咳嗽時不遮住嘴巴，可能會傳染給周圍的人，尤其是在擠滿人的公車上。",
+  "cnMarked": "如果你咳嗽時不遮住嘴巴，可能會【傳染】給周圍的人，尤其是在擠滿人的公車上。",
+  "isHead": false,
+  "level": 5,
+  "family": "infection"
+ },
+ {
+  "word": "infectious",
+  "answer": "infectious",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "傳染性的",
+  "en_def": "able to spread from one person to another",
+  "sentence": "The flu is highly {{BLANK}}, so students with a fever should stay home instead of coming to school.",
+  "cn": "流感具有高度傳染性，所以發燒的學生應該待在家裡，而不是來上學。",
+  "cnMarked": "流感具有高度【傳染性】，所以發燒的學生應該待在家裡，而不是來上學。",
+  "isHead": false,
+  "level": 6,
+  "family": "infection"
+ },
+ {
+  "word": "be infected with",
+  "answer": "were infected with",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "感染（某種疾病）",
+  "en_def": "to have a disease because germs have entered your body",
+  "sentence": "After drinking the dirty water, several hikers {{BLANK}} a stomach virus and had to visit the hospital that night.",
+  "cn": "喝了髒水之後，幾位登山客感染了腸胃病毒，當晚不得不去醫院。",
+  "cnMarked": "喝了髒水之後，幾位登山客【感染了】腸胃病毒，當晚不得不去醫院。",
+  "isHead": false,
+  "level": null,
+  "family": "infection"
+ },
+ {
+  "word": "inflation",
+  "answer": "inflation",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "通貨膨脹",
+  "en_def": "a general rise in prices over time",
+  "sentence": "Because of {{BLANK}}, a bowl of beef noodles that cost 100 dollars five years ago now costs almost 150.",
+  "cn": "由於通貨膨脹，五年前一碗一百元的牛肉麵現在要將近一百五十元。",
+  "cnMarked": "由於【通貨膨脹】，五年前一碗一百元的牛肉麵現在要將近一百五十元。",
+  "isHead": true,
+  "level": 4,
+  "family": "inflation"
+ },
+ {
+  "word": "inflate",
+  "answer": "inflate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使充氣；使上漲",
+  "en_def": "to fill something with air; to make prices or numbers go up",
+  "sentence": "Before the party, we used a small pump to {{BLANK}} fifty balloons, and the whole room looked colorful and fun.",
+  "cn": "派對開始前，我們用一個小打氣筒充氣五十個氣球，整個房間看起來五彩繽紛又有趣。",
+  "cnMarked": "派對開始前，我們用一個小打氣筒【充氣】五十個氣球，整個房間看起來五彩繽紛又有趣。",
+  "isHead": false,
+  "level": null,
+  "family": "inflation"
+ },
+ {
+  "word": "inflation rate",
+  "answer": "inflation rate",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "通貨膨脹率",
+  "en_def": "the speed at which prices rise, shown as a percent",
+  "sentence": "The news reported that the {{BLANK}} reached three percent this year, so many families are spending less on eating out.",
+  "cn": "新聞報導今年的通貨膨脹率達到百分之三，所以許多家庭減少了外食的花費。",
+  "cnMarked": "新聞報導今年的【通貨膨脹率】達到百分之三，所以許多家庭減少了外食的花費。",
+  "isHead": false,
+  "level": null,
+  "family": "inflation"
+ },
+ {
+  "word": "influential",
+  "answer": "influential",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "有影響力的",
+  "en_def": "having the power to change how people think or act",
+  "sentence": "She is one of the most {{BLANK}} teachers in our school because many students chose their careers after taking her class.",
+  "cn": "她是我們學校最有影響力的老師之一，因為許多學生上了她的課後決定了自己的職業。",
+  "cnMarked": "她是我們學校最【有影響力的】老師之一，因為許多學生上了她的課後決定了自己的職業。",
+  "isHead": true,
+  "level": 4,
+  "family": "influential"
+ },
+ {
+  "word": "influence",
+  "answer": "influence",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "影響；影響力",
+  "en_def": "the power to change someone or something",
+  "sentence": "Parents have a strong {{BLANK}} on their children, so kids often copy the way their mother and father speak and eat.",
+  "cn": "父母對孩子有很大的影響，所以孩子常常模仿爸媽說話和吃東西的方式。",
+  "cnMarked": "父母對孩子有很大的【影響】，所以孩子常常模仿爸媽說話和吃東西的方式。",
+  "isHead": false,
+  "level": 2,
+  "family": "influential"
+ },
+ {
+  "word": "influence",
+  "answer": "influence",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "影響",
+  "en_def": "to change the way someone thinks or acts",
+  "sentence": "Advertisements on social media can {{BLANK}} teenagers to buy things they do not really need, such as expensive sneakers.",
+  "cn": "社群媒體上的廣告可能會影響青少年去買他們其實不需要的東西，例如昂貵的球鞋。",
+  "cnMarked": "社群媒體上的廣告可能會【影響】青少年去買他們其實不需要的東西，例如昂貵的球鞋。",
+  "isHead": false,
+  "level": 2,
+  "family": "influential"
+ },
+ {
+  "word": "have an influence on",
+  "answer": "have an influence on",
+  "nblanks": 4,
+  "pos": "v.phr.",
+  "cn_def": "對…有影響",
+  "en_def": "to affect someone or something",
+  "sentence": "The weather can {{BLANK}} our mood, and many people feel sad and tired after several days of heavy rain.",
+  "cn": "天氣會對我們的心情有影響，許多人在連續幾天大雨之後會覺得難過又疲倦。",
+  "cnMarked": "天氣會【對】我們的心情【有影響】，許多人在連續幾天大雨之後會覺得難過又疲倦。",
+  "isHead": false,
+  "level": null,
+  "family": "influential"
+ },
+ {
+  "word": "informative",
+  "answer": "informative",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "資訊豐富的；有教育性的",
+  "en_def": "giving a lot of useful facts and information",
+  "sentence": "The museum guide was so {{BLANK}} that we learned more about Taiwan's history in one hour than in a whole semester.",
+  "cn": "博物館導覽員講解得非常有知識性，我們在一小時內學到的台灣歷史比整個學期還多。",
+  "cnMarked": "博物館導覽員講解得非常【有知識性】，我們在一小時內學到的台灣歷史比整個學期還多。",
+  "isHead": true,
+  "level": 4,
+  "family": "informative"
+ },
+ {
+  "word": "inform",
+  "answer": "inform",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "通知；告知",
+  "en_def": "to tell someone about something officially",
+  "sentence": "The school will {{BLANK}} parents by text message if classes are canceled because of the typhoon tomorrow morning.",
+  "cn": "如果明天早上因颱風停課，學校會用簡訊通知家長。",
+  "cnMarked": "如果明天早上因颱風停課，學校會用簡訊【通知】家長。",
+  "isHead": false,
+  "level": 3,
+  "family": "informative"
+ },
+ {
+  "word": "information",
+  "answer": "information",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "資訊；訊息",
+  "en_def": "facts or details about something",
+  "sentence": "You can find all the {{BLANK}} about the school trip, including the price and the date, on the notice board.",
+  "cn": "你可以在公告欄上找到關於學校旅行的所有資訊，包括價格和日期。",
+  "cnMarked": "你可以在公告欄上找到關於學校旅行的所有【資訊】，包括價格和日期。",
+  "isHead": false,
+  "level": 3,
+  "family": "informative"
+ },
+ {
+  "word": "inform sb of",
+  "answer": "inform us of",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "告知某人某事",
+  "en_def": "to tell someone about something",
+  "sentence": "The airline sent an email to {{BLANK}} the change in our flight time, so we arrived at the airport two hours later.",
+  "cn": "航空公司寄了電子郵件告知我們航班時間的變更，所以我們晚了兩小時才到機場。",
+  "cnMarked": "航空公司寄了電子郵件【告知我們】航班時間的變更，所以我們晚了兩小時才到機場。",
+  "isHead": false,
+  "level": null,
+  "family": "informative"
+ },
+ {
+  "word": "ingredient",
+  "answer": "ingredients",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "（食物的）成分；材料",
+  "en_def": "one of the foods you use to make a dish",
+  "sentence": "Flour, eggs, and sugar are the main {{BLANK}} of this cake, so you probably already have everything in your kitchen.",
+  "cn": "麵粉、雞蛋和糖是這個蛋糕的主要材料，所以你的廚房裡可能已經有所有東西了。",
+  "cnMarked": "麵粉、雞蛋和糖是這個蛋糕的主要【材料】，所以你的廚房裡可能已經有所有東西了。",
+  "isHead": true,
+  "level": 4,
+  "family": "ingredient"
+ },
+ {
+  "word": "ingredient",
+  "answer": "ingredient",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "（成功的）要素",
+  "en_def": "a quality that is needed to make something successful",
+  "sentence": "Hard work is an important {{BLANK}} of success, but good friends and a little luck also help a lot.",
+  "cn": "努力是成功的重要要素，但好朋友和一點運氣也很有幫助。",
+  "cnMarked": "努力是成功的重要【要素】，但好朋友和一點運氣也很有幫助。",
+  "isHead": false,
+  "level": 4,
+  "family": "ingredient"
+ },
+ {
+  "word": "key ingredient",
+  "answer": "key ingredient",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "關鍵成分；關鍵要素",
+  "en_def": "the most important thing needed for something",
+  "sentence": "Fresh ginger is the {{BLANK}} in my grandmother's soup, and without it the soup tastes completely different.",
+  "cn": "新鮮的薑是我奶奶那道湯的關鍵材料，少了它湯的味道就完全不一樣。",
+  "cnMarked": "新鮮的薑是我奶奶那道湯的【關鍵材料】，少了它湯的味道就完全不一樣。",
+  "isHead": false,
+  "level": null,
+  "family": "ingredient"
+ },
+ {
+  "word": "initial",
+  "answer": "initial",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "最初的；開始的",
+  "en_def": "happening at the beginning; first",
+  "sentence": "My {{BLANK}} plan was to study medicine, but after one year at university I decided to become a teacher instead.",
+  "cn": "我最初的計畫是讀醫學，但在大學讀了一年後，我決定改當老師。",
+  "cnMarked": "我【最初的】計畫是讀醫學，但在大學讀了一年後，我決定改當老師。",
+  "isHead": true,
+  "level": 4,
+  "family": "initial"
+ },
+ {
+  "word": "initially",
+  "answer": "Initially",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "起初；最初",
+  "en_def": "at the beginning; at first",
+  "sentence": "{{BLANK}}, I did not like my new roommate because he was very quiet, but now we are the best of friends.",
+  "cn": "起初我不喜歡我的新室友，因為他很安靜，但現在我們是最好的朋友。",
+  "cnMarked": "【起初】我不喜歡我的新室友，因為他很安靜，但現在我們是最好的朋友。",
+  "isHead": false,
+  "level": null,
+  "family": "initial"
+ },
+ {
+  "word": "initial",
+  "answer": "initials",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "（姓名的）首字母",
+  "en_def": "the first letter of a name",
+  "sentence": "Please write your {{BLANK}} in the box at the bottom of each page to show that you have read it.",
+  "cn": "請在每一頁底部的方框裡寫上你的姓名首字母，表示你已經讀過了。",
+  "cnMarked": "請在每一頁底部的方框裡寫上你的【姓名首字母】，表示你已經讀過了。",
+  "isHead": false,
+  "level": 4,
+  "family": "initial"
+ },
+ {
+  "word": "initiate",
+  "answer": "initiate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "開始；發起",
+  "en_def": "to make something start",
+  "sentence": "The city government decided to {{BLANK}} a recycling program that gives small rewards to families who sort their trash.",
+  "cn": "市政府決定發起一項回收計畫，給垃圾分類做得好的家庭小獎勵。",
+  "cnMarked": "市政府決定【發起】一項回收計畫，給垃圾分類做得好的家庭小獎勵。",
+  "isHead": false,
+  "level": 5,
+  "family": "initial"
+ },
+ {
+  "word": "initiative",
+  "answer": "initiative",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "新方案；主動性",
+  "en_def": "a new plan to solve a problem; the ability to act without being told",
+  "sentence": "Instead of waiting for the teacher's instructions, Amy took the {{BLANK}} and started cleaning the classroom by herself.",
+  "cn": "艾咪沒有等老師的指示，而是主動自己開始打掃教室。",
+  "cnMarked": "艾咪沒有等老師的指示，而是【主動】自己開始打掃教室。",
+  "isHead": false,
+  "level": 5,
+  "family": "initial"
+ },
+ {
+  "word": "injure",
+  "answer": "injure",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "傷害；使受傷",
+  "en_def": "to hurt a person or animal, especially in an accident",
+  "sentence": "Wear a helmet when you ride a scooter, because a simple fall can seriously {{BLANK}} your head and neck.",
+  "cn": "騎機車時要戴安全帽，因為一次簡單的摔倒就可能嚴重傷害你的頭部和頸部。",
+  "cnMarked": "騎機車時要戴安全帽，因為一次簡單的摔倒就可能嚴重【傷害】你的頭部和頸部。",
+  "isHead": true,
+  "level": 4,
+  "family": "injure"
+ },
+ {
+  "word": "injury",
+  "answer": "injury",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "傷害；受傷",
+  "en_def": "harm done to a person's body",
+  "sentence": "The basketball player had a knee {{BLANK}} last season, so he could not play in the final game of the year.",
+  "cn": "那位籃球員上個球季膝蓋受傷，所以他無法參加年度最後一場比賽。",
+  "cnMarked": "那位籃球員上個球季膝蓋【受傷】，所以他無法參加年度最後一場比賽。",
+  "isHead": false,
+  "level": 3,
+  "family": "injure"
+ },
+ {
+  "word": "injured",
+  "answer": "injured",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "受傷的",
+  "en_def": "hurt; having a wound or broken bone",
+  "sentence": "After the car accident, the {{BLANK}} driver was taken to the hospital, but luckily he only had a broken arm.",
+  "cn": "車禍之後，受傷的駕駛被送往醫院，幸運的是他只有手臂骨折。",
+  "cnMarked": "車禍之後，【受傷的】駕駛被送往醫院，幸運的是他只有手臂骨折。",
+  "isHead": false,
+  "level": null,
+  "family": "injure"
+ },
+ {
+  "word": "the injured",
+  "answer": "the injured",
+  "nblanks": 2,
+  "pos": "n.",
+  "cn_def": "傷者",
+  "en_def": "people who have been hurt in an accident",
+  "sentence": "After the earthquake, doctors and nurses worked all night to take care of {{BLANK}} in the small town.",
+  "cn": "地震過後，醫生和護士整夜工作，照顧小鎮上的傷者。",
+  "cnMarked": "地震過後，醫生和護士整夜工作，照顧小鎮上的【傷者】。",
+  "isHead": false,
+  "level": null,
+  "family": "injure"
+ },
+ {
+  "word": "innocence",
+  "answer": "innocence",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "無辜；清白；純真",
+  "en_def": "the fact of not being guilty of a crime; lack of experience",
+  "sentence": "The young man kept saying that he was not the thief, and a video from the store finally proved his {{BLANK}}.",
+  "cn": "那個年輕人一直說他不是小偷，店裡的影片最後證明了他的清白。",
+  "cnMarked": "那個年輕人一直說他不是小偷，店裡的影片最後證明了他的【清白】。",
+  "isHead": true,
+  "level": 4,
+  "family": "innocence"
+ },
+ {
+  "word": "innocent",
+  "answer": "innocent",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "無辜的；天真的",
+  "en_def": "not guilty of a crime; without experience of bad things",
+  "sentence": "The police later found that the man was {{BLANK}}, so they let him go home and said sorry to his family.",
+  "cn": "警方後來發現那名男子是無辜的，所以放他回家並向他的家人道歉。",
+  "cnMarked": "警方後來發現那名男子是【無辜的】，所以放他回家並向他的家人道歉。",
+  "isHead": false,
+  "level": 3,
+  "family": "innocence"
+ },
+ {
+  "word": "innocently",
+  "answer": "innocently",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "無辜地；天真地",
+  "en_def": "in a way that shows no bad intention or experience",
+  "sentence": "The little girl {{BLANK}} asked why the moon follows our car, and everyone in the family laughed warmly.",
+  "cn": "小女孩天真地問為什麼月亮一直跟著我們的車，全家人都溫暖地笑了。",
+  "cnMarked": "小女孩【天真地】問為什麼月亮一直跟著我們的車，全家人都溫暖地笑了。",
+  "isHead": false,
+  "level": null,
+  "family": "innocence"
+ },
+ {
+  "word": "prove one's innocence",
+  "answer": "prove his innocence",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "證明某人的清白",
+  "en_def": "to show that you did not do something wrong",
+  "sentence": "The lawyer worked for two years to {{BLANK}}, and in the end the court agreed that he had done nothing wrong.",
+  "cn": "律師努力了兩年來證明他的清白，最後法庭同意他沒有做錯任何事。",
+  "cnMarked": "律師努力了兩年來【證明他的清白】，最後法庭同意他沒有做錯任何事。",
+  "isHead": false,
+  "level": null,
+  "family": "innocence"
+ },
+ {
+  "word": "input",
+  "answer": "input",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "輸入（的資料）",
+  "en_def": "information that is put into a computer or system",
+  "sentence": "The program could not run because of a mistake in the {{BLANK}}, so the engineer checked every number again.",
+  "cn": "程式因為輸入資料有錯誤而無法運行，所以工程師又把每個數字檢查了一遍。",
+  "cnMarked": "程式因為【輸入資料】有錯誤而無法運行，所以工程師又把每個數字檢查了一遍。",
+  "isHead": true,
+  "level": 4,
+  "family": "input"
+ },
+ {
+  "word": "input",
+  "answer": "input",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "輸入",
+  "en_def": "to put information into a computer",
+  "sentence": "You need to {{BLANK}} your student number and password before you can see your test scores on the school website.",
+  "cn": "你需要先輸入學號和密碼，才能在學校網站上看到你的考試成績。",
+  "cnMarked": "你需要先【輸入】學號和密碼，才能在學校網站上看到你的考試成績。",
+  "isHead": false,
+  "level": 4,
+  "family": "input"
+ },
+ {
+  "word": "input",
+  "answer": "input",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "意見；貢獻",
+  "en_def": "ideas or help that you give to make something better",
+  "sentence": "Thank you for your {{BLANK}} at the meeting; your ideas about the school fair will make the event much better.",
+  "cn": "感謝你在會議上的意見；你關於校慶園遊會的想法會讓活動好很多。",
+  "cnMarked": "感謝你在會議上的【意見】；你關於校慶園遊會的想法會讓活動好很多。",
+  "isHead": false,
+  "level": 4,
+  "family": "input"
+ },
+ {
+  "word": "insert",
+  "answer": "insert",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "插入；放入",
+  "en_def": "to put something inside something else",
+  "sentence": "To use the machine, {{BLANK}} a coin into the slot, press the green button, and wait for your drink to come out.",
+  "cn": "要使用這台機器，請把硬幣投入投幣口，按下綠色按鈕，然後等飲料出來。",
+  "cnMarked": "要使用這台機器，請把硬幣【投入】投幣口，按下綠色按鈕，然後等飲料出來。",
+  "isHead": true,
+  "level": 4,
+  "family": "insert"
+ },
+ {
+  "word": "insertion",
+  "answer": "insertion",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "插入",
+  "en_def": "the act of putting something inside something else",
+  "sentence": "The {{BLANK}} of one short sentence at the beginning of the paragraph made the whole story much clearer to readers.",
+  "cn": "在段落開頭插入一個短句，讓整個故事對讀者來說清楚得多。",
+  "cnMarked": "在段落開頭【插入】一個短句，讓整個故事對讀者來說清楚得多。",
+  "isHead": false,
+  "level": null,
+  "family": "insert"
+ },
+ {
+  "word": "insert A into B",
+  "answer": "inserted",
+  "nblanks": 1,
+  "pos": "v.phr.",
+  "cn_def": "把A插入B",
+  "en_def": "to put one thing inside another",
+  "sentence": "The nurse carefully {{BLANK}} the needle into the patient's arm and told him that it would hurt for only a second.",
+  "cn": "護士小心地把針插入病人的手臂，並告訴他只會痛一秒鐘。",
+  "cnMarked": "護士小心地把針【插入】病人的手臂，並告訴他只會痛一秒鐘。",
+  "isHead": false,
+  "level": null,
+  "family": "insert"
+ },
+ {
+  "word": "inspection",
+  "answer": "inspection",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "檢查；視察",
+  "en_def": "a careful check to see if something is correct or safe",
+  "sentence": "The restaurant passed the health {{BLANK}} with a perfect score, so the owner put the report on the wall by the door.",
+  "cn": "這家餐廳以滿分通過了衛生檢查，所以老闆把報告貼在門邊的牆上。",
+  "cnMarked": "這家餐廳以滿分通過了衛生【檢查】，所以老闆把報告貼在門邊的牆上。",
+  "isHead": true,
+  "level": 4,
+  "family": "inspection"
+ },
+ {
+  "word": "inspect",
+  "answer": "inspect",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "檢查；審視",
+  "en_def": "to look at something carefully to check it",
+  "sentence": "Before you buy a used bike, {{BLANK}} the brakes and the tires carefully, or you may have to pay for repairs later.",
+  "cn": "買二手腳踏車之前，請仔細檢查煞車和輪胎，否則你以後可能得付修理費。",
+  "cnMarked": "買二手腳踏車之前，請仔細【檢查】煞車和輪胎，否則你以後可能得付修理費。",
+  "isHead": false,
+  "level": 3,
+  "family": "inspection"
+ },
+ {
+  "word": "inspector",
+  "answer": "inspector",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "檢查員；督察",
+  "en_def": "a person whose job is to check things or places",
+  "sentence": "An {{BLANK}} from the city visited our factory this morning to make sure the workers were wearing safety equipment.",
+  "cn": "今天早上一位市政府的檢查員來我們工廠，確認工人都有穿戴安全裝備。",
+  "cnMarked": "今天早上一位市政府的【檢查員】來我們工廠，確認工人都有穿戴安全裝備。",
+  "isHead": false,
+  "level": 3,
+  "family": "inspection"
+ },
+ {
+  "word": "carry out an inspection",
+  "answer": "carried out an inspection",
+  "nblanks": 4,
+  "pos": "v.phr.",
+  "cn_def": "進行檢查",
+  "en_def": "to do an official check",
+  "sentence": "Firefighters {{BLANK}} of the old apartment building and found that half of the fire alarms did not work.",
+  "cn": "消防員對那棟老公寓進行了檢查，發現一半的火災警報器都不能用。",
+  "cnMarked": "消防員對那棟老公寓【進行了檢查】，發現一半的火災警報器都不能用。",
+  "isHead": false,
+  "level": null,
+  "family": "inspection"
+ },
+ {
+  "word": "inspiration",
+  "answer": "inspiration",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "靈感；啟發",
+  "en_def": "a person or thing that gives you new ideas or makes you want to do something",
+  "sentence": "The artist said that the mountains near her hometown were the {{BLANK}} for most of the paintings in this show.",
+  "cn": "這位藝術家說，她家鄉附近的山是這次展覽中大部分畫作的靈感來源。",
+  "cnMarked": "這位藝術家說，她家鄉附近的山是這次展覽中大部分畫作的【靈感】來源。",
+  "isHead": true,
+  "level": 4,
+  "family": "inspiration"
+ },
+ {
+  "word": "inspire",
+  "answer": "inspire",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "啟發；激勵",
+  "en_def": "to make someone want to do something good or creative",
+  "sentence": "Her story about learning to read at the age of sixty will {{BLANK}} many people who think it is too late to study.",
+  "cn": "她六十歲學會讀書的故事將激勵許多認為讀書太遲的人。",
+  "cnMarked": "她六十歲學會讀書的故事將【激勵】許多認為讀書太遲的人。",
+  "isHead": true,
+  "level": 4,
+  "family": "inspiration"
+ },
+ {
+  "word": "inspiring",
+  "answer": "inspiring",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "激勵人心的",
+  "en_def": "making you feel excited and able to do something",
+  "sentence": "The coach gave such an {{BLANK}} speech before the game that every player ran onto the court full of energy.",
+  "cn": "教練在比賽前發表了一段非常激勵人心的演講，每位球員都充滿活力地衝上球場。",
+  "cnMarked": "教練在比賽前發表了一段非常【激勵人心的】演講，每位球員都充滿活力地衝上球場。",
+  "isHead": false,
+  "level": null,
+  "family": "inspiration"
+ },
+ {
+  "word": "inspired",
+  "answer": "inspired",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "受到啟發的；有靈感的",
+  "en_def": "full of good ideas; feeling excited and creative",
+  "sentence": "After visiting the science museum, the children felt so {{BLANK}} that they built their own small robot at home.",
+  "cn": "參觀科學博物館後，孩子們深受啟發，於是在家裡做了一個自己的小機器人。",
+  "cnMarked": "參觀科學博物館後，孩子們【深受啟發】，於是在家裡做了一個自己的小機器人。",
+  "isHead": false,
+  "level": null,
+  "family": "inspiration"
+ },
+ {
+  "word": "inspire sb to do sth",
+  "answer": "inspired me to",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "激勵某人去做某事",
+  "en_def": "to make someone want to do something",
+  "sentence": "My grandfather's garden {{BLANK}} grow my own vegetables, so now I have tomatoes and peppers on my balcony.",
+  "cn": "我爺爺的花園激勵我自己種蔬菜，所以現在我的陽台上有番茄和辣椒。",
+  "cnMarked": "我爺爺的花園【激勵我】自己種蔬菜，所以現在我的陽台上有番茄和辣椒。",
+  "isHead": false,
+  "level": null,
+  "family": "inspiration"
+ },
+ {
+  "word": "install",
+  "answer": "install",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "安裝",
+  "en_def": "to put a machine or program in place so it can be used",
+  "sentence": "The worker came to {{BLANK}} a new air conditioner in our classroom, and now summer afternoons are much more comfortable.",
+  "cn": "工人來我們教室安裝一台新冷氣，現在夏天的下午舒服多了。",
+  "cnMarked": "工人來我們教室【安裝】一台新冷氣，現在夏天的下午舒服多了。",
+  "isHead": true,
+  "level": 4,
+  "family": "install"
+ },
+ {
+  "word": "installation",
+  "answer": "installation",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "安裝",
+  "en_def": "the act of putting a machine or system in place",
+  "sentence": "The {{BLANK}} of the solar panels on the roof took three days, but now the family pays almost nothing for electricity.",
+  "cn": "屋頂上太陽能板的安裝花了三天，但現在這家人幾乎不用付電費。",
+  "cnMarked": "屋頂上太陽能板的【安裝】花了三天，但現在這家人幾乎不用付電費。",
+  "isHead": false,
+  "level": 5,
+  "family": "install"
+ },
+ {
+  "word": "installment",
+  "answer": "installments",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "分期付款（的一期）",
+  "en_def": "one of several regular payments for something",
+  "sentence": "My brother bought his laptop in twelve monthly {{BLANK}}, so he only pays about two thousand dollars each month.",
+  "cn": "我哥哥用十二期分期付款買了他的筆電，所以他每個月只要付大約兩千元。",
+  "cnMarked": "我哥哥用十二期【分期付款】買了他的筆電，所以他每個月只要付大約兩千元。",
+  "isHead": false,
+  "level": null,
+  "family": "install"
+ },
+ {
+  "word": "instinct",
+  "answer": "instinct",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "本能；直覺",
+  "en_def": "a natural way of behaving or feeling that you are born with",
+  "sentence": "Birds build their nests by {{BLANK}}; nobody teaches them, yet every spring they know exactly what to do.",
+  "cn": "鳥類靠本能築巢；沒有人教它們，但每年春天它們都清楚知道該怎麼做。",
+  "cnMarked": "鳥類靠【本能】築巢；沒有人教它們，但每年春天它們都清楚知道該怎麼做。",
+  "isHead": true,
+  "level": 4,
+  "family": "instinct"
+ },
+ {
+  "word": "instinctive",
+  "answer": "instinctive",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "本能的；直覺的",
+  "en_def": "done naturally without thinking",
+  "sentence": "Closing your eyes when something flies toward your face is an {{BLANK}} reaction that protects you from getting hurt.",
+  "cn": "當有東西朝你的臉飛來時閉上眼睛，是一種保護你不受傷的本能反應。",
+  "cnMarked": "當有東西朝你的臉飛來時閉上眼睛，是一種保護你不受傷的【本能】反應。",
+  "isHead": false,
+  "level": 6,
+  "family": "instinct"
+ },
+ {
+  "word": "instinctively",
+  "answer": "instinctively",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "本能地；直覺地",
+  "en_def": "in a natural way, without thinking first",
+  "sentence": "When the baby started to fall off the chair, the mother {{BLANK}} reached out and caught him just in time.",
+  "cn": "當寶寶開始從椅子上掉下來時，媽媽本能地伸手及時接住了他。",
+  "cnMarked": "當寶寶開始從椅子上掉下來時，媽媽【本能地】伸手及時接住了他。",
+  "isHead": false,
+  "level": null,
+  "family": "instinct"
+ },
+ {
+  "word": "have an instinct for",
+  "answer": "had an instinct for",
+  "nblanks": 4,
+  "pos": "v.phr.",
+  "cn_def": "對…有天生的才能",
+  "en_def": "to be naturally good at something",
+  "sentence": "Even as a child, my cousin {{BLANK}} business, selling homemade cookies to the neighbors every weekend.",
+  "cn": "我表哥小時候就對做生意有天生的才能，每個週末都把自製餅乾賣給鄰居。",
+  "cnMarked": "我表哥小時候就【對】做生意【有天生的才能】，每個週末都把自製餅乾賣給鄰居。",
+  "isHead": false,
+  "level": null,
+  "family": "instinct"
+ },
+ {
+  "word": "instruct",
+  "answer": "instruct",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "教導；指示",
+  "en_def": "to teach someone or tell them officially what to do",
+  "sentence": "The lifeguard will {{BLANK}} the children on how to swim safely before they are allowed to enter the deep pool.",
+  "cn": "救生員會先教導孩子們如何安全游泳，然後才允許他們進入深水池。",
+  "cnMarked": "救生員會先【教導】孩子們如何安全游泳，然後才允許他們進入深水池。",
+  "isHead": true,
+  "level": 4,
+  "family": "instruct"
+ },
+ {
+  "word": "instructor",
+  "answer": "instructor",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "教練；指導員",
+  "en_def": "a person who teaches a skill or sport",
+  "sentence": "Our yoga {{BLANK}} always reminds us to breathe slowly, and she walks around the room to correct our positions.",
+  "cn": "我們的瑜珈教練總是提醒我們慢慢呼吸，她會在教室裡走動糾正我們的姿勢。",
+  "cnMarked": "我們的瑜珈【教練】總是提醒我們慢慢呼吸，她會在教室裡走動糾正我們的姿勢。",
+  "isHead": true,
+  "level": 4,
+  "family": "instruct"
+ },
+ {
+  "word": "instruction",
+  "answer": "instruction",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "教學；指導",
+  "en_def": "teaching; information on how to do something",
+  "sentence": "Students in this class receive two hours of {{BLANK}} in English every day, and they practice speaking with partners.",
+  "cn": "這個班的學生每天接受兩小時的英語教學，並和同伴練習口說。",
+  "cnMarked": "這個班的學生每天接受兩小時的英語【教學】，並和同伴練習口說。",
+  "isHead": false,
+  "level": 2,
+  "family": "instruct"
+ },
+ {
+  "word": "follow the instructions",
+  "answer": "follow the instructions",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "遵照說明",
+  "en_def": "to do what the written or spoken directions tell you",
+  "sentence": "If you {{BLANK}} on the box step by step, you can put the bookshelf together in less than an hour.",
+  "cn": "如果你一步一步遵照盒子上的說明，不到一小時就可以把書架組裝好。",
+  "cnMarked": "如果你一步一步【遵照】盒子上的【說明】，不到一小時就可以把書架組裝好。",
+  "isHead": false,
+  "level": null,
+  "family": "instruct"
+ },
+ {
+  "word": "instructive",
+  "answer": "instructive",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "有教育意義的",
+  "en_def": "giving useful information or knowledge",
+  "sentence": "The documentary about ocean pollution was both interesting and {{BLANK}}, so our teacher showed it to every class.",
+  "cn": "那部關於海洋污染的紀錄片既有趣又有教育意義，所以我們老師放給每個班看。",
+  "cnMarked": "那部關於海洋污染的紀錄片既有趣又【有教育意義】，所以我們老師放給每個班看。",
+  "isHead": false,
+  "level": null,
+  "family": "instruct"
+ },
+ {
+  "word": "insult",
+  "answer": "insult",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "侮辱；辱罵",
+  "en_def": "to say or do something rude that hurts someone's feelings",
+  "sentence": "You should never {{BLANK}} your classmates because of their looks, since words can hurt much more than you think.",
+  "cn": "你永遠不應該因為同學的外表而侮辱他們，因為言語造成的傷害比你想的大得多。",
+  "cnMarked": "你永遠不應該因為同學的外表而【侮辱】他們，因為言語造成的傷害比你想的大得多。",
+  "isHead": true,
+  "level": 4,
+  "family": "insult"
+ },
+ {
+  "word": "insult",
+  "answer": "insult",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "侮辱",
+  "en_def": "a rude remark or action",
+  "sentence": "Calling someone stupid in front of the whole class is a serious {{BLANK}}, and the teacher asked him to apologize.",
+  "cn": "在全班面前說某人笨是一種嚴重的侮辱，老師要他道歉。",
+  "cnMarked": "在全班面前說某人笨是一種嚴重的【侮辱】，老師要他道歉。",
+  "isHead": false,
+  "level": 4,
+  "family": "insult"
+ },
+ {
+  "word": "insulting",
+  "answer": "insulting",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "侮辱的；無禮的",
+  "en_def": "rude and hurting someone's feelings",
+  "sentence": "The comedian's jokes about old people were so {{BLANK}} that many members of the audience stood up and left.",
+  "cn": "那位喜劇演員拿老人開的玩笑太無禮了，許多觀眾起身離席。",
+  "cnMarked": "那位喜劇演員拿老人開的玩笑太【無禮】了，許多觀眾起身離席。",
+  "isHead": false,
+  "level": null,
+  "family": "insult"
+ },
+ {
+  "word": "insurance",
+  "answer": "insurance",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "保險",
+  "en_def": "an agreement in which you pay money and a company pays if something bad happens",
+  "sentence": "Travel {{BLANK}} is not expensive, but it can save you thousands of dollars if you get sick or lose your bag abroad.",
+  "cn": "旅遊保險並不貴，但如果你在國外生病或掉了包包，它可以幫你省下好幾千元。",
+  "cnMarked": "旅遊【保險】並不貴，但如果你在國外生病或掉了包包，它可以幫你省下好幾千元。",
+  "isHead": true,
+  "level": 4,
+  "family": "insurance"
+ },
+ {
+  "word": "insure",
+  "answer": "insure",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "為…投保",
+  "en_def": "to buy insurance for something",
+  "sentence": "Most people {{BLANK}} their cars against accidents, so the insurance company pays for repairs after a crash.",
+  "cn": "大多數人會為他們的汽車投保意外險，所以撞車後由保險公司支付修理費。",
+  "cnMarked": "大多數人會為他們的汽車【投保】意外險，所以撞車後由保險公司支付修理費。",
+  "isHead": false,
+  "level": null,
+  "family": "insurance"
+ },
+ {
+  "word": "insurance company",
+  "answer": "insurance company",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "保險公司",
+  "en_def": "a business that sells insurance",
+  "sentence": "After the typhoon damaged our roof, my father called the {{BLANK}}, and they sent someone to check the house the next day.",
+  "cn": "颱風毀壞我們的屋頂後，我爸爸打電話給保險公司，他們隔天就派人來檢查房子。",
+  "cnMarked": "颱風毀壞我們的屋頂後，我爸爸打電話給【保險公司】，他們隔天就派人來檢查房子。",
+  "isHead": false,
+  "level": null,
+  "family": "insurance"
+ },
+ {
+  "word": "health insurance",
+  "answer": "health insurance",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "健康保險；健保",
+  "en_def": "insurance that pays for medical care",
+  "sentence": "Thanks to the national {{BLANK}} system, a visit to the doctor in Taiwan usually costs only a few hundred dollars.",
+  "cn": "多虧了全民健康保險制度，在台灣看一次醫生通常只要幾百元。",
+  "cnMarked": "多虧了全民【健康保險】制度，在台灣看一次醫生通常只要幾百元。",
+  "isHead": false,
+  "level": null,
+  "family": "insurance"
+ },
+ {
+  "word": "intellectual",
+  "answer": "intellectual",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "智力的；知識的",
+  "en_def": "connected with thinking and understanding ideas",
+  "sentence": "Reading a good novel is an {{BLANK}} activity that makes your brain work much harder than watching short videos does.",
+  "cn": "閱讀一本好小說是一種智力活動，比看短影片更能讓你的大腦努力運作。",
+  "cnMarked": "閱讀一本好小說是一種【智力】活動，比看短影片更能讓你的大腦努力運作。",
+  "isHead": true,
+  "level": 4,
+  "family": "intellectual"
+ },
+ {
+  "word": "intellectual",
+  "answer": "intellectuals",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "知識分子",
+  "en_def": "a well-educated person who enjoys thinking about ideas",
+  "sentence": "In the old days, many {{BLANK}} met in coffee shops to talk about politics, art, and the future of their country.",
+  "cn": "在過去，許多知識分子在咖啡館聚會，談論政治、藝術和國家的未來。",
+  "cnMarked": "在過去，許多【知識分子】在咖啡館聚會，談論政治、藝術和國家的未來。",
+  "isHead": false,
+  "level": 4,
+  "family": "intellectual"
+ },
+ {
+  "word": "intellect",
+  "answer": "intellect",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "智力；才智",
+  "en_def": "the ability to think and understand ideas",
+  "sentence": "The scientist was famous not only for her sharp {{BLANK}} but also for her kindness toward young students.",
+  "cn": "這位科學家不僅以敏銳的才智聞名，也以她對年輕學生的親切著稱。",
+  "cnMarked": "這位科學家不僅以敏銳的【才智】聞名，也以她對年輕學生的親切著稱。",
+  "isHead": false,
+  "level": 6,
+  "family": "intellectual"
+ },
+ {
+  "word": "intellectual property",
+  "answer": "intellectual property",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "智慧財產",
+  "en_def": "ideas or creations that legally belong to a person or company",
+  "sentence": "Copying a song from the Internet without paying breaks {{BLANK}} laws, so the website was closed down last month.",
+  "cn": "不付費就從網路上複製歌曲違反了智慧財產法，所以那個網站上個月被關閉了。",
+  "cnMarked": "不付費就從網路上複製歌曲違反了【智慧財產】法，所以那個網站上個月被關閉了。",
+  "isHead": false,
+  "level": null,
+  "family": "intellectual"
+ },
+ {
+  "word": "intelligence",
+  "answer": "intelligence",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "智力；智慧",
+  "en_def": "the ability to learn, understand, and think",
+  "sentence": "Dolphins show great {{BLANK}}; they can learn tricks quickly and even seem to talk to each other with sounds.",
+  "cn": "海豚展現出極高的智力；它們能快速學會技巧，甚至似乎能用聲音互相交談。",
+  "cnMarked": "海豚展現出極高的【智力】；它們能快速學會技巧，甚至似乎能用聲音互相交談。",
+  "isHead": true,
+  "level": 4,
+  "family": "intelligence"
+ },
+ {
+  "word": "intelligent",
+  "answer": "intelligent",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "聰明的",
+  "en_def": "good at learning and understanding things; clever",
+  "sentence": "My dog is so {{BLANK}} that he brings me his bowl when he is hungry and waits quietly by the door for his walk.",
+  "cn": "我的狗非常聰明，餓的時候會把碗拿給我，想散步時會安靜地在門邊等。",
+  "cnMarked": "我的狗非常【聰明】，餓的時候會把碗拿給我，想散步時會安靜地在門邊等。",
+  "isHead": false,
+  "level": 3,
+  "family": "intelligence"
+ },
+ {
+  "word": "intelligently",
+  "answer": "intelligently",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "聰明地",
+  "en_def": "in a clever and thoughtful way",
+  "sentence": "The young player answered the reporter's hard questions {{BLANK}}, and the coach smiled proudly beside him.",
+  "cn": "那位年輕球員聰明地回答了記者的刁鑽問題，教練在他身旁自豪地微笑。",
+  "cnMarked": "那位年輕球員【聰明地】回答了記者的刁鑽問題，教練在他身旁自豪地微笑。",
+  "isHead": false,
+  "level": null,
+  "family": "intelligence"
+ },
+ {
+  "word": "artificial intelligence",
+  "answer": "artificial intelligence",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "人工智慧",
+  "en_def": "computer systems that can think and learn like people",
+  "sentence": "Many phones now use {{BLANK}} to understand your voice, so you can send a message just by speaking to them.",
+  "cn": "現在許多手機使用人工智慧來理解你的聲音，所以你只要對它說話就能發送訊息。",
+  "cnMarked": "現在許多手機使用【人工智慧】來理解你的聲音，所以你只要對它說話就能發送訊息。",
+  "isHead": false,
+  "level": null,
+  "family": "intelligence"
+ },
+ {
+  "word": "intend",
+  "answer": "intend",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "打算；意圖",
+  "en_def": "to plan to do something",
+  "sentence": "We {{BLANK}} to visit our grandparents in Tainan this weekend, but we will stay home if the typhoon comes closer.",
+  "cn": "我們打算這個週末去台南看爺爺奶奶，但如果颱風更接近，我們就會待在家。",
+  "cnMarked": "我們【打算】這個週末去台南看爺爺奶奶，但如果颱風更接近，我們就會待在家。",
+  "isHead": true,
+  "level": 4,
+  "family": "intend"
+ },
+ {
+  "word": "intend to do sth",
+  "answer": "intended to",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "打算做某事",
+  "en_def": "to have a plan to do something",
+  "sentence": "I {{BLANK}} finish my homework before dinner, but my friend called and we talked for almost two hours.",
+  "cn": "我打算在晚餐前做完功課，但我朋友打電話來，我們聊了將近兩小時。",
+  "cnMarked": "我【打算】在晚餐前做完功課，但我朋友打電話來，我們聊了將近兩小時。",
+  "isHead": false,
+  "level": null,
+  "family": "intend"
+ },
+ {
+  "word": "intended",
+  "answer": "intended",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "預期的；為…準備的",
+  "en_def": "planned; meant for a particular person or purpose",
+  "sentence": "This book is {{BLANK}} for young children, so the pictures are large and each page has only one short sentence.",
+  "cn": "這本書是為幼兒準備的，所以圖片很大，每頁只有一個短句。",
+  "cnMarked": "這本書是【為】幼兒【準備的】，所以圖片很大，每頁只有一個短句。",
+  "isHead": false,
+  "level": null,
+  "family": "intend"
+ },
+ {
+  "word": "intention",
+  "answer": "intention",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "意圖；打算",
+  "en_def": "something you plan or want to do",
+  "sentence": "I had no {{BLANK}} of hurting your feelings when I joked about your haircut, and I am truly sorry.",
+  "cn": "我拿你的髮型開玩笑時，完全沒有傷害你感情的意圖，我真的很抱歉。",
+  "cnMarked": "我拿你的髮型開玩笑時，完全沒有傷害你感情的【意圖】，我真的很抱歉。",
+  "isHead": false,
+  "level": 4,
+  "family": "intend"
+ },
+ {
+  "word": "intentional",
+  "answer": "intentional",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "故意的",
+  "en_def": "done on purpose, not by accident",
+  "sentence": "The referee decided that the push was {{BLANK}}, so the player received a red card and had to leave the field.",
+  "cn": "裁判判定那一推是故意的，所以該球員收到紅牌，必須離場。",
+  "cnMarked": "裁判判定那一推是【故意的】，所以該球員收到紅牌，必須離場。",
+  "isHead": false,
+  "level": null,
+  "family": "intend"
+ },
+ {
+  "word": "intense",
+  "answer": "intense",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "強烈的；劇烈的",
+  "en_def": "very strong or extreme",
+  "sentence": "The heat was so {{BLANK}} at noon that we had to stop playing basketball and rest in the shade for an hour.",
+  "cn": "中午的熱氣非常強烈，我們不得不停止打籃球，在陰涼處休息一小時。",
+  "cnMarked": "中午的熱氣非常【強烈】，我們不得不停止打籃球，在陰涼處休息一小時。",
+  "isHead": true,
+  "level": 4,
+  "family": "intense"
+ },
+ {
+  "word": "intensity",
+  "answer": "intensity",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "強度；強烈",
+  "en_def": "the strength or power of something",
+  "sentence": "The {{BLANK}} of the earthquake surprised everyone, and books fell off the shelves in houses across the whole city.",
+  "cn": "這次地震的強度讓每個人都很驚訝，全市住家的書都從書架上掉了下來。",
+  "cnMarked": "這次地震的【強度】讓每個人都很驚訝，全市住家的書都從書架上掉了下來。",
+  "isHead": true,
+  "level": 4,
+  "family": "intense"
+ },
+ {
+  "word": "intensive",
+  "answer": "intensive",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "密集的；加強的",
+  "en_def": "involving a lot of work or effort in a short time",
+  "sentence": "Before the big exam, Tom took an {{BLANK}} English course that met for four hours every day for two weeks.",
+  "cn": "大考之前，湯姆上了一門密集英語課程，連續兩週每天上四小時。",
+  "cnMarked": "大考之前，湯姆上了一門【密集】英語課程，連續兩週每天上四小時。",
+  "isHead": true,
+  "level": 4,
+  "family": "intense"
+ },
+ {
+  "word": "intensify",
+  "answer": "intensify",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "加強；增強",
+  "en_def": "to become stronger or make something stronger",
+  "sentence": "The rain began to {{BLANK}} in the afternoon, so the school sent all the students home two hours early.",
+  "cn": "下午雨勢開始增強，所以學校提早兩小時讓所有學生回家。",
+  "cnMarked": "下午雨勢開始【增強】，所以學校提早兩小時讓所有學生回家。",
+  "isHead": false,
+  "level": 5,
+  "family": "intense"
+ },
+ {
+  "word": "intensely",
+  "answer": "intensely",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "強烈地；極度地",
+  "en_def": "very strongly; extremely",
+  "sentence": "She stared {{BLANK}} at the chessboard for ten minutes before she finally moved her queen and won the game.",
+  "cn": "她專注地盯著棋盤十分鐘，才終於移動皇后，贏得了比賽。",
+  "cnMarked": "她【專注地】盯著棋盤十分鐘，才終於移動皇后，贏得了比賽。",
+  "isHead": false,
+  "level": null,
+  "family": "intense"
+ }
+];
+const MCQS = [
+ {
+  "q": "Wash your hands before you touch the cut on your knee. If dirt gets into the wound, you may get an ______ and need to see a doctor.",
+  "options": [
+   "inflation",
+   "instinct",
+   "infection",
+   "insult"
+  ],
+  "answer": 2,
+  "vocabIndex": 0
+ },
+ {
+  "q": "A bowl of noodles cost 50 dollars when my mother was young. Today the very same bowl costs 120 dollars because of so many years of ______.",
+  "options": [
+   "innocence",
+   "intensity",
+   "insurance",
+   "inflation"
+  ],
+  "answer": 3,
+  "vocabIndex": 4
+ },
+ {
+  "q": "Thousands of young people copy the singer's clothes and hairstyle. She is one of the most ______ stars in Asia, and companies pay her to wear their products.",
+  "options": [
+   "innocent",
+   "influential",
+   "intense",
+   "informative"
+  ],
+  "answer": 1,
+  "vocabIndex": 7
+ },
+ {
+  "q": "The science video explains how rainbows form in a very clear way. It is so ______ that our English teacher now shows it to every single class.",
+  "options": [
+   "intensive",
+   "insulting",
+   "informative",
+   "instinctive"
+  ],
+  "answer": 2,
+  "vocabIndex": 11
+ },
+ {
+  "q": "My grandmother never follows a recipe when she cooks. She just adds one fresh ______ after another until the soup tastes exactly the way she wants it to.",
+  "options": [
+   "instructor",
+   "ingredient",
+   "installation",
+   "inspection"
+  ],
+  "answer": 1,
+  "vocabIndex": 15
+ },
+ {
+  "q": "Nobody liked the new school uniform when it was first shown. After a few months, however, this ______ feeling slowly changed, and most students stopped complaining about it.",
+  "options": [
+   "initial",
+   "intellectual",
+   "injured",
+   "intentional"
+  ],
+  "answer": 0,
+  "vocabIndex": 18
+ },
+ {
+  "q": "Do not run near the swimming pool. The floor is very wet, and you could easily fall down and ______ yourself before the lifeguard can help you.",
+  "options": [
+   "inform",
+   "insert",
+   "install",
+   "injure"
+  ],
+  "answer": 3,
+  "vocabIndex": 23
+ },
+ {
+  "q": "The man said he was at home when the store was robbed. His neighbor saw him at home that night, and this fact finally helped prove his ______.",
+  "options": [
+   "inspiration",
+   "innocence",
+   "intelligence",
+   "inflation"
+  ],
+  "answer": 1,
+  "vocabIndex": 27
+ },
+ {
+  "q": "Before the system can print your report card, your teacher must type in all your grades. If there is a mistake in the ______, the report will be wrong.",
+  "options": [
+   "insult",
+   "initiative",
+   "input",
+   "instinct"
+  ],
+  "answer": 2,
+  "vocabIndex": 31
+ },
+ {
+  "q": "The parking machine is easy to use. Just ______ a ten-dollar coin into the small hole at the top, and a paper ticket will come out below.",
+  "options": [
+   "insure",
+   "inspire",
+   "intend",
+   "insert"
+  ],
+  "answer": 3,
+  "vocabIndex": 34
+ },
+ {
+  "q": "Every year, a team from the city checks the kitchen of each restaurant. A restaurant that fails this ______ must close until the problems are fixed.",
+  "options": [
+   "injury",
+   "insurance",
+   "inspection",
+   "intensity"
+  ],
+  "answer": 2,
+  "vocabIndex": 37
+ },
+ {
+  "q": "The writer gets most of her ideas from walking along the beach early in the morning. She often says that the sea has always been her greatest ______.",
+  "options": [
+   "installation",
+   "inspiration",
+   "inflation",
+   "instruction"
+  ],
+  "answer": 1,
+  "vocabIndex": 41
+ },
+ {
+  "q": "The young runner lost both legs in an accident but still finished a marathon. His amazing story continues to ______ many people who have already given up hope.",
+  "options": [
+   "inspire",
+   "insult",
+   "inspect",
+   "inflate"
+  ],
+  "answer": 0,
+  "vocabIndex": 42
+ },
+ {
+  "q": "Our old classroom gets very hot in summer. The school has finally decided to ______ new air conditioners in every room before the next school year begins.",
+  "options": [
+   "instruct",
+   "install",
+   "intensify",
+   "initiate"
+  ],
+  "answer": 1,
+  "vocabIndex": 46
+ },
+ {
+  "q": "Nobody taught the baby sea turtles where to go. As soon as they came out of their eggs on the beach, they ran straight to the ocean by ______.",
+  "options": [
+   "instinct",
+   "intellect",
+   "input",
+   "insult"
+  ],
+  "answer": 0,
+  "vocabIndex": 49
+ },
+ {
+  "q": "The new workers do not know how to use the machine yet. The manager will ______ them step by step for a week before they start working alone.",
+  "options": [
+   "intend",
+   "injure",
+   "insure",
+   "instruct"
+  ],
+  "answer": 3,
+  "vocabIndex": 53
+ },
+ {
+  "q": "I want to learn how to swim this summer. The pool near my house has a new ______ who teaches small classes for beginners every Saturday morning.",
+  "options": [
+   "instructor",
+   "inspector",
+   "intellectual",
+   "installment"
+  ],
+  "answer": 0,
+  "vocabIndex": 54
+ },
+ {
+  "q": "Calling your classmate a stupid pig is not a joke. It is an ______ that can really hurt his feelings, so please say sorry to him.",
+  "options": [
+   "instinct",
+   "insult",
+   "inspection",
+   "inflation"
+  ],
+  "answer": 1,
+  "vocabIndex": 58
+ },
+ {
+  "q": "My uncle's car was badly damaged in a crash last week. Luckily, he had bought ______ for the car, so the company paid for most of the repairs.",
+  "options": [
+   "intensity",
+   "innocence",
+   "insurance",
+   "intelligence"
+  ],
+  "answer": 2,
+  "vocabIndex": 61
+ },
+ {
+  "q": "Chess is not just a game for fun. It is also an ______ activity that trains your brain to think ahead and to solve difficult problems.",
+  "options": [
+   "intellectual",
+   "inspired",
+   "insulting",
+   "infectious"
+  ],
+  "answer": 0,
+  "vocabIndex": 65
+ },
+ {
+  "q": "Crows can use small sticks to get food out of a bottle. Scientists say this clever trick shows that these birds have a very high level of ______.",
+  "options": [
+   "insertion",
+   "installation",
+   "intelligence",
+   "infection"
+  ],
+  "answer": 2,
+  "vocabIndex": 69
+ },
+ {
+  "q": "We ______ to leave for the airport at six tomorrow morning. If we start any later, we may get stuck in traffic and miss our flight.",
+  "options": [
+   "insert",
+   "intend",
+   "inflate",
+   "inspect"
+  ],
+  "answer": 1,
+  "vocabIndex": 73
+ },
+ {
+  "q": "The sun was so ______ at the beach that my skin turned red in less than an hour. Next time I will bring an umbrella and sunscreen.",
+  "options": [
+   "informative",
+   "intended",
+   "initial",
+   "intense"
+  ],
+  "answer": 3,
+  "vocabIndex": 78
+ },
+ {
+  "q": "The storm hit the small island with great ______ last night. Tall trees fell across the roads, and many old houses near the sea lost their roofs.",
+  "options": [
+   "insurance",
+   "intensity",
+   "intention",
+   "inspiration"
+  ],
+  "answer": 1,
+  "vocabIndex": 79
+ },
+ {
+  "q": "Lisa has only one month before she moves to Canada. She is taking an ______ English course that meets for six hours every day, even on weekends.",
+  "options": [
+   "intensive",
+   "instinctive",
+   "intentional",
+   "intellectual"
+  ],
+  "answer": 0,
+  "vocabIndex": 80
+ },
+ {
+  "q": "Parents' daily habits can strongly ______ their children. If a father reads a book every night, his kids are much more likely to enjoy reading too.",
+  "options": [
+   "inspect",
+   "insert",
+   "install",
+   "influence"
+  ],
+  "answer": 3,
+  "vocabIndex": 8
+ },
+ {
+  "q": "The school will close tomorrow because of the typhoon. Teachers will ______ all the parents by text message tonight so that nobody comes to school by mistake.",
+  "options": [
+   "intensify",
+   "instruct",
+   "inform",
+   "insure"
+  ],
+  "answer": 2,
+  "vocabIndex": 12
+ },
+ {
+  "q": "The soccer player fell hard and could not stand up. The doctor said the ______ to his knee was serious, and he would miss the rest of the season.",
+  "options": [
+   "injury",
+   "intellect",
+   "input",
+   "inflation"
+  ],
+  "answer": 0,
+  "vocabIndex": 24
+ },
+ {
+  "q": "The police thought the boy had broken the window. Later a video from a nearby shop showed he was ______, so they said sorry to him and his family.",
+  "options": [
+   "initial",
+   "intense",
+   "inspiring",
+   "innocent"
+  ],
+  "answer": 3,
+  "vocabIndex": 28
+ },
+ {
+  "q": "My little sister is very ______ for her age. She could read whole storybooks at four, and now she solves math problems from my high school textbook.",
+  "options": [
+   "intelligent",
+   "insulting",
+   "intensive",
+   "infectious"
+  ],
+  "answer": 0,
+  "vocabIndex": 70
+ }
+];
+const LOOKUP = {};
+VOCAB.forEach(v => { const key = v.word.toLowerCase(); const sense = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def };
+  if (LOOKUP[key]) LOOKUP[key].combined.push(sense); else LOOKUP[key] = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def, combined: [sense] }; });
+const EXTRA_GLOSSES = {};

@@ -392,6 +392,58 @@
   .submit-status.success { color: var(--good); font-weight: 600; }
   .submit-status.error { color: var(--bad); font-weight: 600; }
 
+
+  /* ---------- Start: mode chooser ---------- */
+  .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .mode-btn {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+    padding: 16px 16px; border-radius: 12px; border: 2px solid var(--line); background: #fff;
+    text-align: left; font-size: 1rem; transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .mode-btn:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .mode-btn .mode-title { font-weight: 800; font-size: 1.05rem; color: var(--accent-dark); }
+  .mode-btn .mode-desc { font-size: 0.82rem; color: #6b6354; line-height: 1.4; }
+  .mode-both { margin-top: 12px; text-align: center; }
+  .mode-both button { background: none; border: none; color: var(--sky); font-size: 0.85rem; text-decoration: underline; }
+  .tts-row { display: flex; flex-direction: column; gap: 6px; align-items: center; flex-shrink: 0; }
+  .tts-row .sound-btn.small { font-size: 0.8rem; }
+  .listen-hint { font-size: 0.82rem; color: var(--sky); margin: -6px 0 12px; font-weight: 600; }
+
+  /* ---------- Part 2 score / game hint ---------- */
+  .p2-meta { display: flex; justify-content: space-between; font-size: 0.82rem; color: #6b6354; margin: -6px 0 12px; }
+  .p2-meta .score { font-weight: 700; color: var(--good); }
+  .game-earned { background: #fff3c4; color: #8a5a00; border-radius: 8px; padding: 8px 12px; margin-bottom: 8px; font-weight: 700; }
+
+  /* ---------- Bonus game ---------- */
+  .game-card { background: linear-gradient(160deg, #fffaf0, #f0f7f5); }
+  .game-hud { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; margin-bottom: 12px; }
+  .game-hud .time-bar { flex: 1; height: 12px; background: var(--line); border-radius: 8px; overflow: hidden; }
+  .game-hud .time-fill { height: 100%; background: linear-gradient(90deg, #f4a261, #e76f51); transition: width 0.1s linear; }
+  .game-hud .score { font-weight: 800; color: var(--accent-dark); font-size: 1.1rem; min-width: 40px; text-align: right; }
+  .game-hud .combo { color: #e76f51; font-weight: 800; min-width: 48px; }
+  .game-prompt {
+    text-align: center; font-size: 1.5rem; font-weight: 800; color: var(--ink);
+    background: #fff; border: 2px dashed var(--accent); border-radius: 14px; padding: 18px 14px; margin-bottom: 14px;
+  }
+  .game-prompt .pos { display: block; font-size: 0.8rem; color: var(--sky); font-weight: 600; margin-top: 4px; }
+  .bubbles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .bubble {
+    padding: 18px 10px; border-radius: 40px; border: 2px solid var(--accent); background: #fff;
+    color: var(--accent-dark); font-size: 1.1rem; font-weight: 700; animation: float-in 0.35s ease both;
+    box-shadow: 0 3px 0 var(--accent-soft);
+  }
+  .bubble:hover { background: var(--accent-soft); }
+  .bubble.pop { background: var(--good); border-color: var(--good); color: #fff; transform: scale(1.08); }
+  .bubble.shake { background: var(--bad-soft); border-color: var(--bad); color: var(--bad); animation: shake 0.3s ease; opacity: 0.6; }
+  @keyframes float-in { from { transform: translateY(14px) scale(0.9); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+  .game-over-score { text-align: center; padding: 10px 0; }
+  .game-over-score .big-num { font-size: 3rem; font-weight: 800; color: #e76f51; line-height: 1; }
+  .game-over-score .detail { color: #6b6354; margin-top: 6px; }
+  .game-intro-text { font-size: 0.95rem; }
+  .game-intro-text ul { padding-left: 20px; margin: 8px 0; }
+  .game-scores { font-size: 0.9rem; color: var(--accent-dark); font-weight: 600; }
+
   .hidden { display: none !important; }
 
   @media (max-width: 420px) {
@@ -411,28 +463,40 @@
 
   <!-- ===================== START SCREEN ===================== -->
   <div id="screen-start" class="card start-card">
-    <h2>開始測驗 / Start Quiz</h2>
-    <p>請輸入你的姓名，然後開始測驗。本測驗分為兩個部分：拼字練習與選擇題。</p>
+    <h2>開始練習 / Start</h2>
+    <p>請輸入姓名，然後選擇要練習的部分。</p>
     <label class="field-label" for="student-name-input">姓名 / Name</label>
     <input type="text" id="student-name-input" placeholder="請輸入你的姓名">
-    <div class="btn-row">
-      <button class="btn btn-primary btn-block" id="start-btn">開始 Start</button>
+    <div class="mode-grid">
+      <button class="mode-btn" id="mode-p1-btn">
+        <span class="mode-title">🎧 Part 1 聽寫拼字</span>
+        <span class="mode-desc">聽完整句子，把空格的單字／片語打出來（共 <span id="mode-p1-count">98</span> 題）</span>
+      </button>
+      <button class="mode-btn" id="mode-p2-btn">
+        <span class="mode-title">✅ Part 2 選擇題</span>
+        <span class="mode-desc">30 題會考題型，每答對 10 題解鎖 1 分鐘小遊戲 🎮</span>
+      </button>
     </div>
+    <div class="mode-both"><button id="mode-both-btn">兩部分都做 Do both (Part 1 → Part 2)</button></div>
   </div>
 
   <!-- ===================== PART 1: SPELLING ===================== -->
   <div id="screen-part1" class="card hidden">
-    <span class="part-pill">PART 1 · 拼字練習</span>
+    <span class="part-pill">PART 1 · 聽寫拼字 Listen &amp; Type</span>
     <div class="progress-wrap">
       <span id="p1-progress-label">1 / 98</span>
       <div class="progress-bar"><div class="progress-fill" id="p1-progress-fill" style="width:0%"></div></div>
     </div>
 
     <div class="sentence-block">
-      <button class="sound-btn" id="p1-tts-btn" title="Listen / 播放">🔊</button>
+      <div class="tts-row">
+        <button class="sound-btn" id="p1-tts-btn" title="Listen again / 再聽一次">🔊</button>
+        <button class="sound-btn small" id="p1-tts-slow-btn" title="Slow / 慢速">🐢</button>
+      </div>
       <div class="sentence-text" id="p1-sentence"></div>
     </div>
     <div class="cn-translation" id="p1-cn"></div>
+    <div class="listen-hint">🎧 整句會自動播放（含答案）；聽不清楚請按 🔊 再聽或 🐢 慢速。</div>
 
     <div class="spell-input-row">
       <input type="text" id="p1-answer-input" placeholder="Type the word here / 在此輸入單字" autocomplete="off" autocapitalize="off" spellcheck="false">
@@ -462,6 +526,7 @@
       <span id="p2-progress-label">1 / 30</span>
       <div class="progress-bar"><div class="progress-fill" id="p2-progress-fill" style="width:0%"></div></div>
     </div>
+    <div class="p2-meta"><span class="score" id="p2-score-label">✓ 0</span><span id="p2-game-hint"></span></div>
 
     <div class="mcq-question">
       <button class="sound-btn small" id="p2-tts-btn" title="Listen / 播放">🔊</button>
@@ -477,21 +542,60 @@
     </div>
   </div>
 
+  <!-- ===================== BONUS GAME ===================== -->
+  <div id="screen-game" class="card game-card hidden">
+    <span class="part-pill">🎮 BONUS GAME · 單字快打 Word Rush</span>
+    <div id="game-intro">
+      <h2 style="margin:6px 0 4px;">🎉 太棒了！Game time!</h2>
+      <p id="game-round-label" style="margin:0 0 8px;color:#6b6354;"></p>
+      <div class="game-intro-text">
+        <strong><span id="game-seconds-label">60</span> 秒</strong>內，看中文意思，點出正確的英文單字：
+        <ul>
+          <li>答對 +10 分，連續答對有連擊加分 🔥</li>
+          <li>點錯不扣分，但連擊歸零</li>
+        </ul>
+      </div>
+      <div class="btn-row"><button class="btn btn-primary btn-block" id="game-start-btn">開始 Go!</button></div>
+    </div>
+    <div id="game-play" class="hidden">
+      <div class="game-hud">
+        <span id="game-time-label">60s</span>
+        <div class="time-bar"><div class="time-fill" id="game-time-fill" style="width:100%"></div></div>
+        <span class="combo" id="game-combo-label"></span>
+        <span class="score" id="game-score-label">0</span>
+      </div>
+      <div class="game-prompt"><span id="game-prompt"></span><span class="pos" id="game-pos"></span></div>
+      <div class="bubbles" id="game-bubbles"></div>
+    </div>
+    <div id="game-over" class="hidden">
+      <div class="game-over-score">
+        <div style="font-weight:700;color:#6b6354;">時間到！Time's up!</div>
+        <div class="big-num" id="game-final-score">0</div>
+        <div class="detail" id="game-final-detail"></div>
+      </div>
+      <div class="btn-row"><button class="btn btn-primary btn-block" id="game-continue-btn">繼續答題 Continue</button></div>
+    </div>
+  </div>
+
   <!-- ===================== RESULTS ===================== -->
   <div id="screen-results" class="card hidden">
-    <h2>測驗結果 / Results</h2>
+    <h2>練習結果 / Results</h2>
     <div class="score-display">
       <div class="big-num" id="result-score">--</div>
-      <div class="big-label">Part 2 正確率 / MCQ Score</div>
+      <div class="big-label" id="result-score-label">得分 / Score</div>
     </div>
 
-    <div class="results-section">
+    <div class="results-section" id="result-p1-section">
       <h3>Part 1 拼錯的單字 / Spelling mistakes</h3>
       <div class="word-chip-list" id="p1-wrong-list"></div>
     </div>
-    <div class="results-section">
+    <div class="results-section" id="result-p2-section">
       <h3>Part 2 答錯的單字 / MCQ mistakes</h3>
       <div class="word-chip-list" id="p2-wrong-list"></div>
+    </div>
+    <div class="results-section hidden" id="result-game-section">
+      <h3>🎮 小遊戲得分 / Game scores</h3>
+      <div class="game-scores" id="result-game-scores"></div>
     </div>
 
     <div class="submit-status" id="submit-status">正在送出結果...</div>

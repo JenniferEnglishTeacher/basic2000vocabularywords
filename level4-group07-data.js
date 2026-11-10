@@ -1,0 +1,1505 @@
+// 學測6000字 Level 4 Group 07 (clumsy-concerning) — word-family edition
+const QUIZ_CONFIG = {
+  groupName: "6000字 L4 Group 7 - clumsy – concerning (word family)",
+  gasEndpoint: "https://script.google.com/macros/s/AKfycbzLUqP-nauSjmiHfPXiK3NAV65tYdjAlwqip38TcGdTKqeR_CijuzHYxZDC-sjtRVrr_w/exec"
+};
+const VOCAB = [
+ {
+  "word": "clumsy",
+  "answer": "clumsy",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "笨拙的；笨手笨腳的",
+  "en_def": "moving or doing things in a careless way, often dropping or breaking things",
+  "sentence": "I am so {{BLANK}} in the kitchen that my mother does not let me carry the soup to the table anymore.",
+  "cn": "我在廚房裡太笨手笨腳了，所以媽媽不再讓我把湯端到桌上。",
+  "cnMarked": "我在廚房裡太【笨手笨腳】了，所以媽媽不再讓我把湯端到桌上。",
+  "isHead": true,
+  "level": 4,
+  "family": "clumsy"
+ },
+ {
+  "word": "clumsily",
+  "answer": "clumsily",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "笨拙地",
+  "en_def": "in a careless and awkward way",
+  "sentence": "The new waiter {{BLANK}} dropped the tray of glasses, and the whole restaurant turned to look at him.",
+  "cn": "新來的服務生笨拙地打翻了一整盤玻璃杯，整間餐廳的人都轉頭看他。",
+  "cnMarked": "新來的服務生【笨拙地】打翻了一整盤玻璃杯，整間餐廳的人都轉頭看他。",
+  "isHead": false,
+  "level": null,
+  "family": "clumsy"
+ },
+ {
+  "word": "clumsiness",
+  "answer": "clumsiness",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "笨拙",
+  "en_def": "the quality of being careless and awkward with your body",
+  "sentence": "Because of his {{BLANK}}, my little brother has broken three phones this year, so Dad bought him a strong case.",
+  "cn": "由於他的笨拙，我弟弟今年已經摔壞三支手機，所以爸爸幫他買了一個堅固的手機殼。",
+  "cnMarked": "由於他的【笨拙】，我弟弟今年已經摔壞三支手機，所以爸爸幫他買了一個堅固的手機殼。",
+  "isHead": false,
+  "level": null,
+  "family": "clumsy"
+ },
+ {
+  "word": "coarse",
+  "answer": "coarse",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "粗糙的；粗的",
+  "en_def": "rough and not smooth or fine",
+  "sentence": "The {{BLANK}} sand on this beach hurts your feet, so most visitors wear sandals when they walk to the water.",
+  "cn": "這片海灘上粗糙的沙子會弄痛你的腳，所以大多數遊客走到海邊時都會穿涼鞋。",
+  "cnMarked": "這片海灘上【粗糙的】沙子會弄痛你的腳，所以大多數遊客走到海邊時都會穿涼鞋。",
+  "isHead": true,
+  "level": 4,
+  "family": "coarse"
+ },
+ {
+  "word": "coarse",
+  "answer": "coarse",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "粗俗的；粗魯的",
+  "en_def": "rude and not polite, especially in the way you speak",
+  "sentence": "The old man's {{BLANK}} jokes made several guests at the dinner feel uncomfortable, and his wife told him to stop.",
+  "cn": "那位老先生粗俗的笑話讓晚宴上好幾位客人感到不自在，他太太叫他別再說了。",
+  "cnMarked": "那位老先生【粗俗的】笑話讓晚宴上好幾位客人感到不自在，他太太叫他別再說了。",
+  "isHead": false,
+  "level": 4,
+  "family": "coarse"
+ },
+ {
+  "word": "coarsely",
+  "answer": "coarsely",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "粗略地；粗糙地",
+  "en_def": "in large, rough pieces; in a rude way",
+  "sentence": "For this salad, you should chop the carrots {{BLANK}} instead of cutting them into very thin slices.",
+  "cn": "做這道沙拉時，你應該把紅蘿蔔粗略地切塊，而不是切成很薄的片。",
+  "cnMarked": "做這道沙拉時，你應該把紅蘿蔔【粗略地】切塊，而不是切成很薄的片。",
+  "isHead": false,
+  "level": null,
+  "family": "coarse"
+ },
+ {
+  "word": "code",
+  "answer": "code",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "規範；密碼；代碼",
+  "en_def": "a set of rules; a system of letters, numbers, or signs that carries a message",
+  "sentence": "The spy wrote the message in a secret {{BLANK}} so that nobody else could read it if the letter was stolen.",
+  "cn": "間諜用秘密密碼寫下訊息，這樣即使信被偷了，也沒有人能讀懂。",
+  "cnMarked": "間諜用秘密【密碼】寫下訊息，這樣即使信被偷了，也沒有人能讀懂。",
+  "isHead": true,
+  "level": 4,
+  "family": "code"
+ },
+ {
+  "word": "code",
+  "answer": "code",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "寫程式；編碼",
+  "en_def": "to write instructions for a computer",
+  "sentence": "My cousin learned to {{BLANK}} when she was twelve, and now she builds simple games on her laptop every weekend.",
+  "cn": "我表妹十二歲就學會寫程式，現在她每個週末都在筆電上做簡單的遊戲。",
+  "cnMarked": "我表妹十二歲就學會【寫程式】，現在她每個週末都在筆電上做簡單的遊戲。",
+  "isHead": false,
+  "level": 4,
+  "family": "code"
+ },
+ {
+  "word": "dress code",
+  "answer": "dress code",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "服裝規定",
+  "en_def": "the rules about what clothes people must wear in a place",
+  "sentence": "The company has a strict {{BLANK}}, so employees are not allowed to wear shorts or sandals even in summer.",
+  "cn": "這家公司有嚴格的服裝規定，所以員工即使在夏天也不能穿短褲或涼鞋。",
+  "cnMarked": "這家公司有嚴格的【服裝規定】，所以員工即使在夏天也不能穿短褲或涼鞋。",
+  "isHead": false,
+  "level": null,
+  "family": "code"
+ },
+ {
+  "word": "zip code",
+  "answer": "zip code",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "郵遞區號",
+  "en_def": "a group of numbers that shows the area where you live (US)",
+  "sentence": "Please write your {{BLANK}} clearly on the package, or the post office may send it to the wrong part of the city.",
+  "cn": "請在包裹上清楚寫下你的郵遞區號，否則郵局可能會把它送到城市裡錯誤的地區。",
+  "cnMarked": "請在包裹上清楚寫下你的【郵遞區號】，否則郵局可能會把它送到城市裡錯誤的地區。",
+  "isHead": false,
+  "level": null,
+  "family": "code"
+ },
+ {
+  "word": "decode",
+  "answer": "decode",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "解碼；破解",
+  "en_def": "to find the meaning of a message written in code",
+  "sentence": "It took the scientists several months to {{BLANK}} the strange signals that came from deep space.",
+  "cn": "科學家花了好幾個月才破解來自深太空的奇怪訊號。",
+  "cnMarked": "科學家花了好幾個月才【破解】來自深太空的奇怪訊號。",
+  "isHead": false,
+  "level": null,
+  "family": "code"
+ },
+ {
+  "word": "collapse",
+  "answer": "collapse",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "倒塌；崩潰；昏倒",
+  "en_def": "to fall down suddenly; to fail completely",
+  "sentence": "The old bridge might {{BLANK}} in the next big earthquake, so the city has closed it to all cars and buses.",
+  "cn": "這座老橋可能會在下一次大地震中倒塌，所以市政府已禁止所有汽車和公車通行。",
+  "cnMarked": "這座老橋可能會在下一次大地震中【倒塌】，所以市政府已禁止所有汽車和公車通行。",
+  "isHead": true,
+  "level": 4,
+  "family": "collapse"
+ },
+ {
+  "word": "collapse",
+  "answer": "collapse",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "倒塌；崩潰；瓦解",
+  "en_def": "a sudden fall or failure of something",
+  "sentence": "The sudden {{BLANK}} of the company left two thousand workers without jobs just before the new year.",
+  "cn": "這家公司突然倒閉，讓兩千名員工在新年前夕失去工作。",
+  "cnMarked": "這家公司突然【倒閉】，讓兩千名員工在新年前夕失去工作。",
+  "isHead": false,
+  "level": 4,
+  "family": "collapse"
+ },
+ {
+  "word": "collapsible",
+  "answer": "collapsible",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "可折疊的",
+  "en_def": "able to be folded into a smaller shape",
+  "sentence": "We bought a {{BLANK}} table for camping, because it fits easily in the back of our small car.",
+  "cn": "我們買了一張可折疊的露營桌，因為它可以輕鬆放進我們小車的後車廂。",
+  "cnMarked": "我們買了一張【可折疊的】露營桌，因為它可以輕鬆放進我們小車的後車廂。",
+  "isHead": false,
+  "level": null,
+  "family": "collapse"
+ },
+ {
+  "word": "colleague",
+  "answer": "colleague",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "同事",
+  "en_def": "a person you work with, especially in a professional job",
+  "sentence": "My mother's {{BLANK}} drove her home from the office last night because her car would not start in the rain.",
+  "cn": "我媽媽的同事昨晚開車送她從公司回家，因為她的車在雨中發不動。",
+  "cnMarked": "我媽媽的【同事】昨晚開車送她從公司回家，因為她的車在雨中發不動。",
+  "isHead": true,
+  "level": 4,
+  "family": "colleague"
+ },
+ {
+  "word": "co-worker",
+  "answer": "co-worker",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "同事",
+  "en_def": "a person who works with you at the same company",
+  "sentence": "A friendly {{BLANK}} showed me how to use the copy machine on my first day, which saved me a lot of time.",
+  "cn": "一位友善的同事在我上班第一天教我怎麼用影印機，幫我省了很多時間。",
+  "cnMarked": "一位友善的【同事】在我上班第一天教我怎麼用影印機，幫我省了很多時間。",
+  "isHead": false,
+  "level": null,
+  "family": "colleague"
+ },
+ {
+  "word": "a colleague of mine",
+  "answer": "A colleague of mine",
+  "nblanks": 4,
+  "pos": "n.phr.",
+  "cn_def": "我的一位同事",
+  "en_def": "one of the people I work with",
+  "sentence": "{{BLANK}} is giving a talk about healthy eating tomorrow, so I will go to the hall to support her.",
+  "cn": "我的一位同事明天要做一場關於健康飲食的演講，所以我會去會堂支持她。",
+  "cnMarked": "【我的一位同事】明天要做一場關於健康飲食的演講，所以我會去會堂支持她。",
+  "isHead": false,
+  "level": null,
+  "family": "colleague"
+ },
+ {
+  "word": "combination",
+  "answer": "combination",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "結合；組合；密碼組合",
+  "en_def": "two or more things put together; the numbers that open a lock",
+  "sentence": "The restaurant is popular because of its {{BLANK}} of good food, friendly service, and low prices.",
+  "cn": "這家餐廳很受歡迎，因為它結合了美食、親切的服務和實惠的價格。",
+  "cnMarked": "這家餐廳很受歡迎，因為它【結合】了美食、親切的服務和實惠的價格。",
+  "isHead": true,
+  "level": 4,
+  "family": "combination"
+ },
+ {
+  "word": "combine",
+  "answer": "combine",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "結合；混合",
+  "en_def": "to join two or more things together",
+  "sentence": "If you {{BLANK}} flour, eggs, milk, and a little sugar, you can make simple pancakes in about ten minutes.",
+  "cn": "如果你把麵粉、雞蛋、牛奶和一點糖混合在一起，大約十分鐘就能做出簡單的鬆餅。",
+  "cnMarked": "如果你把麵粉、雞蛋、牛奶和一點糖【混合】在一起，大約十分鐘就能做出簡單的鬆餅。",
+  "isHead": false,
+  "level": 2,
+  "family": "combination"
+ },
+ {
+  "word": "combined",
+  "answer": "combined",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "聯合的；總共的",
+  "en_def": "put together; total",
+  "sentence": "The {{BLANK}} efforts of the teachers and the parents helped the school raise enough money for a new library.",
+  "cn": "老師和家長共同的努力幫助學校募到足夠的錢，蓋了一座新圖書館。",
+  "cnMarked": "老師和家長【共同的】努力幫助學校募到足夠的錢，蓋了一座新圖書館。",
+  "isHead": false,
+  "level": null,
+  "family": "combination"
+ },
+ {
+  "word": "in combination with",
+  "answer": "in combination with",
+  "nblanks": 3,
+  "pos": "phr.",
+  "cn_def": "與…結合；搭配",
+  "en_def": "together with something else",
+  "sentence": "This medicine works best {{BLANK}} plenty of rest, so the doctor told me to stay home for three days.",
+  "cn": "這種藥搭配充分的休息效果最好，所以醫生要我在家待三天。",
+  "cnMarked": "這種藥【搭配】充分的休息效果最好，所以醫生要我在家待三天。",
+  "isHead": false,
+  "level": null,
+  "family": "combination"
+ },
+ {
+  "word": "comedy",
+  "answer": "comedy",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "喜劇",
+  "en_def": "a funny film, play, or TV show that makes people laugh",
+  "sentence": "After a long week of exams, we watched a {{BLANK}} together, and we laughed so hard that our stomachs hurt.",
+  "cn": "經過一週漫長的考試之後，我們一起看了一部喜劇，笑到肚子都痛了。",
+  "cnMarked": "經過一週漫長的考試之後，我們一起看了一部【喜劇】，笑到肚子都痛了。",
+  "isHead": true,
+  "level": 4,
+  "family": "comedy"
+ },
+ {
+  "word": "comedian",
+  "answer": "comedian",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "喜劇演員",
+  "en_def": "a person whose job is to make people laugh",
+  "sentence": "The {{BLANK}} told funny stories about his family, and even the serious old man in the front row could not stop laughing.",
+  "cn": "那位喜劇演員說了關於他家人的好笑故事，連前排嚴肅的老先生都笑個不停。",
+  "cnMarked": "那位【喜劇演員】說了關於他家人的好笑故事，連前排嚴肅的老先生都笑個不停。",
+  "isHead": false,
+  "level": 5,
+  "family": "comedy"
+ },
+ {
+  "word": "comic",
+  "answer": "comic",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "滑稽的；喜劇的",
+  "en_def": "funny; connected with comedy",
+  "sentence": "The actor is famous for his {{BLANK}} roles, but in his new movie he plays a sad father who loses his son.",
+  "cn": "這位演員以喜劇角色聞名，但在他的新電影裡，他飾演一位失去兒子的悲傷父親。",
+  "cnMarked": "這位演員以【喜劇】角色聞名，但在他的新電影裡，他飾演一位失去兒子的悲傷父親。",
+  "isHead": false,
+  "level": 2,
+  "family": "comedy"
+ },
+ {
+  "word": "comical",
+  "answer": "comical",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "好笑的；滑稽的",
+  "en_def": "funny in a strange or silly way",
+  "sentence": "It was {{BLANK}} to watch my grandfather try to dance to pop music at my sister's wedding party.",
+  "cn": "看我爺爺在姊姊的婚宴上努力跟著流行音樂跳舞，真是好笑。",
+  "cnMarked": "看我爺爺在姊姊的婚宴上努力跟著流行音樂跳舞，真是【好笑】。",
+  "isHead": false,
+  "level": null,
+  "family": "comedy"
+ },
+ {
+  "word": "commander",
+  "answer": "commander",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "指揮官；司令",
+  "en_def": "an officer who is in charge of a group of soldiers or a ship",
+  "sentence": "The {{BLANK}} ordered his soldiers to stop and rest for the night because the road ahead was too dangerous in the dark.",
+  "cn": "指揮官命令士兵停下來休息過夜，因為前方的路在黑暗中太危險了。",
+  "cnMarked": "【指揮官】命令士兵停下來休息過夜，因為前方的路在黑暗中太危險了。",
+  "isHead": true,
+  "level": 4,
+  "family": "commander"
+ },
+ {
+  "word": "command",
+  "answer": "command",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "命令；指揮",
+  "en_def": "an order that must be obeyed; control over a group",
+  "sentence": "The dog sat down at once when it heard its owner's {{BLANK}}, which showed how well it had been trained.",
+  "cn": "那隻狗一聽到主人的命令就立刻坐下，顯示牠受過良好的訓練。",
+  "cnMarked": "那隻狗一聽到主人的【命令】就立刻坐下，顯示牠受過良好的訓練。",
+  "isHead": false,
+  "level": 2,
+  "family": "commander"
+ },
+ {
+  "word": "command",
+  "answer": "command",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "命令；指揮",
+  "en_def": "to tell someone to do something; to be in charge of",
+  "sentence": "The captain will {{BLANK}} the ship for the next two weeks while the main officer recovers from his illness.",
+  "cn": "在主要軍官養病期間，船長將在接下來兩週指揮這艘船。",
+  "cnMarked": "在主要軍官養病期間，船長將在接下來兩週【指揮】這艘船。",
+  "isHead": false,
+  "level": 2,
+  "family": "commander"
+ },
+ {
+  "word": "in command of",
+  "answer": "in command of",
+  "nblanks": 3,
+  "pos": "phr.",
+  "cn_def": "指揮；掌管",
+  "en_def": "in charge of a group of people",
+  "sentence": "The young teacher was {{BLANK}} forty excited children on the field trip, and she did not lose a single one.",
+  "cn": "這位年輕老師在校外教學時掌管四十個興奮的孩子，一個都沒弄丟。",
+  "cnMarked": "這位年輕老師在校外教學時【掌管】四十個興奮的孩子，一個都沒弄丟。",
+  "isHead": false,
+  "level": null,
+  "family": "commander"
+ },
+ {
+  "word": "comment",
+  "answer": "comment",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "評論；意見",
+  "en_def": "something you say or write that gives your opinion",
+  "sentence": "The teacher wrote a kind {{BLANK}} at the end of my essay, saying that my ideas were clear and interesting.",
+  "cn": "老師在我的作文結尾寫了一句親切的評語，說我的想法清楚又有趣。",
+  "cnMarked": "老師在我的作文結尾寫了一句親切的【評語】，說我的想法清楚又有趣。",
+  "isHead": true,
+  "level": 4,
+  "family": "comment"
+ },
+ {
+  "word": "comment",
+  "answer": "comment",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "評論；發表意見",
+  "en_def": "to give your opinion about something",
+  "sentence": "The coach refused to {{BLANK}} on the game until he had watched the video of the last ten minutes again.",
+  "cn": "教練拒絕對這場比賽發表意見，直到他再看一次最後十分鐘的影片。",
+  "cnMarked": "教練拒絕對這場比賽【發表意見】，直到他再看一次最後十分鐘的影片。",
+  "isHead": false,
+  "level": 4,
+  "family": "comment"
+ },
+ {
+  "word": "comment on",
+  "answer": "commented on",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "對…發表評論",
+  "en_def": "to say or write what you think about something",
+  "sentence": "Many people {{BLANK}} her new haircut, and most of them said it made her look younger and more confident.",
+  "cn": "很多人對她的新髮型發表意見，大多數人說這讓她看起來更年輕、更有自信。",
+  "cnMarked": "很多人【對】她的新髮型【發表意見】，大多數人說這讓她看起來更年輕、更有自信。",
+  "isHead": false,
+  "level": null,
+  "family": "comment"
+ },
+ {
+  "word": "commentary",
+  "answer": "commentary",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "實況報導；評論",
+  "en_def": "a spoken description of an event while it is happening; a set of comments",
+  "sentence": "We listened to the radio {{BLANK}} of the baseball game while we were driving home from the beach.",
+  "cn": "我們從海邊開車回家時，一邊聽著棒球比賽的廣播實況報導。",
+  "cnMarked": "我們從海邊開車回家時，一邊聽著棒球比賽的廣播【實況報導】。",
+  "isHead": false,
+  "level": 5,
+  "family": "comment"
+ },
+ {
+  "word": "commentator",
+  "answer": "commentator",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "評論員；播報員",
+  "en_def": "a person who describes a sports event or gives opinions on the news",
+  "sentence": "The sports {{BLANK}} got so excited when the team scored that he nearly fell off his chair.",
+  "cn": "當球隊得分時，那位體育播報員太興奮了，差點從椅子上摔下來。",
+  "cnMarked": "當球隊得分時，那位體育【播報員】太興奮了，差點從椅子上摔下來。",
+  "isHead": false,
+  "level": 5,
+  "family": "comment"
+ },
+ {
+  "word": "commerce",
+  "answer": "commerce",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "商業；貿易",
+  "en_def": "the buying and selling of goods and services",
+  "sentence": "The old port city grew rich through {{BLANK}} with countries across the sea, and many traders settled there.",
+  "cn": "這座古老的港口城市透過與海外國家的貿易變得富裕，許多商人在那裡定居。",
+  "cnMarked": "這座古老的港口城市透過與海外國家的【貿易】變得富裕，許多商人在那裡定居。",
+  "isHead": true,
+  "level": 4,
+  "family": "commerce"
+ },
+ {
+  "word": "commercial",
+  "answer": "commercial",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "商業的；商業性的",
+  "en_def": "connected with buying and selling; made to earn money",
+  "sentence": "The movie was not a {{BLANK}} success, but many critics said it was the best film of the year.",
+  "cn": "這部電影在商業上並不成功，但許多影評人說它是年度最佳電影。",
+  "cnMarked": "這部電影在【商業】上並不成功，但許多影評人說它是年度最佳電影。",
+  "isHead": false,
+  "level": 2,
+  "family": "commerce"
+ },
+ {
+  "word": "commercial",
+  "answer": "commercial",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "（電視、廣播）廣告",
+  "en_def": "an advertisement on TV or radio",
+  "sentence": "My little sister can sing every word of the toothpaste {{BLANK}} because it is played ten times a day.",
+  "cn": "我妹妹能唱出那支牙膏廣告的每一個字，因為它一天播十次。",
+  "cnMarked": "我妹妹能唱出那支牙膏【廣告】的每一個字，因為它一天播十次。",
+  "isHead": false,
+  "level": 2,
+  "family": "commerce"
+ },
+ {
+  "word": "e-commerce",
+  "answer": "e-commerce",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "電子商務",
+  "en_def": "the business of buying and selling things on the internet",
+  "sentence": "Thanks to {{BLANK}}, my aunt sells her handmade soap to customers all over the world without leaving her village.",
+  "cn": "多虧了電子商務，我阿姨不用離開村子就能把手工肥皂賣給世界各地的顧客。",
+  "cnMarked": "多虧了【電子商務】，我阿姨不用離開村子就能把手工肥皂賣給世界各地的顧客。",
+  "isHead": false,
+  "level": null,
+  "family": "commerce"
+ },
+ {
+  "word": "commit",
+  "answer": "commit",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "犯（罪、錯）",
+  "en_def": "to do something wrong or illegal",
+  "sentence": "The police believe the man did not {{BLANK}} the robbery, because he was at work when it happened.",
+  "cn": "警方相信那名男子並沒有犯下搶案，因為案發時他正在上班。",
+  "cnMarked": "警方相信那名男子並沒有【犯下】搶案，因為案發時他正在上班。",
+  "isHead": true,
+  "level": 4,
+  "family": "commit"
+ },
+ {
+  "word": "commit a crime",
+  "answer": "commit a crime",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "犯罪",
+  "en_def": "to do something that is against the law",
+  "sentence": "People who {{BLANK}} should be punished fairly, but they should also be given a chance to change.",
+  "cn": "犯罪的人應該受到公平的懲罰，但也應該被給予改過的機會。",
+  "cnMarked": "【犯罪】的人應該受到公平的懲罰，但也應該被給予改過的機會。",
+  "isHead": false,
+  "level": null,
+  "family": "commit"
+ },
+ {
+  "word": "commit to",
+  "answer": "commit to",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "承諾；投入",
+  "en_def": "to promise to do something or to give your time to it",
+  "sentence": "Before you {{BLANK}} the swimming team, remember that you will have to practice every morning at six o'clock.",
+  "cn": "在你承諾加入游泳隊之前，記住你每天早上六點都必須練習。",
+  "cnMarked": "在你【承諾加入】游泳隊之前，記住你每天早上六點都必須練習。",
+  "isHead": false,
+  "level": null,
+  "family": "commit"
+ },
+ {
+  "word": "commitment",
+  "answer": "commitment",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "承諾；投入",
+  "en_def": "a promise to do something; the hard work you give to something",
+  "sentence": "Learning a musical instrument takes real {{BLANK}}, so you should practice a little every day instead of once a week.",
+  "cn": "學樂器需要真正的投入，所以你應該每天練習一點，而不是一週練一次。",
+  "cnMarked": "學樂器需要真正的【投入】，所以你應該每天練習一點，而不是一週練一次。",
+  "isHead": false,
+  "level": 5,
+  "family": "commit"
+ },
+ {
+  "word": "committed",
+  "answer": "committed",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "盡心盡力的；堅定的",
+  "en_def": "willing to work very hard at something",
+  "sentence": "She is a {{BLANK}} teacher who stays after school every day to help students who are having trouble with math.",
+  "cn": "她是一位盡心盡力的老師，每天放學後都留下來幫助數學有困難的學生。",
+  "cnMarked": "她是一位【盡心盡力的】老師，每天放學後都留下來幫助數學有困難的學生。",
+  "isHead": false,
+  "level": null,
+  "family": "commit"
+ },
+ {
+  "word": "communication",
+  "answer": "communication",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "溝通；通訊",
+  "en_def": "the act of sharing information, ideas, or feelings with others",
+  "sentence": "Good {{BLANK}} between parents and teachers helps children do better at school and feel safer in class.",
+  "cn": "家長與老師之間良好的溝通有助於孩子在學校表現更好，在課堂上也更有安全感。",
+  "cnMarked": "家長與老師之間良好的【溝通】有助於孩子在學校表現更好，在課堂上也更有安全感。",
+  "isHead": true,
+  "level": 4,
+  "family": "communication"
+ },
+ {
+  "word": "communicate",
+  "answer": "communicate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "溝通；傳達",
+  "en_def": "to share information, ideas, or feelings with someone",
+  "sentence": "Even though they do not speak the same language, the two boys {{BLANK}} easily by drawing pictures and using hand signs.",
+  "cn": "雖然他們說的語言不同，這兩個男孩透過畫圖和手勢輕鬆地溝通。",
+  "cnMarked": "雖然他們說的語言不同，這兩個男孩透過畫圖和手勢輕鬆地【溝通】。",
+  "isHead": false,
+  "level": 3,
+  "family": "communication"
+ },
+ {
+  "word": "communicate with",
+  "answer": "communicate with",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "與…溝通",
+  "en_def": "to talk or write to someone and share ideas",
+  "sentence": "Nowadays, most teenagers prefer to {{BLANK}} their friends through short messages rather than long phone calls.",
+  "cn": "現在大多數青少年偏好透過簡短的訊息而不是長時間的電話與朋友溝通。",
+  "cnMarked": "現在大多數青少年偏好透過簡短的訊息而不是長時間的電話【與】朋友【溝通】。",
+  "isHead": false,
+  "level": null,
+  "family": "communication"
+ },
+ {
+  "word": "communicative",
+  "answer": "communicative",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "健談的；善於溝通的",
+  "en_def": "willing to talk and share information with people",
+  "sentence": "The new student was shy at first, but she became much more {{BLANK}} after she joined the drama club.",
+  "cn": "這位新生起初很害羞，但加入戲劇社之後，她變得健談多了。",
+  "cnMarked": "這位新生起初很害羞，但加入戲劇社之後，她變得【健談】多了。",
+  "isHead": false,
+  "level": 6,
+  "family": "communication"
+ },
+ {
+  "word": "community",
+  "answer": "community",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "社區；社群；群體",
+  "en_def": "all the people who live in one area; a group of people who share something",
+  "sentence": "Everyone in our small {{BLANK}} helped clean up the park after the typhoon, and it looked beautiful again by Sunday.",
+  "cn": "颱風過後，我們小社區裡的每個人都幫忙清理公園，到星期天它又變得美麗了。",
+  "cnMarked": "颱風過後，我們小【社區】裡的每個人都幫忙清理公園，到星期天它又變得美麗了。",
+  "isHead": true,
+  "level": 4,
+  "family": "community"
+ },
+ {
+  "word": "community center",
+  "answer": "community center",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "社區活動中心",
+  "en_def": "a building where people in an area can meet and do activities",
+  "sentence": "My grandmother takes a free dance class at the {{BLANK}} every Tuesday morning with her neighbors.",
+  "cn": "我奶奶每週二早上和鄰居一起在社區活動中心上免費的舞蹈課。",
+  "cnMarked": "我奶奶每週二早上和鄰居一起在【社區活動中心】上免費的舞蹈課。",
+  "isHead": false,
+  "level": null,
+  "family": "community"
+ },
+ {
+  "word": "community service",
+  "answer": "community service",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "社區服務",
+  "en_def": "unpaid work that helps the people in an area",
+  "sentence": "Our class did {{BLANK}} last weekend by picking up trash along the river and painting the old bus stop.",
+  "cn": "我們班上週末做了社區服務，沿著河邊撿垃圾，還把舊公車站漆了一遍。",
+  "cnMarked": "我們班上週末做了【社區服務】，沿著河邊撿垃圾，還把舊公車站漆了一遍。",
+  "isHead": false,
+  "level": null,
+  "family": "community"
+ },
+ {
+  "word": "communal",
+  "answer": "communal",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "公共的；共用的",
+  "en_def": "shared by a group of people",
+  "sentence": "The students who live in the dormitory cook together in a {{BLANK}} kitchen on the first floor.",
+  "cn": "住在宿舍的學生在一樓的共用廚房裡一起煮飯。",
+  "cnMarked": "住在宿舍的學生在一樓的【共用】廚房裡一起煮飯。",
+  "isHead": false,
+  "level": null,
+  "family": "community"
+ },
+ {
+  "word": "companion",
+  "answer": "companion",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "同伴；伴侶",
+  "en_def": "a person or animal you spend a lot of time with",
+  "sentence": "My grandfather's dog has been his closest {{BLANK}} since my grandmother passed away three years ago.",
+  "cn": "自從三年前我奶奶過世後，爺爺的狗就一直是他最親密的同伴。",
+  "cnMarked": "自從三年前我奶奶過世後，爺爺的狗就一直是他最親密的【同伴】。",
+  "isHead": true,
+  "level": 4,
+  "family": "companion"
+ },
+ {
+  "word": "companionship",
+  "answer": "companionship",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "友誼；陪伴",
+  "en_def": "the pleasant feeling of being with someone you like",
+  "sentence": "Many elderly people join the morning exercise group not only for their health but also for the {{BLANK}}.",
+  "cn": "許多老人家參加晨間運動團體，不只是為了健康，也是為了陪伴。",
+  "cnMarked": "許多老人家參加晨間運動團體，不只是為了健康，也是為了【陪伴】。",
+  "isHead": false,
+  "level": null,
+  "family": "companion"
+ },
+ {
+  "word": "company",
+  "answer": "company",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "陪伴；公司",
+  "en_def": "the state of being with someone; a business",
+  "sentence": "I enjoy her {{BLANK}} because she always listens carefully and makes me laugh when I am feeling sad.",
+  "cn": "我很享受她的陪伴，因為她總是仔細傾聽，在我難過時逗我笑。",
+  "cnMarked": "我很享受她的【陪伴】，因為她總是仔細傾聽，在我難過時逗我笑。",
+  "isHead": false,
+  "level": 2,
+  "family": "companion"
+ },
+ {
+  "word": "accompany",
+  "answer": "accompany",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "陪伴；陪同",
+  "en_def": "to go somewhere with someone",
+  "sentence": "My father will {{BLANK}} me to the interview tomorrow, but he has promised to wait outside the office.",
+  "cn": "我爸爸明天會陪我去面試，但他答應會在辦公室外面等。",
+  "cnMarked": "我爸爸明天會【陪】我去面試，但他答應會在辦公室外面等。",
+  "isHead": false,
+  "level": 4,
+  "family": "companion"
+ },
+ {
+  "word": "competition",
+  "answer": "competition",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "比賽；競爭",
+  "en_def": "an event in which people try to win; the act of trying to be better than others",
+  "sentence": "There is a lot of {{BLANK}} for places at the best high schools, so students start preparing for the exam a year early.",
+  "cn": "進入最好的高中的競爭非常激烈，所以學生提前一年就開始準備考試。",
+  "cnMarked": "進入最好的高中的【競爭】非常激烈，所以學生提前一年就開始準備考試。",
+  "isHead": true,
+  "level": 4,
+  "family": "competition"
+ },
+ {
+  "word": "competitive",
+  "answer": "competitive",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "競爭的；好勝的",
+  "en_def": "wanting very much to win; involving competition",
+  "sentence": "My brother is so {{BLANK}} that he gets upset even when he loses a simple card game with our grandmother.",
+  "cn": "我哥哥太好勝了，連和奶奶玩簡單的紙牌遊戲輸了都會不高興。",
+  "cnMarked": "我哥哥太【好勝】了，連和奶奶玩簡單的紙牌遊戲輸了都會不高興。",
+  "isHead": true,
+  "level": 4,
+  "family": "competition"
+ },
+ {
+  "word": "competitor",
+  "answer": "competitors",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "競爭者；參賽者",
+  "en_def": "a person, team, or company that competes with others",
+  "sentence": "Over two hundred {{BLANK}} from twelve countries will take part in the speech contest in Taipei next month.",
+  "cn": "下個月將有來自十二個國家的兩百多名參賽者參加在台北舉辦的演講比賽。",
+  "cnMarked": "下個月將有來自十二個國家的兩百多名【參賽者】參加在台北舉辦的演講比賽。",
+  "isHead": true,
+  "level": 4,
+  "family": "competition"
+ },
+ {
+  "word": "compete",
+  "answer": "compete",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "競爭；比賽",
+  "en_def": "to try to win or be better than others",
+  "sentence": "Small bookstores find it hard to {{BLANK}} with online shops that sell the same books at much lower prices.",
+  "cn": "小書店很難和以低很多的價格販售同樣書籍的網路商店競爭。",
+  "cnMarked": "小書店很難和以低很多的價格販售同樣書籍的網路商店【競爭】。",
+  "isHead": false,
+  "level": 3,
+  "family": "competition"
+ },
+ {
+  "word": "compete against",
+  "answer": "compete against",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "與…競爭",
+  "en_def": "to try to beat a particular person or team",
+  "sentence": "Our school team will {{BLANK}} last year's champions in the final, so we have been practicing twice a day.",
+  "cn": "我們校隊將在決賽中對上去年的冠軍，所以我們每天練習兩次。",
+  "cnMarked": "我們校隊將在決賽中【對上】去年的冠軍，所以我們每天練習兩次。",
+  "isHead": false,
+  "level": null,
+  "family": "competition"
+ },
+ {
+  "word": "complicate",
+  "answer": "complicate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使複雜化",
+  "en_def": "to make something more difficult to understand or deal with",
+  "sentence": "Please do not {{BLANK}} the plan by inviting more people; a small dinner with close friends is all she wants.",
+  "cn": "請不要再邀更多人來把計畫弄得更複雜；她只想要和親近的朋友吃頓小型晚餐。",
+  "cnMarked": "請不要再邀更多人來把計畫【弄得更複雜】；她只想要和親近的朋友吃頓小型晚餐。",
+  "isHead": true,
+  "level": 4,
+  "family": "complicate"
+ },
+ {
+  "word": "complicated",
+  "answer": "complicated",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "複雜的",
+  "en_def": "difficult to understand because it has many parts",
+  "sentence": "The rules of this board game are so {{BLANK}} that we spent the first hour just reading the instructions.",
+  "cn": "這款桌遊的規則太複雜了，我們第一個小時光是讀說明書就過去了。",
+  "cnMarked": "這款桌遊的規則太【複雜】了，我們第一個小時光是讀說明書就過去了。",
+  "isHead": false,
+  "level": null,
+  "family": "complicate"
+ },
+ {
+  "word": "complication",
+  "answer": "complication",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "複雜的問題；併發症",
+  "en_def": "something that makes a situation more difficult",
+  "sentence": "The trip was going well until a {{BLANK}} with our train tickets forced us to stay another night in the city.",
+  "cn": "這趟旅行原本一切順利，直到火車票出了麻煩，迫使我們在這座城市多住一晚。",
+  "cnMarked": "這趟旅行原本一切順利，直到火車票出了【麻煩】，迫使我們在這座城市多住一晚。",
+  "isHead": false,
+  "level": 5,
+  "family": "complicate"
+ },
+ {
+  "word": "complex",
+  "answer": "complex",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "複雜的",
+  "en_def": "made of many connected parts; not simple",
+  "sentence": "The human brain is the most {{BLANK}} organ in the body, and scientists still do not understand how it works.",
+  "cn": "人腦是身體中最複雜的器官，科學家至今仍不了解它如何運作。",
+  "cnMarked": "人腦是身體中最【複雜的】器官，科學家至今仍不了解它如何運作。",
+  "isHead": false,
+  "level": 2,
+  "family": "complicate"
+ },
+ {
+  "word": "compose",
+  "answer": "compose",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "作曲；創作；撰寫",
+  "en_def": "to write music, a poem, or a letter",
+  "sentence": "She began to {{BLANK}} her own songs at the age of ten, and now she writes music for popular singers.",
+  "cn": "她十歲就開始創作自己的歌曲，現在她為流行歌手寫歌。",
+  "cnMarked": "她十歲就開始【創作】自己的歌曲，現在她為流行歌手寫歌。",
+  "isHead": true,
+  "level": 4,
+  "family": "compose"
+ },
+ {
+  "word": "composer",
+  "answer": "composer",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "作曲家",
+  "en_def": "a person who writes music",
+  "sentence": "The young {{BLANK}} wrote the music for the film in only three weeks, and it later won an important award.",
+  "cn": "這位年輕的作曲家只用三週就為這部電影寫好配樂，後來還贏得了一個重要獎項。",
+  "cnMarked": "這位年輕的【作曲家】只用三週就為這部電影寫好配樂，後來還贏得了一個重要獎項。",
+  "isHead": true,
+  "level": 4,
+  "family": "compose"
+ },
+ {
+  "word": "composition",
+  "answer": "composition",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "作品；作文；組成",
+  "en_def": "a piece of music or writing; the way something is made up",
+  "sentence": "For homework, we have to write a {{BLANK}} about a person who changed our life, and it must be at least 200 words.",
+  "cn": "回家作業是寫一篇關於改變我們人生的人的作文，至少要兩百字。",
+  "cnMarked": "回家作業是寫一篇關於改變我們人生的人的【作文】，至少要兩百字。",
+  "isHead": true,
+  "level": 4,
+  "family": "compose"
+ },
+ {
+  "word": "be composed of",
+  "answer": "is composed of",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "由…組成",
+  "en_def": "to be made up of certain parts",
+  "sentence": "The school band {{BLANK}} thirty students, and about half of them play some kind of drum.",
+  "cn": "學校樂隊由三十名學生組成，其中大約一半的人演奏某種鼓。",
+  "cnMarked": "學校樂隊【由】三十名學生【組成】，其中大約一半的人演奏某種鼓。",
+  "isHead": false,
+  "level": null,
+  "family": "compose"
+ },
+ {
+  "word": "compose oneself",
+  "answer": "compose herself",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "使自己鎮定下來",
+  "en_def": "to become calm after being upset or nervous",
+  "sentence": "The speaker took a deep breath to {{BLANK}} before she walked onto the stage in front of a thousand people.",
+  "cn": "演講者在走上一千人面前的舞台之前，深吸一口氣讓自己鎮定下來。",
+  "cnMarked": "演講者在走上一千人面前的舞台之前，深吸一口氣【讓自己鎮定下來】。",
+  "isHead": false,
+  "level": null,
+  "family": "compose"
+ },
+ {
+  "word": "concentrate",
+  "answer": "concentrate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "專心；集中",
+  "en_def": "to give all your attention to one thing",
+  "sentence": "It is hard to {{BLANK}} on my homework when my brother is playing loud video games in the next room.",
+  "cn": "當我哥哥在隔壁房間大聲玩電動時，我很難專心寫功課。",
+  "cnMarked": "當我哥哥在隔壁房間大聲玩電動時，我很難【專心】寫功課。",
+  "isHead": true,
+  "level": 4,
+  "family": "concentrate"
+ },
+ {
+  "word": "concentration",
+  "answer": "concentration",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "專注力；專心",
+  "en_def": "the ability to give all your attention to something",
+  "sentence": "Chess requires great {{BLANK}}, so the players sat in silence for over three hours without looking up.",
+  "cn": "下棋需要高度的專注力，所以棋手們安靜地坐了三個多小時，連頭都沒抬。",
+  "cnMarked": "下棋需要高度的【專注力】，所以棋手們安靜地坐了三個多小時，連頭都沒抬。",
+  "isHead": true,
+  "level": 4,
+  "family": "concentrate"
+ },
+ {
+  "word": "concentrate on",
+  "answer": "concentrate on",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "專注於…",
+  "en_def": "to think very carefully about one thing you are doing",
+  "sentence": "This year I want to {{BLANK}} improving my English, so I have decided to read one English book every month.",
+  "cn": "今年我想專注於提升我的英文，所以我決定每個月讀一本英文書。",
+  "cnMarked": "今年我想【專注於】提升我的英文，所以我決定每個月讀一本英文書。",
+  "isHead": false,
+  "level": null,
+  "family": "concentrate"
+ },
+ {
+  "word": "concentrated",
+  "answer": "concentrated",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "濃縮的；集中的",
+  "en_def": "strong because water has been removed; done with great attention",
+  "sentence": "This juice is {{BLANK}}, so you need to add three cups of water before you drink it.",
+  "cn": "這種果汁是濃縮的，所以喝之前你需要加三杯水。",
+  "cnMarked": "這種果汁是【濃縮的】，所以喝之前你需要加三杯水。",
+  "isHead": false,
+  "level": null,
+  "family": "concentrate"
+ },
+ {
+  "word": "concept",
+  "answer": "concept",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "概念；觀念",
+  "en_def": "an idea of what something is or how it works",
+  "sentence": "Young children often do not understand the {{BLANK}} of time, so they ask \"Are we there yet?\" every five minutes.",
+  "cn": "幼童通常不懂時間的概念，所以他們每五分鐘就問一次「到了沒？」。",
+  "cnMarked": "幼童通常不懂時間的【概念】，所以他們每五分鐘就問一次「到了沒？」。",
+  "isHead": true,
+  "level": 4,
+  "family": "concept"
+ },
+ {
+  "word": "conceive",
+  "answer": "conceived",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "構想；想像",
+  "en_def": "to think of a new idea or plan; to imagine",
+  "sentence": "The engineer first {{BLANK}} the idea for the folding bicycle while watching his daughter fold a paper crane.",
+  "cn": "這位工程師第一次構想出折疊腳踏車的點子，是在看女兒摺紙鶴的時候。",
+  "cnMarked": "這位工程師第一次【構想】出折疊腳踏車的點子，是在看女兒摺紙鶴的時候。",
+  "isHead": false,
+  "level": 5,
+  "family": "concept"
+ },
+ {
+  "word": "conception",
+  "answer": "conception",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "概念；理解",
+  "en_def": "a general idea or understanding of something",
+  "sentence": "Many students have no clear {{BLANK}} of what a scientist's daily work is really like, so the school invited one to speak.",
+  "cn": "許多學生對科學家的日常工作到底是什麼樣子沒有清楚的概念，所以學校邀請了一位來演講。",
+  "cnMarked": "許多學生對科學家的日常工作到底是什麼樣子沒有清楚的【概念】，所以學校邀請了一位來演講。",
+  "isHead": false,
+  "level": 5,
+  "family": "concept"
+ },
+ {
+  "word": "conceptual",
+  "answer": "conceptual",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "概念上的",
+  "en_def": "based on ideas rather than on real things",
+  "sentence": "The artist's {{BLANK}} work made some visitors confused, because there was only an empty chair in the middle of the room.",
+  "cn": "這位藝術家的概念性作品讓一些參觀者感到困惑，因為房間中央只有一張空椅子。",
+  "cnMarked": "這位藝術家的【概念性】作品讓一些參觀者感到困惑，因為房間中央只有一張空椅子。",
+  "isHead": false,
+  "level": null,
+  "family": "concept"
+ },
+ {
+  "word": "concerning",
+  "answer": "concerning",
+  "nblanks": 1,
+  "pos": "prep.",
+  "cn_def": "關於",
+  "en_def": "about; on the subject of",
+  "sentence": "The principal sent a letter to all parents {{BLANK}} the new rules for using phones during school hours.",
+  "cn": "校長寄了一封信給所有家長，關於上課時間使用手機的新規定。",
+  "cnMarked": "校長寄了一封信給所有家長，【關於】上課時間使用手機的新規定。",
+  "isHead": true,
+  "level": 4,
+  "family": "concerning"
+ },
+ {
+  "word": "concern",
+  "answer": "concern",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "擔心；關心的事",
+  "en_def": "a feeling of worry; something that worries you",
+  "sentence": "The doctor said my main {{BLANK}} should be getting enough sleep, not the small cut on my hand.",
+  "cn": "醫生說我主要該擔心的是睡眠是否充足，而不是手上的小傷口。",
+  "cnMarked": "醫生說我主要該【擔心】的是睡眠是否充足，而不是手上的小傷口。",
+  "isHead": false,
+  "level": 2,
+  "family": "concerning"
+ },
+ {
+  "word": "concern",
+  "answer": "concern",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使擔心；與…有關",
+  "en_def": "to worry someone; to be about something",
+  "sentence": "The news that the river is rising again will {{BLANK}} everyone who lives near the bridge.",
+  "cn": "河水再次上漲的消息會讓所有住在橋附近的人擔心。",
+  "cnMarked": "河水再次上漲的消息會【讓】所有住在橋附近的人【擔心】。",
+  "isHead": false,
+  "level": 2,
+  "family": "concerning"
+ },
+ {
+  "word": "be concerned about",
+  "answer": "are concerned about",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "擔心…",
+  "en_def": "to be worried about something",
+  "sentence": "My parents {{BLANK}} my grades this semester, so they have asked me to stop playing games on school nights.",
+  "cn": "我父母擔心我這學期的成績，所以他們要我上課日的晚上不要再打電動。",
+  "cnMarked": "我父母【擔心】我這學期的成績，所以他們要我上課日的晚上不要再打電動。",
+  "isHead": false,
+  "level": null,
+  "family": "concerning"
+ },
+ {
+  "word": "concerned",
+  "answer": "concerned",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "擔心的；有關的",
+  "en_def": "worried; involved in something",
+  "sentence": "The {{BLANK}} mother called the school three times when her son did not come home by six o'clock.",
+  "cn": "當兒子六點還沒回家時，那位擔心的母親打了三次電話到學校。",
+  "cnMarked": "當兒子六點還沒回家時，那位【擔心的】母親打了三次電話到學校。",
+  "isHead": false,
+  "level": null,
+  "family": "concerning"
+ },
+ {
+  "word": "concerning",
+  "answer": "concerning",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "令人擔憂的",
+  "en_def": "causing worry",
+  "sentence": "The number of students who skip breakfast is {{BLANK}}, so the school now sells cheap sandwiches before the first class.",
+  "cn": "不吃早餐的學生人數令人擔憂，所以學校現在在第一節課前販售便宜的三明治。",
+  "cnMarked": "不吃早餐的學生人數【令人擔憂】，所以學校現在在第一節課前販售便宜的三明治。",
+  "isHead": false,
+  "level": 4,
+  "family": "concerning"
+ }
+];
+const MCQS = [
+ {
+  "q": "My brother always knocks over his glass at dinner and drops things on the floor. He is so ______ that Mom never lets him wash the good plates.",
+  "options": [
+   "clumsy",
+   "competitive",
+   "complex",
+   "coarse"
+  ],
+  "answer": 0,
+  "vocabIndex": 0
+ },
+ {
+  "q": "This towel feels rough and scratches my skin when I dry my face. The cloth is too ______, so I think we should buy a softer one for the baby.",
+  "options": [
+   "clumsy",
+   "coarse",
+   "comic",
+   "communal"
+  ],
+  "answer": 1,
+  "vocabIndex": 3
+ },
+ {
+  "q": "You cannot open this door just by pushing it. You have to enter a four-number ______ on the small box next to it, and only the teachers know the numbers.",
+  "options": [
+   "commerce",
+   "comedy",
+   "code",
+   "concept"
+  ],
+  "answer": 2,
+  "vocabIndex": 6
+ },
+ {
+  "q": "The old building was shaking badly during the earthquake last night. Luckily, everyone got out before the roof started to ______ onto the wet floor below.",
+  "options": [
+   "compete",
+   "compose",
+   "commit",
+   "collapse"
+  ],
+  "answer": 3,
+  "vocabIndex": 11
+ },
+ {
+  "q": "My father has worked at the same bank for twenty years. He often has lunch with a ______ from his office, and they talk about their work and their families.",
+  "options": [
+   "commander",
+   "competitor",
+   "colleague",
+   "composer"
+  ],
+  "answer": 2,
+  "vocabIndex": 14
+ },
+ {
+  "q": "The lock on my bike needs three numbers to open. I forgot the right ______, so I had to wait in the rain until my sister came to help me.",
+  "options": [
+   "community",
+   "composition",
+   "commentary",
+   "combination"
+  ],
+  "answer": 3,
+  "vocabIndex": 17
+ },
+ {
+  "q": "I do not want to watch a sad or scary movie tonight. Let's choose a ______ instead, because I really need something that will make me laugh after this hard week.",
+  "options": [
+   "comedy",
+   "commerce",
+   "concentration",
+   "companion"
+  ],
+  "answer": 0,
+  "vocabIndex": 21
+ },
+ {
+  "q": "The soldiers waited quietly in the dark for their orders. At last, the ______ raised his hand and told them to move forward toward the river.",
+  "options": [
+   "comedian",
+   "competitor",
+   "commentator",
+   "commander"
+  ],
+  "answer": 3,
+  "vocabIndex": 25
+ },
+ {
+  "q": "I posted a photo of my new painting online last night. By this morning, more than fifty people had left a ______ under it, and most of them were very kind.",
+  "options": [
+   "code",
+   "comment",
+   "command",
+   "commerce"
+  ],
+  "answer": 1,
+  "vocabIndex": 29
+ },
+ {
+  "q": "Hundreds of years ago, ships from many countries came to this port to buy tea and silk. This busy ______ made the city rich, and many beautiful houses were built here.",
+  "options": [
+   "comedy",
+   "concentration",
+   "commerce",
+   "clumsiness"
+  ],
+  "answer": 2,
+  "vocabIndex": 34
+ },
+ {
+  "q": "The man said he was at home watching TV on the night of the robbery. The police have no proof that he did ______ the crime, so they let him go.",
+  "options": [
+   "commit",
+   "compose",
+   "complicate",
+   "collapse"
+  ],
+  "answer": 0,
+  "vocabIndex": 38
+ },
+ {
+  "q": "When my grandparents were young, letters took weeks to arrive. Today, ______ is much faster, and we can send a message across the world in one second.",
+  "options": [
+   "combination",
+   "competition",
+   "communication",
+   "composition"
+  ],
+  "answer": 2,
+  "vocabIndex": 43
+ },
+ {
+  "q": "After the big flood, people from the whole ______ came to help. Neighbors shared food, cleaned the streets, and gave clothes to the families who had lost everything.",
+  "options": [
+   "community",
+   "comedian",
+   "concept",
+   "commentary"
+  ],
+  "answer": 0,
+  "vocabIndex": 47
+ },
+ {
+  "q": "My grandmother lives alone, so last year she got a small dog. Now the dog goes everywhere with her, and she says he is the best ______ she has ever had.",
+  "options": [
+   "competitor",
+   "companion",
+   "composer",
+   "commander"
+  ],
+  "answer": 1,
+  "vocabIndex": 51
+ },
+ {
+  "q": "More than a hundred students entered the school singing ______ this year. Only ten of them were chosen to perform in the final show next Friday.",
+  "options": [
+   "competition",
+   "communication",
+   "commerce",
+   "concentration"
+  ],
+  "answer": 0,
+  "vocabIndex": 55
+ },
+ {
+  "q": "My sister hates losing at anything, even a simple game of cards. She is so ______ that she practices for hours just to beat her friends at table tennis.",
+  "options": [
+   "clumsy",
+   "complicated",
+   "concerned",
+   "competitive"
+  ],
+  "answer": 3,
+  "vocabIndex": 56
+ },
+ {
+  "q": "Every ______ in the race must wear a large number on his or her shirt. This helps the judges know who finishes first, second, and third.",
+  "options": [
+   "competitor",
+   "composer",
+   "comedian",
+   "commentator"
+  ],
+  "answer": 0,
+  "vocabIndex": 57
+ },
+ {
+  "q": "The plan for the party was simple at first: just pizza and a movie. Then my aunt tried to add dancing and games, which only served to ______ things.",
+  "options": [
+   "commit",
+   "complicate",
+   "compete",
+   "concentrate"
+  ],
+  "answer": 1,
+  "vocabIndex": 60
+ },
+ {
+  "q": "Beethoven could not hear well in his later years. Even so, he continued to ______ beautiful music, and some of his greatest works were written during that time.",
+  "options": [
+   "command",
+   "collapse",
+   "communicate",
+   "compose"
+  ],
+  "answer": 3,
+  "vocabIndex": 64
+ },
+ {
+  "q": "Mozart wrote his first piece of music when he was only five years old. Many people around the world believe he was the greatest ______ who ever lived.",
+  "options": [
+   "commentator",
+   "companion",
+   "composer",
+   "commander"
+  ],
+  "answer": 2,
+  "vocabIndex": 65
+ },
+ {
+  "q": "For English class, we had to write a ______ about our dream job. I wrote three pages about becoming a doctor and helping children in poor countries.",
+  "options": [
+   "community",
+   "composition",
+   "commerce",
+   "competition"
+  ],
+  "answer": 1,
+  "vocabIndex": 66
+ },
+ {
+  "q": "The library is the best place for me to study. It is quiet there, so I can ______ on my reading without being disturbed by my noisy brothers.",
+  "options": [
+   "communicate",
+   "commit",
+   "concentrate",
+   "compose"
+  ],
+  "answer": 2,
+  "vocabIndex": 69
+ },
+ {
+  "q": "Playing the piano well takes more than fast fingers. It also needs great ______, because you must read the notes, count the beats, and listen to yourself at the same time.",
+  "options": [
+   "concentration",
+   "combination",
+   "commentary",
+   "companionship"
+  ],
+  "answer": 0,
+  "vocabIndex": 70
+ },
+ {
+  "q": "Before the age of five, most children do not understand the ______ of money. They do not know why a toy that costs 1,000 dollars is too expensive to buy.",
+  "options": [
+   "commander",
+   "concept",
+   "code",
+   "comedy"
+  ],
+  "answer": 1,
+  "vocabIndex": 73
+ },
+ {
+  "q": "The number of young children who cannot see the board clearly is growing. Eye doctors find this ______ and say that too much screen time may be the main reason.",
+  "options": [
+   "collapsible",
+   "clumsy",
+   "concerning",
+   "complicated"
+  ],
+  "answer": 2,
+  "vocabIndex": 77
+ },
+ {
+  "q": "Our school team is not very strong this year, but the players still want to ______ with the best teams in the city. They believe practice will make them better.",
+  "options": [
+   "compete",
+   "compose",
+   "collapse",
+   "complicate"
+  ],
+  "answer": 0,
+  "vocabIndex": 58
+ },
+ {
+  "q": "The dog is well trained and listens to its owner at once. With one short ______, it sits, stays, or runs back to her side without any trouble.",
+  "options": [
+   "comedy",
+   "concept",
+   "comment",
+   "command"
+  ],
+  "answer": 3,
+  "vocabIndex": 26
+ },
+ {
+  "q": "The small farm used to grow vegetables only for the family. Now it has become a ______ business that sells fruit and jam to supermarkets all over the island.",
+  "options": [
+   "comic",
+   "commercial",
+   "conceptual",
+   "communal"
+  ],
+  "answer": 1,
+  "vocabIndex": 35
+ },
+ {
+  "q": "The instructions for building this desk are long and very ______. There are over sixty steps, and some of the pictures do not match the words at all.",
+  "options": [
+   "concentrated",
+   "coarse",
+   "committed",
+   "complicated"
+  ],
+  "answer": 3,
+  "vocabIndex": 61
+ },
+ {
+  "q": "When you travel to a country whose language you do not speak, do not worry too much. You can still ______ with people by using simple words, pictures, and hand signs.",
+  "options": [
+   "complicate",
+   "communicate",
+   "concentrate",
+   "conceive"
+  ],
+  "answer": 1,
+  "vocabIndex": 44
+ }
+];
+const LOOKUP = {};
+VOCAB.forEach(v => { const key = v.word.toLowerCase(); const sense = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def };
+  if (LOOKUP[key]) LOOKUP[key].combined.push(sense); else LOOKUP[key] = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def, combined: [sense] }; });
+const EXTRA_GLOSSES = {};

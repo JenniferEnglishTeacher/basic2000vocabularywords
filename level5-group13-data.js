@@ -1,0 +1,1505 @@
+// 學測6000字 Level 5 Group 13 (dissolve-embrace) — word-family edition
+const QUIZ_CONFIG = {
+  groupName: "6000字 L5 Group 13 - dissolve – embrace (word family)",
+  gasEndpoint: "https://script.google.com/macros/s/AKfycbzLUqP-nauSjmiHfPXiK3NAV65tYdjAlwqip38TcGdTKqeR_CijuzHYxZDC-sjtRVrr_w/exec"
+};
+const VOCAB = [
+ {
+  "word": "dissolve",
+  "answer": "dissolves",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "溶解",
+  "en_def": "to mix into a liquid and disappear",
+  "sentence": "Stir the sugar until it {{BLANK}} completely in the hot tea; otherwise, the last sip will be far too sweet.",
+  "cn": "攪拌糖直到它在熱茶中完全溶解；否則最後一口會太甜。",
+  "cnMarked": "攪拌糖直到它在熱茶中完全【溶解】；否則最後一口會太甜。",
+  "isHead": true,
+  "level": 5,
+  "family": "dissolve"
+ },
+ {
+  "word": "dissolve",
+  "answer": "dissolve",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "解散；解除",
+  "en_def": "to officially end a company, group, or marriage",
+  "sentence": "The two business partners decided to {{BLANK}} their company after ten years because they could no longer agree on anything.",
+  "cn": "兩位事業夥伴十年後決定解散公司，因為他們再也無法在任何事上達成共識。",
+  "cnMarked": "兩位事業夥伴十年後決定【解散】公司，因為他們再也無法在任何事上達成共識。",
+  "isHead": false,
+  "level": 5,
+  "family": "dissolve"
+ },
+ {
+  "word": "dissolve into tears",
+  "answer": "dissolved into tears",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "忍不住哭了起來",
+  "en_def": "to suddenly start crying",
+  "sentence": "When the little boy saw his lost puppy running toward him, he {{BLANK}} and hugged it tightly.",
+  "cn": "當小男孩看到走失的小狗朝他跑來時，他忍不住哭了起來，緊緊抱住牠。",
+  "cnMarked": "當小男孩看到走失的小狗朝他跑來時，他【忍不住哭了起來】，緊緊抱住牠。",
+  "isHead": false,
+  "level": null,
+  "family": "dissolve"
+ },
+ {
+  "word": "solution",
+  "answer": "solution",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "溶液；解決辦法",
+  "en_def": "a liquid with something dissolved in it; an answer to a problem",
+  "sentence": "Mix the salt into the water, and the {{BLANK}} can be used to clean the small cut on your finger.",
+  "cn": "把鹽溶入水中，這溶液可以用來清潔你手指上的小傷口。",
+  "cnMarked": "把鹽溶入水中，這【溶液】可以用來清潔你手指上的小傷口。",
+  "isHead": false,
+  "level": 2,
+  "family": "dissolve"
+ },
+ {
+  "word": "distinction",
+  "answer": "distinction",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "區別；差別",
+  "en_def": "a clear difference between two things",
+  "sentence": "There is a clear {{BLANK}} between being confident and being rude, and good leaders know where the line is.",
+  "cn": "自信和無禮之間有明顯的區別，好的領導者知道界線在哪裡。",
+  "cnMarked": "自信和無禮之間有明顯的【區別】，好的領導者知道界線在哪裡。",
+  "isHead": true,
+  "level": 5,
+  "family": "distinction"
+ },
+ {
+  "word": "distinctive",
+  "answer": "distinctive",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "獨特的；有特色的",
+  "en_def": "easy to recognize because it is different from others",
+  "sentence": "The singer has such a {{BLANK}} voice that you can recognize her song after hearing only two or three notes.",
+  "cn": "這位歌手的聲音非常獨特，你只要聽兩三個音就能認出她的歌。",
+  "cnMarked": "這位歌手的聲音非常【獨特】，你只要聽兩三個音就能認出她的歌。",
+  "isHead": true,
+  "level": 5,
+  "family": "distinction"
+ },
+ {
+  "word": "distinguish",
+  "answer": "distinguish",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "分辨；區別",
+  "en_def": "to see or show the difference between things",
+  "sentence": "It is hard to {{BLANK}} the twins from each other, so their mother dresses them in different colors.",
+  "cn": "很難把這對雙胞胎分辨開來，所以他們的媽媽給他們穿不同顏色的衣服。",
+  "cnMarked": "很難把這對雙胞胎【分辨】開來，所以他們的媽媽給他們穿不同顏色的衣服。",
+  "isHead": false,
+  "level": 4,
+  "family": "distinction"
+ },
+ {
+  "word": "distinct",
+  "answer": "distinct",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "明顯的；不同的",
+  "en_def": "clearly different; easy to notice",
+  "sentence": "The soup had a {{BLANK}} smell of ginger, which reminded me of the dishes my grandmother used to cook in winter.",
+  "cn": "這湯有一股明顯的薑味，讓我想起奶奶以前冬天煮的菜。",
+  "cnMarked": "這湯有一股【明顯的】薑味，讓我想起奶奶以前冬天煮的菜。",
+  "isHead": false,
+  "level": 4,
+  "family": "distinction"
+ },
+ {
+  "word": "draw a distinction between",
+  "answer": "draw a distinction between",
+  "nblanks": 4,
+  "pos": "v.phr.",
+  "cn_def": "區分…",
+  "en_def": "to show that two things are different",
+  "sentence": "Teachers should {{BLANK}} a student who is lazy and one who is simply struggling with the subject.",
+  "cn": "老師應該區分懶惰的學生和單純在這科目上學得辛苦的學生。",
+  "cnMarked": "老師應該【區分】懶惰的學生和單純在這科目上學得辛苦的學生。",
+  "isHead": false,
+  "level": null,
+  "family": "distinction"
+ },
+ {
+  "word": "with distinction",
+  "answer": "with distinction",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "以優異成績",
+  "en_def": "with very high marks or great success",
+  "sentence": "My cousin graduated from medical school {{BLANK}}, and three hospitals offered her a job in the same week.",
+  "cn": "我表姐以優異成績從醫學院畢業，同一週就有三家醫院提供她工作。",
+  "cnMarked": "我表姐以【優異成績】從醫學院畢業，同一週就有三家醫院提供她工作。",
+  "isHead": false,
+  "level": null,
+  "family": "distinction"
+ },
+ {
+  "word": "distract",
+  "answer": "distract",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使分心",
+  "en_def": "to take someone's attention away from what they are doing",
+  "sentence": "Please turn off the music while I study; it will {{BLANK}} me, and I have a big test tomorrow morning.",
+  "cn": "我讀書時請把音樂關掉；它會讓我分心，而且我明天早上有大考。",
+  "cnMarked": "我讀書時請把音樂關掉；它會讓我【分心】，而且我明天早上有大考。",
+  "isHead": true,
+  "level": 5,
+  "family": "distract"
+ },
+ {
+  "word": "be distracted by",
+  "answer": "was distracted by",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "被…分散注意力",
+  "en_def": "to stop paying attention because of something",
+  "sentence": "The driver {{BLANK}} a message on his phone and did not notice that the light had turned red.",
+  "cn": "駕駛被手機上的訊息分散了注意力，沒注意到燈已經變紅了。",
+  "cnMarked": "駕駛【被】手機上的訊息【分散了注意力】，沒注意到燈已經變紅了。",
+  "isHead": false,
+  "level": null,
+  "family": "distract"
+ },
+ {
+  "word": "distraction",
+  "answer": "distraction",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "使人分心的事物",
+  "en_def": "something that takes your attention away",
+  "sentence": "My phone is my biggest {{BLANK}}, so I leave it in another room when I need to finish my homework.",
+  "cn": "手機是最讓我分心的東西，所以需要寫完作業時我會把它放在另一個房間。",
+  "cnMarked": "手機是最讓我【分心的東西】，所以需要寫完作業時我會把它放在另一個房間。",
+  "isHead": false,
+  "level": 6,
+  "family": "distract"
+ },
+ {
+  "word": "distracted",
+  "answer": "distracted",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "心不在焉的",
+  "en_def": "not able to pay attention because you are thinking of other things",
+  "sentence": "Tom seemed {{BLANK}} in class today; he kept looking out the window and did not hear the teacher call his name.",
+  "cn": "湯姆今天上課似乎心不在焉；他一直看著窗外，沒聽到老師叫他的名字。",
+  "cnMarked": "湯姆今天上課似乎【心不在焉】；他一直看著窗外，沒聽到老師叫他的名字。",
+  "isHead": false,
+  "level": null,
+  "family": "distract"
+ },
+ {
+  "word": "doctrine",
+  "answer": "doctrine",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "教義；主義；信條",
+  "en_def": "a set of beliefs taught by a religion or group",
+  "sentence": "The temple's {{BLANK}} teaches that people should be kind to all living things, including the smallest insects.",
+  "cn": "這座寺廟的教義教導人們應該善待所有生物，包括最小的昆蟲。",
+  "cnMarked": "這座寺廟的【教義】教導人們應該善待所有生物，包括最小的昆蟲。",
+  "isHead": true,
+  "level": 5,
+  "family": "doctrine"
+ },
+ {
+  "word": "religious doctrine",
+  "answer": "religious doctrine",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "宗教教義",
+  "en_def": "the beliefs that a religion teaches",
+  "sentence": "Students in the history class compared the {{BLANK}} of several faiths and found that most of them value honesty and kindness.",
+  "cn": "歷史課的學生比較了幾個信仰的宗教教義，發現大多數都重視誠實和善良。",
+  "cnMarked": "歷史課的學生比較了幾個信仰的【宗教教義】，發現大多數都重視誠實和善良。",
+  "isHead": false,
+  "level": null,
+  "family": "doctrine"
+ },
+ {
+  "word": "doctor",
+  "answer": "doctor",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "醫生",
+  "en_def": "a person whose job is to treat sick people",
+  "sentence": "The {{BLANK}} told my father to walk for thirty minutes every day and to eat less salt and sugar.",
+  "cn": "醫生告訴我爸爸每天走路三十分鐘，而且要少吃鹽和糖。",
+  "cnMarked": "【醫生】告訴我爸爸每天走路三十分鐘，而且要少吃鹽和糖。",
+  "isHead": false,
+  "level": 1,
+  "family": "doctrine"
+ },
+ {
+  "word": "document",
+  "answer": "document",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "文件",
+  "en_def": "an official paper with information on it",
+  "sentence": "Keep this {{BLANK}} in a safe place because you will need it when you apply for your passport next year.",
+  "cn": "把這份文件放在安全的地方，因為明年申請護照時你會需要它。",
+  "cnMarked": "把這份【文件】放在安全的地方，因為明年申請護照時你會需要它。",
+  "isHead": true,
+  "level": 5,
+  "family": "document"
+ },
+ {
+  "word": "documentary",
+  "answer": "documentary",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "紀錄片",
+  "en_def": "a film or TV program about real people and events",
+  "sentence": "We watched a {{BLANK}} about penguins in science class, and I was surprised to learn how far they walk to find food.",
+  "cn": "我們在自然課看了一部關於企鵝的紀錄片，我很驚訝牠們為了找食物走那麼遠。",
+  "cnMarked": "我們在自然課看了一部關於企鵝的【紀錄片】，我很驚訝牠們為了找食物走那麼遠。",
+  "isHead": true,
+  "level": 5,
+  "family": "document"
+ },
+ {
+  "word": "document",
+  "answer": "document",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "記錄；記載",
+  "en_def": "to record something in writing, photos, or film",
+  "sentence": "The scientists spent five years in the forest to {{BLANK}} the daily life of the wild monkeys that live there.",
+  "cn": "科學家在森林裡花了五年時間記錄住在那裡的野生猴子的日常生活。",
+  "cnMarked": "科學家在森林裡花了五年時間【記錄】住在那裡的野生猴子的日常生活。",
+  "isHead": false,
+  "level": 5,
+  "family": "document"
+ },
+ {
+  "word": "documentary",
+  "answer": "documentary",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "書面的；紀實的",
+  "en_def": "in the form of written papers; based on real facts",
+  "sentence": "The lawyer asked for {{BLANK}} evidence, such as receipts and letters, to prove that the money had really been paid.",
+  "cn": "律師要求書面證據，例如收據和信件，以證明那筆錢真的付過了。",
+  "cnMarked": "律師要求【書面】證據，例如收據和信件，以證明那筆錢真的付過了。",
+  "isHead": false,
+  "level": 5,
+  "family": "document"
+ },
+ {
+  "word": "official document",
+  "answer": "official document",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "正式文件",
+  "en_def": "a paper given by the government or an organization",
+  "sentence": "A birth certificate is an {{BLANK}} that shows when and where you were born, so never throw it away.",
+  "cn": "出生證明是一份顯示你出生時間和地點的正式文件，所以千萬別丟掉。",
+  "cnMarked": "出生證明是一份顯示你出生時間和地點的【正式文件】，所以千萬別丟掉。",
+  "isHead": false,
+  "level": null,
+  "family": "document"
+ },
+ {
+  "word": "documentation",
+  "answer": "documentation",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "證明文件；文件資料",
+  "en_def": "papers that prove something or give information",
+  "sentence": "Bring all the necessary {{BLANK}} to the bank, including your ID card and a recent bill with your address on it.",
+  "cn": "把所有必要的證明文件帶到銀行，包括身分證和一張有你地址的近期帳單。",
+  "cnMarked": "把所有必要的【證明文件】帶到銀行，包括身分證和一張有你地址的近期帳單。",
+  "isHead": false,
+  "level": null,
+  "family": "document"
+ },
+ {
+  "word": "domain",
+  "answer": "domain",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "領域；範圍",
+  "en_def": "an area of activity, interest, or knowledge",
+  "sentence": "Cooking used to be seen as a woman's {{BLANK}}, but today many of the world's most famous chefs are men.",
+  "cn": "烹飪過去被視為女性的領域，但今天世界上許多最有名的主廚都是男性。",
+  "cnMarked": "烹飪過去被視為女性的【領域】，但今天世界上許多最有名的主廚都是男性。",
+  "isHead": true,
+  "level": 5,
+  "family": "domain"
+ },
+ {
+  "word": "domain name",
+  "answer": "domain name",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "網域名稱",
+  "en_def": "the address of a website, such as example.com",
+  "sentence": "Before you build a website for your shop, you need to buy a {{BLANK}} that customers can remember easily.",
+  "cn": "在為你的店建立網站之前，你需要買一個顧客容易記住的網域名稱。",
+  "cnMarked": "在為你的店建立網站之前，你需要買一個顧客容易記住的【網域名稱】。",
+  "isHead": false,
+  "level": null,
+  "family": "domain"
+ },
+ {
+  "word": "public domain",
+  "answer": "public domain",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "公有領域",
+  "en_def": "works that anyone may use freely because no one owns the rights",
+  "sentence": "Old books whose authors died more than seventy years ago are in the {{BLANK}}, so anyone can print or share them freely.",
+  "cn": "作者去世超過七十年的舊書屬於公有領域，所以任何人都可以自由印製或分享。",
+  "cnMarked": "作者去世超過七十年的舊書屬於【公有領域】，所以任何人都可以自由印製或分享。",
+  "isHead": false,
+  "level": null,
+  "family": "domain"
+ },
+ {
+  "word": "domestic",
+  "answer": "Domestic",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "國內的；家庭的",
+  "en_def": "inside one country; connected with the home",
+  "sentence": "{{BLANK}} flights from Taipei to Kaohsiung take less than an hour, but most people prefer the high-speed train.",
+  "cn": "從台北到高雄的國內航班不到一小時，但大多數人偏好高鐵。",
+  "cnMarked": "從台北到高雄的【國內】航班不到一小時，但大多數人偏好高鐵。",
+  "isHead": false,
+  "level": 2,
+  "family": "domain"
+ },
+ {
+  "word": "dome",
+  "answer": "dome",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "圓頂",
+  "en_def": "a round roof shaped like half a ball",
+  "sentence": "The {{BLANK}} of the old church is painted with gold stars, and visitors always look up as soon as they walk in.",
+  "cn": "這座古老教堂的圓頂上畫著金色的星星，遊客一走進去就會抬頭看。",
+  "cnMarked": "這座古老教堂的【圓頂】上畫著金色的星星，遊客一走進去就會抬頭看。",
+  "isHead": true,
+  "level": 5,
+  "family": "dome"
+ },
+ {
+  "word": "domed",
+  "answer": "domed",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "有圓頂的",
+  "en_def": "having a round roof",
+  "sentence": "The new {{BLANK}} stadium lets baseball games continue even on rainy days, so fans no longer worry about the weather.",
+  "cn": "新的圓頂體育場讓棒球比賽即使在雨天也能繼續進行，所以球迷不再擔心天氣。",
+  "cnMarked": "新的【圓頂】體育場讓棒球比賽即使在雨天也能繼續進行，所以球迷不再擔心天氣。",
+  "isHead": false,
+  "level": null,
+  "family": "dome"
+ },
+ {
+  "word": "glass dome",
+  "answer": "glass dome",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "玻璃圓頂",
+  "en_def": "a round roof made of glass",
+  "sentence": "The shopping mall has a huge {{BLANK}} that lets sunlight pour into the center of the building all day long.",
+  "cn": "這座購物中心有一個巨大的玻璃圓頂，讓陽光整天灑進大樓中央。",
+  "cnMarked": "這座購物中心有一個巨大的【玻璃圓頂】，讓陽光整天灑進大樓中央。",
+  "isHead": false,
+  "level": null,
+  "family": "dome"
+ },
+ {
+  "word": "donate",
+  "answer": "donate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "捐贈；捐獻",
+  "en_def": "to give money or things to help people",
+  "sentence": "Every winter our school asks students to {{BLANK}} warm clothes they no longer wear to families in need.",
+  "cn": "每年冬天我們學校都請學生把不再穿的保暖衣物捐給有需要的家庭。",
+  "cnMarked": "每年冬天我們學校都請學生把不再穿的保暖衣物【捐】給有需要的家庭。",
+  "isHead": true,
+  "level": 5,
+  "family": "donate"
+ },
+ {
+  "word": "donation",
+  "answer": "donation",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "捐款；捐贈物",
+  "en_def": "money or things given to help people",
+  "sentence": "The animal shelter received a large {{BLANK}} from a local company, which will pay for food and medicine for a whole year.",
+  "cn": "動物收容所收到當地一家公司的一大筆捐款，足以支付一整年的食物和醫藥費。",
+  "cnMarked": "動物收容所收到當地一家公司的一大筆【捐款】，足以支付一整年的食物和醫藥費。",
+  "isHead": true,
+  "level": 5,
+  "family": "donate"
+ },
+ {
+  "word": "donor",
+  "answer": "donor",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "捐贈者",
+  "en_def": "a person who gives money, blood, or an organ to help others",
+  "sentence": "A generous {{BLANK}} gave the library ten thousand books, but she asked the staff not to tell anyone her name.",
+  "cn": "一位慷慨的捐贈者送給圖書館一萬本書，但她要求館員不要告訴任何人她的名字。",
+  "cnMarked": "一位慷慨的【捐贈者】送給圖書館一萬本書，但她要求館員不要告訴任何人她的名字。",
+  "isHead": true,
+  "level": 5,
+  "family": "donate"
+ },
+ {
+  "word": "blood donor",
+  "answer": "blood donors",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "捐血者",
+  "en_def": "a person who gives blood for sick people to use",
+  "sentence": "Hospitals need more {{BLANK}} in summer because fewer people give blood during the hot vacation months.",
+  "cn": "醫院在夏天需要更多捐血者，因為在炎熱的假期月份捐血的人比較少。",
+  "cnMarked": "醫院在夏天需要更多【捐血者】，因為在炎熱的假期月份捐血的人比較少。",
+  "isHead": false,
+  "level": null,
+  "family": "donate"
+ },
+ {
+  "word": "make a donation",
+  "answer": "make a donation",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "捐款",
+  "en_def": "to give money to a charity or cause",
+  "sentence": "If you would like to {{BLANK}} to the earthquake fund, you can scan the QR code on the poster by the door.",
+  "cn": "如果你想為地震基金捐款，可以掃描門邊海報上的 QR code。",
+  "cnMarked": "如果你想為地震基金【捐款】，可以掃描門邊海報上的 QR code。",
+  "isHead": false,
+  "level": null,
+  "family": "donate"
+ },
+ {
+  "word": "organ donation",
+  "answer": "organ donation",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "器官捐贈",
+  "en_def": "giving a part of your body, such as a kidney, to save someone",
+  "sentence": "Thanks to {{BLANK}}, the young man received a new kidney and was able to return to school six months later.",
+  "cn": "多虧器官捐贈，這位年輕人得到一顆新的腎臟，六個月後就能回到學校。",
+  "cnMarked": "多虧【器官捐贈】，這位年輕人得到一顆新的腎臟，六個月後就能回到學校。",
+  "isHead": false,
+  "level": null,
+  "family": "donate"
+ },
+ {
+  "word": "doorway",
+  "answer": "doorway",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "門口",
+  "en_def": "the space where a door opens into a room or building",
+  "sentence": "The tall man stood in the {{BLANK}} for a moment, looking around the crowded room for his friends.",
+  "cn": "那個高個子男人在門口站了一會兒，在擁擠的房間裡四處尋找他的朋友。",
+  "cnMarked": "那個高個子男人在【門口】站了一會兒，在擁擠的房間裡四處尋找他的朋友。",
+  "isHead": true,
+  "level": 5,
+  "family": "doorway"
+ },
+ {
+  "word": "door",
+  "answer": "door",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "門",
+  "en_def": "the thing you open to go into a room or building",
+  "sentence": "Please close the {{BLANK}} quietly when you leave, because the baby has just fallen asleep in the next room.",
+  "cn": "離開時請輕輕關門，因為寶寶剛在隔壁房間睡著。",
+  "cnMarked": "離開時請輕輕關【門】，因為寶寶剛在隔壁房間睡著。",
+  "isHead": false,
+  "level": 1,
+  "family": "doorway"
+ },
+ {
+  "word": "doorbell",
+  "answer": "doorbell",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "門鈴",
+  "en_def": "a bell beside a door that visitors ring",
+  "sentence": "Someone rang the {{BLANK}} at seven this morning, but when I opened the door, there was only a package on the step.",
+  "cn": "今天早上七點有人按門鈴，但當我開門時，台階上只有一個包裹。",
+  "cnMarked": "今天早上七點有人按【門鈴】，但當我開門時，台階上只有一個包裹。",
+  "isHead": false,
+  "level": null,
+  "family": "doorway"
+ },
+ {
+  "word": "doorstep",
+  "answer": "doorstep",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "門階；門口",
+  "en_def": "the step just outside the door of a building",
+  "sentence": "Every morning the newspaper is left on our {{BLANK}}, and my grandfather reads it with his first cup of tea.",
+  "cn": "每天早上報紙都放在我們家門階上，我爺爺會邊喝第一杯茶邊看報。",
+  "cnMarked": "每天早上報紙都放在我們家【門階】上，我爺爺會邊喝第一杯茶邊看報。",
+  "isHead": false,
+  "level": null,
+  "family": "doorway"
+ },
+ {
+  "word": "next door",
+  "answer": "next door",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "隔壁",
+  "en_def": "in the house or room beside yours",
+  "sentence": "The family who lives {{BLANK}} has a big dog that barks every time someone walks past their gate.",
+  "cn": "住在隔壁的那家人有一隻大狗，每次有人經過他們的大門牠就會叫。",
+  "cnMarked": "住在【隔壁】的那家人有一隻大狗，每次有人經過他們的大門牠就會叫。",
+  "isHead": false,
+  "level": null,
+  "family": "doorway"
+ },
+ {
+  "word": "dough",
+  "answer": "dough",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "麵團",
+  "en_def": "a soft mix of flour and water used to make bread",
+  "sentence": "Grandma let the {{BLANK}} rest for an hour before she shaped it into small round buns and put them in the oven.",
+  "cn": "奶奶讓麵團靜置一小時，然後把它捏成小圓麵包放進烤箱。",
+  "cnMarked": "奶奶讓【麵團】靜置一小時，然後把它捏成小圓麵包放進烤箱。",
+  "isHead": true,
+  "level": 5,
+  "family": "dough"
+ },
+ {
+  "word": "knead the dough",
+  "answer": "knead the dough",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "揉麵團",
+  "en_def": "to press and push the dough with your hands",
+  "sentence": "You must {{BLANK}} for at least ten minutes so that the bread will be soft and light when it is baked.",
+  "cn": "你必須揉麵團至少十分鐘，這樣烤出來的麵包才會柔軟蓬鬆。",
+  "cnMarked": "你必須【揉麵團】至少十分鐘，這樣烤出來的麵包才會柔軟蓬鬆。",
+  "isHead": false,
+  "level": null,
+  "family": "dough"
+ },
+ {
+  "word": "doughnut",
+  "answer": "doughnuts",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "甜甜圈",
+  "en_def": "a small round sweet cake fried in oil, often with a hole in the middle",
+  "sentence": "My little brother loves chocolate {{BLANK}}, so we always stop at the bakery on the way home from school.",
+  "cn": "我弟弟愛吃巧克力甜甜圈，所以我們放學回家的路上總會在麵包店停一下。",
+  "cnMarked": "我弟弟愛吃巧克力【甜甜圈】，所以我們放學回家的路上總會在麵包店停一下。",
+  "isHead": false,
+  "level": 3,
+  "family": "dough"
+ },
+ {
+  "word": "pizza dough",
+  "answer": "pizza dough",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "披薩麵團",
+  "en_def": "the dough used to make the base of a pizza",
+  "sentence": "The restaurant makes its own {{BLANK}} every morning, which is why the crust tastes so fresh and crispy.",
+  "cn": "這家餐廳每天早上自己做披薩麵團，這就是為什麼餅皮吃起來那麼新鮮酥脆。",
+  "cnMarked": "這家餐廳每天早上自己做【披薩麵團】，這就是為什麼餅皮吃起來那麼新鮮酥脆。",
+  "isHead": false,
+  "level": null,
+  "family": "dough"
+ },
+ {
+  "word": "dreadful",
+  "answer": "dreadful",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "可怕的；糟糕的",
+  "en_def": "very bad or unpleasant",
+  "sentence": "The weather was {{BLANK}} during our trip; it rained every day, and the wind was so strong that we could not use umbrellas.",
+  "cn": "我們旅行期間的天氣糟糕透了；每天都下雨，風大到我們無法撐傘。",
+  "cnMarked": "我們旅行期間的天氣【糟糕透了】；每天都下雨，風大到我們無法撐傘。",
+  "isHead": true,
+  "level": 5,
+  "family": "dreadful"
+ },
+ {
+  "word": "dread",
+  "answer": "dread",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "害怕；畏懼",
+  "en_def": "to feel very worried about something that will happen",
+  "sentence": "I {{BLANK}} going to the dentist, so I always wait until the pain becomes too strong to ignore.",
+  "cn": "我害怕看牙醫，所以總是等到痛得無法忽視才去。",
+  "cnMarked": "我【害怕】看牙醫，所以總是等到痛得無法忽視才去。",
+  "isHead": false,
+  "level": 4,
+  "family": "dreadful"
+ },
+ {
+  "word": "dread",
+  "answer": "dread",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "恐懼；擔憂",
+  "en_def": "a strong feeling of fear about something that will happen",
+  "sentence": "She felt a sense of {{BLANK}} as she slowly opened the envelope with her exam results inside.",
+  "cn": "她慢慢打開裝著考試成績的信封時，感到一陣恐懼。",
+  "cnMarked": "她慢慢打開裝著考試成績的信封時，感到一陣【恐懼】。",
+  "isHead": false,
+  "level": 4,
+  "family": "dreadful"
+ },
+ {
+  "word": "dreadfully",
+  "answer": "dreadfully",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "非常；糟糕地",
+  "en_def": "very; extremely (used for something bad)",
+  "sentence": "I am {{BLANK}} sorry for breaking your vase; please let me pay for a new one this weekend.",
+  "cn": "打破你的花瓶我非常抱歉；請讓我這個週末賠你一個新的。",
+  "cnMarked": "打破你的花瓶我【非常】抱歉；請讓我這個週末賠你一個新的。",
+  "isHead": false,
+  "level": null,
+  "family": "dreadful"
+ },
+ {
+  "word": "driveway",
+  "answer": "driveway",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "私人車道",
+  "en_def": "a short private road from the street to a house or garage",
+  "sentence": "Please do not park in front of our {{BLANK}}, because my mother cannot get her car out of the garage.",
+  "cn": "請不要停在我們家車道前面，因為我媽媽的車會開不出車庫。",
+  "cnMarked": "請不要停在我們家【車道】前面，因為我媽媽的車會開不出車庫。",
+  "isHead": true,
+  "level": 5,
+  "family": "driveway"
+ },
+ {
+  "word": "drive",
+  "answer": "drive",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "開車；駕駛",
+  "en_def": "to control a car and make it move",
+  "sentence": "My sister is learning to {{BLANK}}, so she practices in the empty parking lot every Sunday morning with Dad.",
+  "cn": "我姐姐在學開車，所以她每個星期天早上和爸爸在空停車場練習。",
+  "cnMarked": "我姐姐在學【開車】，所以她每個星期天早上和爸爸在空停車場練習。",
+  "isHead": false,
+  "level": 1,
+  "family": "driveway"
+ },
+ {
+  "word": "driver",
+  "answer": "driver",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "駕駛；司機",
+  "en_def": "a person who drives a car, bus, or truck",
+  "sentence": "The bus {{BLANK}} waited patiently while the old woman slowly climbed the steps with her heavy bags.",
+  "cn": "公車司機耐心等候，老太太提著沉重的袋子慢慢爬上階梯。",
+  "cnMarked": "公車【司機】耐心等候，老太太提著沉重的袋子慢慢爬上階梯。",
+  "isHead": false,
+  "level": 1,
+  "family": "driveway"
+ },
+ {
+  "word": "driver's license",
+  "answer": "driver's license",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "駕照",
+  "en_def": "an official card that allows you to drive",
+  "sentence": "You have to be eighteen to get a {{BLANK}} in Taiwan, and you must pass both a written test and a road test.",
+  "cn": "在台灣你必須年滿十八歲才能考駕照，而且必須通過筆試和路考。",
+  "cnMarked": "在台灣你必須年滿十八歲才能考【駕照】，而且必須通過筆試和路考。",
+  "isHead": false,
+  "level": null,
+  "family": "driveway"
+ },
+ {
+  "word": "drive sb crazy",
+  "answer": "driving me crazy",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "使某人抓狂",
+  "en_def": "to make someone very annoyed",
+  "sentence": "The noise from the construction site next door is {{BLANK}}, so I study at the library in the afternoon.",
+  "cn": "隔壁工地的噪音快把我逼瘋了，所以我下午都在圖書館讀書。",
+  "cnMarked": "隔壁工地的噪音【快把我逼瘋了】，所以我下午都在圖書館讀書。",
+  "isHead": false,
+  "level": null,
+  "family": "driveway"
+ },
+ {
+  "word": "drought",
+  "answer": "drought",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "乾旱",
+  "en_def": "a long period with little or no rain",
+  "sentence": "After six months of {{BLANK}}, the reservoir was almost empty, and the city had to limit water use to five days a week.",
+  "cn": "經過六個月的乾旱，水庫幾乎見底，城市必須把用水限制為每週五天。",
+  "cnMarked": "經過六個月的【乾旱】，水庫幾乎見底，城市必須把用水限制為每週五天。",
+  "isHead": true,
+  "level": 5,
+  "family": "drought"
+ },
+ {
+  "word": "severe drought",
+  "answer": "severe drought",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "嚴重乾旱",
+  "en_def": "a very serious lack of rain",
+  "sentence": "The {{BLANK}} in the south destroyed most of the rice crop, and farmers asked the government for help.",
+  "cn": "南部的嚴重乾旱毀掉了大部分稻作，農民向政府求助。",
+  "cnMarked": "南部的【嚴重乾旱】毀掉了大部分稻作，農民向政府求助。",
+  "isHead": false,
+  "level": null,
+  "family": "drought"
+ },
+ {
+  "word": "dry",
+  "answer": "dry",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "乾的",
+  "en_def": "without water or wet feeling",
+  "sentence": "The towels on the balcony are already {{BLANK}}, so please bring them in before it starts raining again.",
+  "cn": "陽台上的毛巾已經乾了，請在再次下雨前把它們收進來。",
+  "cnMarked": "陽台上的毛巾已經【乾了】，請在再次下雨前把它們收進來。",
+  "isHead": false,
+  "level": 1,
+  "family": "drought"
+ },
+ {
+  "word": "dry up",
+  "answer": "dry up",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "乾涸",
+  "en_def": "(of a river or lake) to lose all its water",
+  "sentence": "The small river near our village tends to {{BLANK}} every summer, and the fish disappear until the rains return.",
+  "cn": "我們村子附近的小河每年夏天都會乾涸，魚群消失直到雨季再來。",
+  "cnMarked": "我們村子附近的小河每年夏天都會【乾涸】，魚群消失直到雨季再來。",
+  "isHead": false,
+  "level": null,
+  "family": "drought"
+ },
+ {
+  "word": "ecological",
+  "answer": "ecological",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "生態的",
+  "en_def": "connected with the relationship between living things and their environment",
+  "sentence": "The oil spill caused an {{BLANK}} disaster along the coast, killing thousands of birds and fish.",
+  "cn": "漏油在沿岸造成一場生態災難，導致數千隻鳥和魚死亡。",
+  "cnMarked": "漏油在沿岸造成一場【生態】災難，導致數千隻鳥和魚死亡。",
+  "isHead": true,
+  "level": 5,
+  "family": "ecological"
+ },
+ {
+  "word": "ecology",
+  "answer": "ecology",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "生態；生態學",
+  "en_def": "the study of how living things depend on each other and their surroundings",
+  "sentence": "She studied {{BLANK}} at university because she wanted to understand how animals, plants, and people depend on each other.",
+  "cn": "她在大學讀生態學，因為她想了解動物、植物和人類如何互相依賴。",
+  "cnMarked": "她在大學讀【生態學】，因為她想了解動物、植物和人類如何互相依賴。",
+  "isHead": true,
+  "level": 5,
+  "family": "ecological"
+ },
+ {
+  "word": "ecosystem",
+  "answer": "ecosystem",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "生態系統",
+  "en_def": "all the living things in an area and the way they affect each other",
+  "sentence": "A coral reef is a rich {{BLANK}} where thousands of different fish, plants, and tiny animals live together.",
+  "cn": "珊瑚礁是一個豐富的生態系統，數千種不同的魚類、植物和微小動物一起生活在那裡。",
+  "cnMarked": "珊瑚礁是一個豐富的【生態系統】，數千種不同的魚類、植物和微小動物一起生活在那裡。",
+  "isHead": true,
+  "level": 5,
+  "family": "ecological"
+ },
+ {
+  "word": "ecologist",
+  "answer": "ecologist",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "生態學家",
+  "en_def": "a scientist who studies ecology",
+  "sentence": "An {{BLANK}} visited our school to explain why cutting down the forest on the hill would harm the birds and the river.",
+  "cn": "一位生態學家來我們學校解釋為什麼砍掉山丘上的森林會傷害鳥類和河流。",
+  "cnMarked": "一位【生態學家】來我們學校解釋為什麼砍掉山丘上的森林會傷害鳥類和河流。",
+  "isHead": false,
+  "level": null,
+  "family": "ecological"
+ },
+ {
+  "word": "eco-friendly",
+  "answer": "eco-friendly",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "環保的",
+  "en_def": "not harmful to the environment",
+  "sentence": "More and more shops now sell {{BLANK}} products, such as bamboo toothbrushes and bags made from old plastic bottles.",
+  "cn": "越來越多商店現在販賣環保產品，例如竹製牙刷和用舊寶特瓶做的袋子。",
+  "cnMarked": "越來越多商店現在販賣【環保】產品，例如竹製牙刷和用舊寶特瓶做的袋子。",
+  "isHead": false,
+  "level": null,
+  "family": "ecological"
+ },
+ {
+  "word": "ecological footprint",
+  "answer": "ecological footprint",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "生態足跡",
+  "en_def": "the amount of natural resources a person or group uses",
+  "sentence": "You can reduce your {{BLANK}} by taking the bus, eating less meat, and buying only what you really need.",
+  "cn": "你可以透過搭公車、少吃肉、只買真正需要的東西來減少你的生態足跡。",
+  "cnMarked": "你可以透過搭公車、少吃肉、只買真正需要的東西來減少你的【生態足跡】。",
+  "isHead": false,
+  "level": null,
+  "family": "ecological"
+ },
+ {
+  "word": "ego",
+  "answer": "ego",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "自我；自尊心",
+  "en_def": "your idea of how important or good you are",
+  "sentence": "The famous actor has a huge {{BLANK}}; he talks about himself all the time and never listens to anyone else.",
+  "cn": "這位名演員自我意識很強；他總是談論自己，從不聽別人說話。",
+  "cnMarked": "這位名演員【自我意識】很強；他總是談論自己，從不聽別人說話。",
+  "isHead": true,
+  "level": 5,
+  "family": "ego"
+ },
+ {
+  "word": "boost one's ego",
+  "answer": "boosted his ego",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "增強某人的自信心",
+  "en_def": "to make someone feel more confident and important",
+  "sentence": "Winning the speech contest really {{BLANK}}, and now he is not afraid to speak in front of the whole school.",
+  "cn": "贏得演講比賽真的增強了他的自信心，現在他不怕在全校面前說話了。",
+  "cnMarked": "贏得演講比賽真的【增強了他的自信心】，現在他不怕在全校面前說話了。",
+  "isHead": false,
+  "level": null,
+  "family": "ego"
+ },
+ {
+  "word": "egocentric",
+  "answer": "egocentric",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "自我中心的",
+  "en_def": "thinking only about yourself",
+  "sentence": "My roommate is so {{BLANK}} that he plays loud music at midnight without thinking about anyone else in the apartment.",
+  "cn": "我室友非常自我中心，半夜放很大聲的音樂，完全不考慮公寓裡的其他人。",
+  "cnMarked": "我室友非常【自我中心】，半夜放很大聲的音樂，完全不考慮公寓裡的其他人。",
+  "isHead": false,
+  "level": null,
+  "family": "ego"
+ },
+ {
+  "word": "elaborate",
+  "answer": "elaborate",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "精心製作的；複雜的",
+  "en_def": "having many parts and details; carefully made",
+  "sentence": "The bride wore an {{BLANK}} dress covered with tiny flowers that took three people two months to sew by hand.",
+  "cn": "新娘穿著一件精心製作的禮服，上面佈滿小花，三個人花了兩個月手工縫製。",
+  "cnMarked": "新娘穿著一件【精心製作的】禮服，上面佈滿小花，三個人花了兩個月手工縫製。",
+  "isHead": true,
+  "level": 5,
+  "family": "elaborate"
+ },
+ {
+  "word": "elaborate",
+  "answer": "elaborate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "詳細說明",
+  "en_def": "to explain something in more detail",
+  "sentence": "Your plan sounds interesting, but could you {{BLANK}} on how you are going to pay for all the equipment?",
+  "cn": "你的計畫聽起來很有趣，但你能詳細說明打算怎麼支付所有設備的費用嗎？",
+  "cnMarked": "你的計畫聽起來很有趣，但你能【詳細說明】打算怎麼支付所有設備的費用嗎？",
+  "isHead": false,
+  "level": 5,
+  "family": "elaborate"
+ },
+ {
+  "word": "elaborately",
+  "answer": "elaborately",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "精心地",
+  "en_def": "with a lot of care and detail",
+  "sentence": "The cake was {{BLANK}} decorated with chocolate leaves and sugar roses, so nobody wanted to be the first to cut it.",
+  "cn": "蛋糕被精心裝飾著巧克力葉子和糖玫瑰，所以沒有人想當第一個切它的人。",
+  "cnMarked": "蛋糕被【精心】裝飾著巧克力葉子和糖玫瑰，所以沒有人想當第一個切它的人。",
+  "isHead": false,
+  "level": null,
+  "family": "elaborate"
+ },
+ {
+  "word": "labor",
+  "answer": "labor",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "勞動；勞力",
+  "en_def": "hard physical work",
+  "sentence": "Building the stone wall by hand took a whole year of hard {{BLANK}}, but the farmer was proud of every stone.",
+  "cn": "徒手砌這道石牆花了整整一年的辛苦勞動，但農夫對每一塊石頭都感到自豪。",
+  "cnMarked": "徒手砌這道石牆花了整整一年的辛苦【勞動】，但農夫對每一塊石頭都感到自豪。",
+  "isHead": false,
+  "level": 4,
+  "family": "elaborate"
+ },
+ {
+  "word": "eligible",
+  "answer": "eligible",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "有資格的；合格的",
+  "en_def": "allowed to do or have something because you meet the rules",
+  "sentence": "Only students who have finished all three levels are {{BLANK}} for the advanced course, so please check your records first.",
+  "cn": "只有完成全部三個等級的學生才有資格上進階課程，所以請先查看你的紀錄。",
+  "cnMarked": "只有完成全部三個等級的學生才【有資格】上進階課程，所以請先查看你的紀錄。",
+  "isHead": true,
+  "level": 5,
+  "family": "eligible"
+ },
+ {
+  "word": "be eligible for",
+  "answer": "are eligible for",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "有資格獲得…",
+  "en_def": "to have the right to get something",
+  "sentence": "People over sixty-five {{BLANK}} a free bus pass in this city, and they can apply for it at any MRT station.",
+  "cn": "這座城市六十五歲以上的人有資格獲得免費公車卡，可以在任何捷運站申請。",
+  "cnMarked": "這座城市六十五歲以上的人【有資格獲得】免費公車卡，可以在任何捷運站申請。",
+  "isHead": false,
+  "level": null,
+  "family": "eligible"
+ },
+ {
+  "word": "eligibility",
+  "answer": "eligibility",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "資格",
+  "en_def": "the state of being allowed to do or have something",
+  "sentence": "Please read the {{BLANK}} rules carefully before you enter the contest, because only students under eighteen can take part.",
+  "cn": "參加比賽前請仔細閱讀資格規定，因為只有十八歲以下的學生可以參加。",
+  "cnMarked": "參加比賽前請仔細閱讀【資格】規定，因為只有十八歲以下的學生可以參加。",
+  "isHead": false,
+  "level": null,
+  "family": "eligible"
+ },
+ {
+  "word": "ineligible",
+  "answer": "ineligible",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "無資格的",
+  "en_def": "not allowed to do or have something",
+  "sentence": "He was {{BLANK}} to vote in the election because he had moved to the city only two weeks earlier.",
+  "cn": "他沒有資格在這次選舉中投票，因為他兩週前才搬到這座城市。",
+  "cnMarked": "他【沒有資格】在這次選舉中投票，因為他兩週前才搬到這座城市。",
+  "isHead": false,
+  "level": null,
+  "family": "eligible"
+ },
+ {
+  "word": "elect",
+  "answer": "elect",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "選舉；推選",
+  "en_def": "to choose someone for a position by voting",
+  "sentence": "The class will {{BLANK}} a new leader next Monday, and three students have already said they want the job.",
+  "cn": "班上下星期一將選出新班長，已經有三位學生表示想要這個職位。",
+  "cnMarked": "班上下星期一將【選出】新班長，已經有三位學生表示想要這個職位。",
+  "isHead": false,
+  "level": 3,
+  "family": "eligible"
+ },
+ {
+  "word": "eloquent",
+  "answer": "eloquent",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "雄辯的；口才好的",
+  "en_def": "able to speak or write well and persuade people",
+  "sentence": "The young lawyer was so {{BLANK}} that even people who disagreed with her enjoyed listening to her speak.",
+  "cn": "這位年輕律師非常雄辯，連不同意她的人都喜歡聽她說話。",
+  "cnMarked": "這位年輕律師非常【雄辯】，連不同意她的人都喜歡聽她說話。",
+  "isHead": true,
+  "level": 5,
+  "family": "eloquent"
+ },
+ {
+  "word": "eloquently",
+  "answer": "eloquently",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "雄辯地；有說服力地",
+  "en_def": "in a way that is clear, strong, and persuasive",
+  "sentence": "He spoke so {{BLANK}} about the need for clean rivers that the city council agreed to fund the project that very night.",
+  "cn": "他對乾淨河流的必要性說得非常有說服力，市議會當晚就同意資助這項計畫。",
+  "cnMarked": "他對乾淨河流的必要性說得非常【有說服力】，市議會當晚就同意資助這項計畫。",
+  "isHead": false,
+  "level": null,
+  "family": "eloquent"
+ },
+ {
+  "word": "eloquence",
+  "answer": "eloquence",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "口才；雄辯",
+  "en_def": "the ability to speak or write well and persuade people",
+  "sentence": "Martin Luther King Jr. is remembered for his {{BLANK}}, and his speeches are still studied in schools around the world.",
+  "cn": "馬丁·路德·金恩以他的口才為人所銘記，他的演講至今仍在世界各地的學校被研究。",
+  "cnMarked": "馬丁·路德·金恩以他的【口才】為人所銘記，他的演講至今仍在世界各地的學校被研究。",
+  "isHead": false,
+  "level": null,
+  "family": "eloquent"
+ },
+ {
+  "word": "embrace",
+  "answer": "embrace",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "擁抱",
+  "en_def": "to hold someone in your arms to show love",
+  "sentence": "At the airport, the mother ran to {{BLANK}} her son, whom she had not seen for three long years.",
+  "cn": "在機場，母親跑過去擁抱她三年沒見的兒子。",
+  "cnMarked": "在機場，母親跑過去【擁抱】她三年沒見的兒子。",
+  "isHead": true,
+  "level": 5,
+  "family": "embrace"
+ },
+ {
+  "word": "embrace",
+  "answer": "embrace",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "欣然接受",
+  "en_def": "to accept a new idea or change gladly",
+  "sentence": "Many older workers find it hard to {{BLANK}} new technology, but my grandfather learned to use a tablet in a week.",
+  "cn": "許多年長的員工覺得很難欣然接受新科技，但我爺爺一週就學會用平板電腦了。",
+  "cnMarked": "許多年長的員工覺得很難【欣然接受】新科技，但我爺爺一週就學會用平板電腦了。",
+  "isHead": false,
+  "level": 5,
+  "family": "embrace"
+ },
+ {
+  "word": "embrace",
+  "answer": "embrace",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "擁抱",
+  "en_def": "the act of holding someone in your arms",
+  "sentence": "The two old friends held each other in a warm {{BLANK}} before they said goodbye at the train station.",
+  "cn": "兩位老朋友在火車站道別前溫暖地擁抱了彼此。",
+  "cnMarked": "兩位老朋友在火車站道別前溫暖地【擁抱】了彼此。",
+  "isHead": false,
+  "level": 5,
+  "family": "embrace"
+ },
+ {
+  "word": "brace yourself",
+  "answer": "Brace yourself",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "做好心理準備",
+  "en_def": "to get ready for something unpleasant",
+  "sentence": "{{BLANK}} for some bad news: the school trip to Japan has been canceled because of the typhoon.",
+  "cn": "做好心理準備聽壞消息：去日本的校外教學因為颱風取消了。",
+  "cnMarked": "【做好心理準備】聽壞消息：去日本的校外教學因為颱風取消了。",
+  "isHead": false,
+  "level": null,
+  "family": "embrace"
+ }
+];
+const MCQS = [
+ {
+  "q": "This medicine comes as a small white tablet. Drop it into a glass of warm water and wait for it to ______ before you drink it.",
+  "options": [
+   "dissolve",
+   "distract",
+   "donate",
+   "embrace"
+  ],
+  "answer": 0,
+  "vocabIndex": 0
+ },
+ {
+  "q": "Many people use the words \"weather\" and \"climate\" as if they mean the same thing. However, scientists make a clear ______ between the two in their reports.",
+  "options": [
+   "donation",
+   "distinction",
+   "doctrine",
+   "distraction"
+  ],
+  "answer": 1,
+  "vocabIndex": 4
+ },
+ {
+  "q": "You can tell this bakery's bread from any other in town with your eyes closed. It has a ______ smell of butter and honey that fills the whole street.",
+  "options": [
+   "distinctive",
+   "dreadful",
+   "eligible",
+   "domestic"
+  ],
+  "answer": 0,
+  "vocabIndex": 5
+ },
+ {
+  "q": "Please put your phone away during our family dinner tonight. The messages keep making noise, and they ______ everyone at the table from the conversation with Grandma.",
+  "options": [
+   "elect",
+   "drive",
+   "distract",
+   "dissolve"
+  ],
+  "answer": 2,
+  "vocabIndex": 10
+ },
+ {
+  "q": "Members of the group believe that all people should share what they own equally. This ______ guides every decision they make about money, work, and family life.",
+  "options": [
+   "doctrine",
+   "dough",
+   "drought",
+   "doorway"
+  ],
+  "answer": 0,
+  "vocabIndex": 14
+ },
+ {
+  "q": "Before you can open a bank account, you must show who you are. Bring an official ______ with your photo on it, such as your ID card or passport.",
+  "options": [
+   "donor",
+   "dome",
+   "driveway",
+   "document"
+  ],
+  "answer": 3,
+  "vocabIndex": 17
+ },
+ {
+  "q": "Last night we watched a ninety-minute film about real lions in Africa. The ______ followed one family of lions for a whole year and showed how they hunt.",
+  "options": [
+   "drought",
+   "documentary",
+   "doctrine",
+   "ecosystem"
+  ],
+  "answer": 1,
+  "vocabIndex": 18
+ },
+ {
+  "q": "Twenty years ago, only experts with expensive cameras could take good photos. Today, photography is no longer the ______ of professionals; anyone with a phone can do it.",
+  "options": [
+   "dome",
+   "dough",
+   "doorstep",
+   "domain"
+  ],
+  "answer": 3,
+  "vocabIndex": 23
+ },
+ {
+  "q": "The new stadium has a huge round roof that covers the whole field. Thanks to this ______, baseball games can go on even when it rains heavily.",
+  "options": [
+   "doorway",
+   "dome",
+   "domain",
+   "driveway"
+  ],
+  "answer": 1,
+  "vocabIndex": 27
+ },
+ {
+  "q": "The flood left hundreds of families without food or clean clothes. Our school is asking everyone to ______ rice, blankets, and anything else that could help.",
+  "options": [
+   "donate",
+   "distract",
+   "dissolve",
+   "elaborate"
+  ],
+  "answer": 0,
+  "vocabIndex": 30
+ },
+ {
+  "q": "A kind businessman gave two million dollars to the children's hospital last week. With this ______, the hospital will buy new beds and build a playroom.",
+  "options": [
+   "drought",
+   "distinction",
+   "donation",
+   "doorway"
+  ],
+  "answer": 2,
+  "vocabIndex": 31
+ },
+ {
+  "q": "Someone has been sending money to the orphanage every month for ten years. Nobody knows who this generous ______ is, because the letters are never signed.",
+  "options": [
+   "ecologist",
+   "donor",
+   "doctor",
+   "driver"
+  ],
+  "answer": 1,
+  "vocabIndex": 32
+ },
+ {
+  "q": "The puppy did not want to go out into the rain. It just stood in the ______ and looked back at me, waiting for me to pick it up.",
+  "options": [
+   "doorway",
+   "dome",
+   "dough",
+   "ego"
+  ],
+  "answer": 0,
+  "vocabIndex": 36
+ },
+ {
+  "q": "To make the buns, mix the flour, water, and a little salt in a big bowl. Then knead the ______ with your hands until it is soft and smooth.",
+  "options": [
+   "dome",
+   "dough",
+   "doctrine",
+   "drought"
+  ],
+  "answer": 1,
+  "vocabIndex": 41
+ },
+ {
+  "q": "The hotel room was dirty, the bed was hard, and the air conditioner did not work. It was the most ______ night I have ever spent on a trip.",
+  "options": [
+   "dreadful",
+   "eligible",
+   "distinctive",
+   "eloquent"
+  ],
+  "answer": 0,
+  "vocabIndex": 45
+ },
+ {
+  "q": "Mr. Wang washes his car every Sunday morning. He parks it in the ______ in front of his garage and uses the garden hose to clean it.",
+  "options": [
+   "doorway",
+   "domain",
+   "driveway",
+   "dome"
+  ],
+  "answer": 2,
+  "vocabIndex": 49
+ },
+ {
+  "q": "It has not rained in the south for almost five months, and the rivers are nearly empty. Because of the ______, farmers cannot plant rice this season.",
+  "options": [
+   "dough",
+   "donation",
+   "doctrine",
+   "drought"
+  ],
+  "answer": 3,
+  "vocabIndex": 54
+ },
+ {
+  "q": "A factory let dirty water run into the lake for years, and most of the fish died. Scientists call it the worst ______ disaster in the area's history.",
+  "options": [
+   "elaborate",
+   "domestic",
+   "ecological",
+   "eloquent"
+  ],
+  "answer": 2,
+  "vocabIndex": 58
+ },
+ {
+  "q": "My cousin studies how plants, animals, and people in a forest depend on one another. She says ______ is the science that helps us protect nature.",
+  "options": [
+   "eloquence",
+   "doctrine",
+   "eligibility",
+   "ecology"
+  ],
+  "answer": 3,
+  "vocabIndex": 59
+ },
+ {
+  "q": "A pond is home to fish, frogs, insects, and many water plants. If one of them disappears, the whole ______ can change in ways that are hard to predict.",
+  "options": [
+   "driveway",
+   "ecosystem",
+   "distinction",
+   "documentary"
+  ],
+  "answer": 1,
+  "vocabIndex": 60
+ },
+ {
+  "q": "Jason always talks about how smart and handsome he is. His big ______ makes it hard for him to admit that he is ever wrong about anything.",
+  "options": [
+   "dough",
+   "domain",
+   "dread",
+   "ego"
+  ],
+  "answer": 3,
+  "vocabIndex": 64
+ },
+ {
+  "q": "The wedding cake had seven levels, hundreds of sugar flowers, and tiny golden birds on top. It was so ______ that the guests took photos for ten minutes before anyone cut it.",
+  "options": [
+   "eligible",
+   "dreadful",
+   "elaborate",
+   "domestic"
+  ],
+  "answer": 2,
+  "vocabIndex": 67
+ },
+ {
+  "q": "The free English camp is only for students who are fifteen or older. My brother is just fourteen, so he is not ______ to join it this summer.",
+  "options": [
+   "eligible",
+   "eloquent",
+   "dry",
+   "distinct"
+  ],
+  "answer": 0,
+  "vocabIndex": 71
+ },
+ {
+  "q": "The student spoke for only three minutes about saving the old trees in the park. Her speech was so ______ that even the mayor stood up and clapped.",
+  "options": [
+   "ineligible",
+   "eloquent",
+   "dreadful",
+   "domestic"
+  ],
+  "answer": 1,
+  "vocabIndex": 76
+ },
+ {
+  "q": "After two years of working abroad, Lily finally came home. Her parents ran across the airport to ______ her, and all three of them cried with joy.",
+  "options": [
+   "distract",
+   "elect",
+   "embrace",
+   "dread"
+  ],
+  "answer": 2,
+  "vocabIndex": 79
+ },
+ {
+  "q": "The two brands of orange juice come in bottles of the same shape and color. Without reading the labels, it is almost impossible to ______ one from the other.",
+  "options": [
+   "dissolve",
+   "embrace",
+   "donate",
+   "distinguish"
+  ],
+  "answer": 3,
+  "vocabIndex": 6
+ },
+ {
+  "q": "I cannot finish my homework in the living room because the TV is always on. It is a constant ______, so I now study in the quiet kitchen instead.",
+  "options": [
+   "documentation",
+   "distraction",
+   "donation",
+   "solution"
+  ],
+  "answer": 1,
+  "vocabIndex": 12
+ },
+ {
+  "q": "Every year my little sister cries before her visit to the dentist. She really does ______ the sound of the drill, even though it has never hurt her.",
+  "options": [
+   "document",
+   "elaborate",
+   "dissolve",
+   "dread"
+  ],
+  "answer": 3,
+  "vocabIndex": 46
+ },
+ {
+  "q": "The old man had never been to school, but he could tell stories that made the whole village laugh and cry. People came from far away just to enjoy his ______.",
+  "options": [
+   "eloquence",
+   "ecology",
+   "eligibility",
+   "ego"
+  ],
+  "answer": 0,
+  "vocabIndex": 78
+ },
+ {
+  "q": "Dr. Huang spends every summer counting the frogs and birds in the wetland near our town. As an ______, she wants to know whether the new road has hurt them.",
+  "options": [
+   "ecosystem",
+   "eloquence",
+   "ecologist",
+   "ecology"
+  ],
+  "answer": 2,
+  "vocabIndex": 61
+ }
+];
+const LOOKUP = {};
+VOCAB.forEach(v => { const key = v.word.toLowerCase(); const sense = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def };
+  if (LOOKUP[key]) LOOKUP[key].combined.push(sense); else LOOKUP[key] = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def, combined: [sense] }; });
+const EXTRA_GLOSSES = {};

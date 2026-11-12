@@ -1,0 +1,1505 @@
+// 學測6000字 Level 6 Group 21 (lethal-lotion) — word-family edition
+const QUIZ_CONFIG = {
+  groupName: "6000字 L6 Group 21 - lethal – lotion (word family)",
+  gasEndpoint: "https://script.google.com/macros/s/AKfycbzLUqP-nauSjmiHfPXiK3NAV65tYdjAlwqip38TcGdTKqeR_CijuzHYxZDC-sjtRVrr_w/exec"
+};
+const VOCAB = [
+ {
+  "word": "lethal",
+  "answer": "lethal",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "致命的",
+  "en_def": "able to cause death",
+  "sentence": "The chemical in this bottle is {{BLANK}} if swallowed, so keep it locked away where small children cannot reach it.",
+  "cn": "這個瓶子裡的化學物質吞下去是致命的，所以要把它鎖在小孩拿不到的地方。",
+  "cnMarked": "這個瓶子裡的化學物質吞下去是【致命的】，所以要把它鎖在小孩拿不到的地方。",
+  "isHead": true,
+  "level": 6,
+  "family": "lethal"
+ },
+ {
+  "word": "lethal weapon",
+  "answer": "lethal weapon",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "致命武器",
+  "en_def": "a weapon that can kill",
+  "sentence": "The police found that the man was carrying a {{BLANK}}, so they arrested him before he could enter the station.",
+  "cn": "警方發現那名男子身上帶著致命武器，所以在他進入車站前就逮捕了他。",
+  "cnMarked": "警方發現那名男子身上帶著【致命武器】，所以在他進入車站前就逮捕了他。",
+  "isHead": false,
+  "level": null,
+  "family": "lethal"
+ },
+ {
+  "word": "lethal dose",
+  "answer": "lethal dose",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "致死劑量",
+  "en_def": "an amount of a drug or poison large enough to kill",
+  "sentence": "Even common medicine can be dangerous; taking far more than the normal amount may reach a {{BLANK}} for a small child.",
+  "cn": "即使是普通的藥也可能很危險；服用遠超過正常的量，對小孩來說可能達到致死劑量。",
+  "cnMarked": "即使是普通的藥也可能很危險；服用遠超過正常的量，對小孩來說可能達到【致死劑量】。",
+  "isHead": false,
+  "level": null,
+  "family": "lethal"
+ },
+ {
+  "word": "lethally",
+  "answer": "lethally",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "致命地",
+  "en_def": "in a way that can cause death",
+  "sentence": "The snake's bite is {{BLANK}} poisonous, so hikers in this area are told to wear boots and watch where they step.",
+  "cn": "這種蛇咬一口有致命的毒性，所以這一帶的登山客被要求穿靴子並注意腳下。",
+  "cnMarked": "這種蛇咬一口有【致命的】毒性，所以這一帶的登山客被要求穿靴子並注意腳下。",
+  "isHead": false,
+  "level": null,
+  "family": "lethal"
+ },
+ {
+  "word": "liable",
+  "answer": "liable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "容易…的；有…傾向的",
+  "en_def": "likely to do or suffer something, usually something bad",
+  "sentence": "The old wooden bridge is {{BLANK}} to collapse in a strong typhoon, so the town has closed it until repairs are finished.",
+  "cn": "這座老舊的木橋在強烈颱風中很容易倒塌，所以鎮上已將它封閉直到修復完成。",
+  "cnMarked": "這座老舊的木橋在強烈颱風中【很容易】倒塌，所以鎮上已將它封閉直到修復完成。",
+  "isHead": true,
+  "level": 6,
+  "family": "liable"
+ },
+ {
+  "word": "liable",
+  "answer": "liable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "應負法律責任的",
+  "en_def": "legally responsible for something",
+  "sentence": "If a customer slips on the wet floor, the restaurant owner may be held {{BLANK}} for any injuries that result.",
+  "cn": "如果顧客在濕地板上滑倒，餐廳老闆可能要對由此造成的任何傷害負責。",
+  "cnMarked": "如果顧客在濕地板上滑倒，餐廳老闆可能要對由此造成的任何傷害【負責】。",
+  "isHead": false,
+  "level": 6,
+  "family": "liable"
+ },
+ {
+  "word": "be liable for",
+  "answer": "are liable for",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "對…負有責任",
+  "en_def": "to be responsible by law for paying for something",
+  "sentence": "Parents {{BLANK}} any damage their children cause at the hotel, so please watch them carefully near the swimming pool.",
+  "cn": "父母要對孩子在飯店造成的任何損壞負責，所以請在游泳池附近仔細看好他們。",
+  "cnMarked": "父母【要對】孩子在飯店造成的任何損壞【負責】，所以請在游泳池附近仔細看好他們。",
+  "isHead": false,
+  "level": null,
+  "family": "liable"
+ },
+ {
+  "word": "liability",
+  "answer": "liability",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "責任；負擔",
+  "en_def": "legal responsibility; something that causes problems",
+  "sentence": "The company bought insurance to cover its {{BLANK}} in case a worker was injured while using the new machines.",
+  "cn": "公司買了保險來承擔它的責任，以防工人在使用新機器時受傷。",
+  "cnMarked": "公司買了保險來承擔它的【責任】，以防工人在使用新機器時受傷。",
+  "isHead": false,
+  "level": 5,
+  "family": "liable"
+ },
+ {
+  "word": "liberate",
+  "answer": "liberate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "解放；釋放",
+  "en_def": "to set someone free",
+  "sentence": "In 1945, Allied soldiers arrived to {{BLANK}} the prisoners, many of whom had not seen their families for five years.",
+  "cn": "一九四五年，盟軍士兵前來解放囚犯，其中許多人已經五年沒見到家人了。",
+  "cnMarked": "一九四五年，盟軍士兵前來【解放】囚犯，其中許多人已經五年沒見到家人了。",
+  "isHead": true,
+  "level": 6,
+  "family": "liberate"
+ },
+ {
+  "word": "liberation",
+  "answer": "liberation",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "解放",
+  "en_def": "the act of setting people free",
+  "sentence": "The city celebrates its {{BLANK}} from foreign rule every October with parades, fireworks, and speeches in the main square.",
+  "cn": "這座城市每年十月都以遊行、煙火和主廣場上的演講來慶祝從外國統治中解放。",
+  "cnMarked": "這座城市每年十月都以遊行、煙火和主廣場上的演講來慶祝從外國統治中【解放】。",
+  "isHead": true,
+  "level": 6,
+  "family": "liberate"
+ },
+ {
+  "word": "liberty",
+  "answer": "Liberty",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "自由",
+  "en_def": "freedom",
+  "sentence": "The Statue of {{BLANK}} in New York was a gift from France and has welcomed millions of people arriving by ship.",
+  "cn": "紐約的自由女神像是法國送的禮物，曾迎接數百萬乘船抵達的人。",
+  "cnMarked": "紐約的【自由】女神像是法國送的禮物，曾迎接數百萬乘船抵達的人。",
+  "isHead": false,
+  "level": 3,
+  "family": "liberate"
+ },
+ {
+  "word": "liberal",
+  "answer": "liberal",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "開明的；自由的",
+  "en_def": "willing to accept new ideas and different ways of living",
+  "sentence": "My grandparents have surprisingly {{BLANK}} views for their age, and they fully supported my decision to study art instead of medicine.",
+  "cn": "以我祖父母的年紀來說，他們的觀念出乎意料地開明，他們完全支持我學藝術而不是學醫的決定。",
+  "cnMarked": "以我祖父母的年紀來說，他們的觀念出乎意料地【開明】，他們完全支持我學藝術而不是學醫的決定。",
+  "isHead": false,
+  "level": 2,
+  "family": "liberate"
+ },
+ {
+  "word": "liberated",
+  "answer": "liberated",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "解放的；不受拘束的",
+  "en_def": "free from old rules about how to behave",
+  "sentence": "Her grandmother was a {{BLANK}} woman for her time; she ran her own business in the 1950s when most women stayed at home.",
+  "cn": "她的祖母在那個年代是位思想解放的女性；一九五〇年代大多數女性待在家裡時，她經營著自己的事業。",
+  "cnMarked": "她的祖母在那個年代是位【思想解放的】女性；一九五〇年代大多數女性待在家裡時，她經營著自己的事業。",
+  "isHead": false,
+  "level": null,
+  "family": "liberate"
+ },
+ {
+  "word": "lieutenant",
+  "answer": "lieutenant",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "中尉；少尉；警察副隊長",
+  "en_def": "an officer of low rank in the army, navy, or police",
+  "sentence": "After four years at the military academy, my cousin became a {{BLANK}} and was put in charge of thirty soldiers.",
+  "cn": "在軍校四年後，我表哥成為中尉，負責帶領三十名士兵。",
+  "cnMarked": "在軍校四年後，我表哥成為【中尉】，負責帶領三十名士兵。",
+  "isHead": true,
+  "level": 6,
+  "family": "lieutenant"
+ },
+ {
+  "word": "lieutenant",
+  "answer": "lieutenant",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "副手；助手",
+  "en_def": "a person who helps and acts for someone more important",
+  "sentence": "As the manager's trusted {{BLANK}}, she runs the office whenever he travels abroad to meet customers.",
+  "cn": "身為經理信任的副手，每當他出國拜訪客戶時，就由她負責管理辦公室。",
+  "cnMarked": "身為經理信任的【副手】，每當他出國拜訪客戶時，就由她負責管理辦公室。",
+  "isHead": false,
+  "level": 6,
+  "family": "lieutenant"
+ },
+ {
+  "word": "lieutenant colonel",
+  "answer": "lieutenant colonel",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "中校",
+  "en_def": "an army officer above a major and below a colonel",
+  "sentence": "The {{BLANK}} spoke to the new soldiers about discipline and reminded them that their training would be hard but fair.",
+  "cn": "中校對新兵講述紀律，並提醒他們訓練會很辛苦但很公平。",
+  "cnMarked": "【中校】對新兵講述紀律，並提醒他們訓練會很辛苦但很公平。",
+  "isHead": false,
+  "level": null,
+  "family": "lieutenant"
+ },
+ {
+  "word": "tenant",
+  "answer": "tenant",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "房客；租戶",
+  "en_def": "a person who pays rent to live in a house or apartment",
+  "sentence": "The {{BLANK}} on the third floor always pays the rent on time and keeps the apartment very clean.",
+  "cn": "三樓的房客總是準時付房租，而且把公寓保持得非常乾淨。",
+  "cnMarked": "三樓的【房客】總是準時付房租，而且把公寓保持得非常乾淨。",
+  "isHead": false,
+  "level": 6,
+  "family": "lieutenant"
+ },
+ {
+  "word": "lifelong",
+  "answer": "lifelong",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "終身的；一生的",
+  "en_def": "lasting all through your life",
+  "sentence": "Reading has been a {{BLANK}} habit for my grandmother, who still finishes at least one novel every week at ninety.",
+  "cn": "閱讀是我奶奶一生的習慣，九十歲的她每週仍至少讀完一本小說。",
+  "cnMarked": "閱讀是我奶奶【一生的】習慣，九十歲的她每週仍至少讀完一本小說。",
+  "isHead": true,
+  "level": 6,
+  "family": "lifelong"
+ },
+ {
+  "word": "lifelong learning",
+  "answer": "lifelong learning",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "終身學習",
+  "en_def": "continuing to learn new things all through your life",
+  "sentence": "The community college offers cheap evening classes to encourage {{BLANK}}, and many retired people study languages there.",
+  "cn": "社區大學提供便宜的夜間課程來鼓勵終身學習，許多退休人士在那裡學語言。",
+  "cnMarked": "社區大學提供便宜的夜間課程來鼓勵【終身學習】，許多退休人士在那裡學語言。",
+  "isHead": false,
+  "level": null,
+  "family": "lifelong"
+ },
+ {
+  "word": "lifetime",
+  "answer": "lifetime",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "一生；終身",
+  "en_def": "the length of time that a person lives",
+  "sentence": "In her {{BLANK}}, my great-grandmother saw the arrival of the first cars, airplanes, television, and finally the internet.",
+  "cn": "在我曾祖母的一生中，她見證了第一批汽車、飛機、電視，最後還有網路的出現。",
+  "cnMarked": "在我曾祖母的【一生】中，她見證了第一批汽車、飛機、電視，最後還有網路的出現。",
+  "isHead": false,
+  "level": 3,
+  "family": "lifelong"
+ },
+ {
+  "word": "lifestyle",
+  "answer": "lifestyle",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "生活方式",
+  "en_def": "the way a person lives",
+  "sentence": "A healthy {{BLANK}} includes regular exercise, enough sleep, and meals with plenty of fresh vegetables and fruit.",
+  "cn": "健康的生活方式包括規律運動、充足睡眠，以及含有大量新鮮蔬果的餐點。",
+  "cnMarked": "健康的【生活方式】包括規律運動、充足睡眠，以及含有大量新鮮蔬果的餐點。",
+  "isHead": false,
+  "level": null,
+  "family": "lifelong"
+ },
+ {
+  "word": "lifespan",
+  "answer": "lifespan",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "壽命",
+  "en_def": "the length of time that a person or animal usually lives",
+  "sentence": "The average {{BLANK}} of a house cat is about fifteen years, though some live well into their twenties.",
+  "cn": "家貓的平均壽命大約十五年，不過有些能活到二十多歲。",
+  "cnMarked": "家貓的平均【壽命】大約十五年，不過有些能活到二十多歲。",
+  "isHead": false,
+  "level": null,
+  "family": "lifelong"
+ },
+ {
+  "word": "lighten",
+  "answer": "lighten",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "減輕",
+  "en_def": "to make something less heavy or less serious",
+  "sentence": "To {{BLANK}} my backpack before the hike, I took out two books and a heavy water bottle.",
+  "cn": "為了在健行前減輕背包的重量，我拿出了兩本書和一個很重的水壺。",
+  "cnMarked": "為了在健行前【減輕】背包的重量，我拿出了兩本書和一個很重的水壺。",
+  "isHead": true,
+  "level": 6,
+  "family": "lighten"
+ },
+ {
+  "word": "lighten the mood",
+  "answer": "lighten the mood",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "緩和氣氛",
+  "en_def": "to make a situation feel less serious or tense",
+  "sentence": "The host told a funny story to {{BLANK}} after the awkward silence that followed the argument at the dinner table.",
+  "cn": "餐桌上的爭吵之後是一陣尷尬的沉默，主人講了一個好笑的故事來緩和氣氛。",
+  "cnMarked": "餐桌上的爭吵之後是一陣尷尬的沉默，主人講了一個好笑的故事來【緩和氣氛】。",
+  "isHead": false,
+  "level": null,
+  "family": "lighten"
+ },
+ {
+  "word": "lighten up",
+  "answer": "lighten up",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "放輕鬆",
+  "en_def": "to become more relaxed and less serious",
+  "sentence": "You need to {{BLANK}} a little; it was only a practice test, and nobody expects a perfect score the first time.",
+  "cn": "你需要放輕鬆一點；那只是模擬考，沒有人期待第一次就拿滿分。",
+  "cnMarked": "你需要【放輕鬆】一點；那只是模擬考，沒有人期待第一次就拿滿分。",
+  "isHead": false,
+  "level": null,
+  "family": "lighten"
+ },
+ {
+  "word": "light",
+  "answer": "light",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "輕的",
+  "en_def": "not heavy",
+  "sentence": "This laptop is so {{BLANK}} that I can carry it in one hand all day without my arm getting tired.",
+  "cn": "這台筆電非常輕，我可以單手拿一整天，手臂也不會累。",
+  "cnMarked": "這台筆電非常【輕】，我可以單手拿一整天，手臂也不會累。",
+  "isHead": false,
+  "level": 1,
+  "family": "lighten"
+ },
+ {
+  "word": "enlighten",
+  "answer": "enlightened",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "啟發；開導",
+  "en_def": "to give someone knowledge or understanding",
+  "sentence": "The documentary really {{BLANK}} me about how much water is used to make a single pair of jeans.",
+  "cn": "這部紀錄片真的讓我明白製作一條牛仔褲要用掉多少水。",
+  "cnMarked": "這部紀錄片真的【讓我明白】製作一條牛仔褲要用掉多少水。",
+  "isHead": false,
+  "level": 6,
+  "family": "lighten"
+ },
+ {
+  "word": "limp",
+  "answer": "limp",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "跛行；一瘸一拐地走",
+  "en_def": "to walk with difficulty because one leg or foot is hurt",
+  "sentence": "After twisting his ankle on the stairs, Jack had to {{BLANK}} to the nurse's office with the help of a friend.",
+  "cn": "在樓梯上扭傷腳踝後，傑克必須在朋友的攙扶下一瘸一拐地走到保健室。",
+  "cnMarked": "在樓梯上扭傷腳踝後，傑克必須在朋友的攙扶下【一瘸一拐地走】到保健室。",
+  "isHead": true,
+  "level": 6,
+  "family": "limp"
+ },
+ {
+  "word": "limp",
+  "answer": "limp",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "跛行",
+  "en_def": "a way of walking with difficulty because of a hurt leg",
+  "sentence": "My grandfather has walked with a slight {{BLANK}} ever since he fell off his motorcycle thirty years ago.",
+  "cn": "自從三十年前從機車上摔下來後，我爺爺走路就一直有點跛。",
+  "cnMarked": "自從三十年前從機車上摔下來後，我爺爺走路就一直有點【跛】。",
+  "isHead": false,
+  "level": 6,
+  "family": "limp"
+ },
+ {
+  "word": "limp",
+  "answer": "limp",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "軟弱無力的；癱軟的",
+  "en_def": "not stiff or firm; weak",
+  "sentence": "The lettuce had gone {{BLANK}} after two days in the hot kitchen, so we threw it away and bought fresh vegetables.",
+  "cn": "萵苣在悶熱的廚房放了兩天後已經軟掉了，所以我們把它丟掉，買了新鮮的蔬菜。",
+  "cnMarked": "萵苣在悶熱的廚房放了兩天後已經【軟掉】了，所以我們把它丟掉，買了新鮮的蔬菜。",
+  "isHead": false,
+  "level": 6,
+  "family": "limp"
+ },
+ {
+  "word": "liner",
+  "answer": "liner",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "郵輪；襯墊",
+  "en_def": "a large ship that carries passengers; a layer that covers the inside of something",
+  "sentence": "The luxury {{BLANK}} carried two thousand passengers across the Atlantic, with swimming pools and theaters on board.",
+  "cn": "這艘豪華郵輪載著兩千名乘客橫渡大西洋，船上有游泳池和劇院。",
+  "cnMarked": "這艘豪華【郵輪】載著兩千名乘客橫渡大西洋，船上有游泳池和劇院。",
+  "isHead": true,
+  "level": 6,
+  "family": "liner"
+ },
+ {
+  "word": "lining",
+  "answer": "lining",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "內襯；內裡",
+  "en_def": "a layer of material that covers the inside of clothes, boxes, etc.",
+  "sentence": "My winter coat has a soft {{BLANK}} made of wool, which keeps me warm even on the coldest mornings.",
+  "cn": "我的冬季大衣有柔軟的羊毛內襯，即使在最冷的早晨也能讓我保暖。",
+  "cnMarked": "我的冬季大衣有柔軟的羊毛【內襯】，即使在最冷的早晨也能讓我保暖。",
+  "isHead": true,
+  "level": 6,
+  "family": "liner"
+ },
+ {
+  "word": "line",
+  "answer": "line",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "線；隊伍",
+  "en_def": "a long thin mark; a row of people waiting",
+  "sentence": "There was a long {{BLANK}} outside the bakery at seven in the morning because everyone wanted the famous pineapple cakes.",
+  "cn": "早上七點麵包店外就排了一條長長的隊伍，因為大家都想買那有名的鳳梨酥。",
+  "cnMarked": "早上七點麵包店外就排了一條長長的【隊伍】，因為大家都想買那有名的鳳梨酥。",
+  "isHead": false,
+  "level": 1,
+  "family": "liner"
+ },
+ {
+  "word": "line",
+  "answer": "lined",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "沿…排列",
+  "en_def": "to form rows along the sides of something",
+  "sentence": "Hundreds of fans {{BLANK}} the street to welcome the baseball team home after their big win in the championship.",
+  "cn": "數百名球迷沿街排列，歡迎棒球隊在冠軍賽大勝後凱旋歸來。",
+  "cnMarked": "數百名球迷【沿街排列】，歡迎棒球隊在冠軍賽大勝後凱旋歸來。",
+  "isHead": false,
+  "level": 1,
+  "family": "liner"
+ },
+ {
+  "word": "every cloud has a silver lining",
+  "answer": "every cloud has a silver lining",
+  "nblanks": 6,
+  "pos": "phr.",
+  "cn_def": "禍中有福；黑暗中總有一線光明",
+  "en_def": "every bad situation has some good side",
+  "sentence": "I lost my job last year, but {{BLANK}}: I finally had time to start the small bakery I had always dreamed of.",
+  "cn": "去年我失業了，但每朵烏雲都鑲著銀邊（禍中有福）：我終於有時間開一家我一直夢想的小麵包店。",
+  "cnMarked": "去年我失業了，但【每朵烏雲都鑲著銀邊（禍中有福）】：我終於有時間開一家我一直夢想的小麵包店。",
+  "isHead": false,
+  "level": null,
+  "family": "liner"
+ },
+ {
+  "word": "linger",
+  "answer": "lingered",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "逗留；徘徊；縈繞",
+  "en_def": "to stay somewhere longer than necessary; to be slow to disappear",
+  "sentence": "After the concert ended, many fans {{BLANK}} outside the hall, hoping to catch a glimpse of the singer leaving.",
+  "cn": "演唱會結束後，許多歌迷逗留在會場外，希望能看到歌手離開時的身影。",
+  "cnMarked": "演唱會結束後，許多歌迷【逗留】在會場外，希望能看到歌手離開時的身影。",
+  "isHead": true,
+  "level": 6,
+  "family": "linger"
+ },
+ {
+  "word": "linger on",
+  "answer": "lingered on",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "持續存在；久久不散",
+  "en_def": "to continue to exist for a long time",
+  "sentence": "The smell of burnt toast {{BLANK}} in the kitchen for hours, even though we had opened all the windows.",
+  "cn": "烤焦吐司的味道在廚房裡久久不散，即使我們已經打開了所有的窗戶。",
+  "cnMarked": "烤焦吐司的味道在廚房裡【久久不散】，即使我們已經打開了所有的窗戶。",
+  "isHead": false,
+  "level": null,
+  "family": "linger"
+ },
+ {
+  "word": "lingering",
+  "answer": "lingering",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "持久的；揮之不去的",
+  "en_def": "lasting for a long time",
+  "sentence": "Although the doctor said he had fully recovered, he still had a {{BLANK}} cough that bothered him at night.",
+  "cn": "雖然醫生說他已經完全康復，他晚上仍有揮之不去的咳嗽困擾著他。",
+  "cnMarked": "雖然醫生說他已經完全康復，他晚上仍有【揮之不去的】咳嗽困擾著他。",
+  "isHead": false,
+  "level": null,
+  "family": "linger"
+ },
+ {
+  "word": "liter",
+  "answer": "liters",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "公升",
+  "en_def": "a unit for measuring liquid",
+  "sentence": "Doctors recommend drinking about two {{BLANK}} of water a day, especially in summer when you sweat a lot.",
+  "cn": "醫生建議每天喝大約兩公升的水，尤其是在容易流汗的夏天。",
+  "cnMarked": "醫生建議每天喝大約兩【公升】的水，尤其是在容易流汗的夏天。",
+  "isHead": true,
+  "level": 6,
+  "family": "liter"
+ },
+ {
+  "word": "milliliter",
+  "answer": "milliliters",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "毫升",
+  "en_def": "one thousandth of a liter",
+  "sentence": "The medicine bottle holds 100 {{BLANK}}, and the doctor said to take five of them three times a day.",
+  "cn": "這個藥瓶裝有一百毫升，醫生說一天三次，每次服用五毫升。",
+  "cnMarked": "這個藥瓶裝有一百【毫升】，醫生說一天三次，每次服用五毫升。",
+  "isHead": false,
+  "level": null,
+  "family": "liter"
+ },
+ {
+  "word": "per liter",
+  "answer": "per liter",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "每公升",
+  "en_def": "for each liter",
+  "sentence": "Gas prices rose to thirty-five dollars {{BLANK}} this week, so many people are taking the MRT to work instead of driving.",
+  "cn": "這週油價漲到每公升三十五元，所以許多人改搭捷運上班而不開車。",
+  "cnMarked": "這週油價漲到【每公升】三十五元，所以許多人改搭捷運上班而不開車。",
+  "isHead": false,
+  "level": null,
+  "family": "liter"
+ },
+ {
+  "word": "literacy",
+  "answer": "literacy",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "識字能力；讀寫能力",
+  "en_def": "the ability to read and write",
+  "sentence": "The country's {{BLANK}} rate rose from fifty percent to nearly one hundred percent after free schools were opened in every village.",
+  "cn": "在每個村莊都開設免費學校後，這個國家的識字率從百分之五十上升到接近百分之百。",
+  "cnMarked": "在每個村莊都開設免費學校後，這個國家的【識字】率從百分之五十上升到接近百分之百。",
+  "isHead": true,
+  "level": 6,
+  "family": "literacy"
+ },
+ {
+  "word": "literal",
+  "answer": "literal",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "字面的",
+  "en_def": "following the exact, basic meaning of words",
+  "sentence": "The {{BLANK}} meaning of \"break a leg\" sounds painful, but actors say it to each other to wish good luck.",
+  "cn": "break a leg 的字面意思聽起來很痛，但演員們互相這麼說是為了祝好運。",
+  "cnMarked": "break a leg 的【字面】意思聽起來很痛，但演員們互相這麼說是為了祝好運。",
+  "isHead": true,
+  "level": 6,
+  "family": "literacy"
+ },
+ {
+  "word": "literate",
+  "answer": "literate",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "識字的；有讀寫能力的",
+  "en_def": "able to read and write",
+  "sentence": "Two hundred years ago, only a small number of people in the village were {{BLANK}}, so letters were read aloud in the square.",
+  "cn": "兩百年前，村子裡只有少數人識字，所以信件都在廣場上被大聲念出來。",
+  "cnMarked": "兩百年前，村子裡只有少數人【識字】，所以信件都在廣場上被大聲念出來。",
+  "isHead": true,
+  "level": 6,
+  "family": "literacy"
+ },
+ {
+  "word": "literally",
+  "answer": "literally",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "字面上地；真正地",
+  "en_def": "in the exact meaning of the words; really",
+  "sentence": "When I said the test was killing me, I did not mean it {{BLANK}}; I just meant that it was very difficult.",
+  "cn": "我說考試要我的命時，並不是字面上的意思；我只是說它非常難。",
+  "cnMarked": "我說考試要我的命時，並不是【字面上的意思】；我只是說它非常難。",
+  "isHead": false,
+  "level": null,
+  "family": "literacy"
+ },
+ {
+  "word": "illiterate",
+  "answer": "illiterate",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "不識字的",
+  "en_def": "not able to read or write",
+  "sentence": "My great-grandfather was {{BLANK}} because he never went to school, so he signed his name with a simple mark.",
+  "cn": "我曾祖父因為從未上過學而不識字，所以他用一個簡單的記號來簽名。",
+  "cnMarked": "我曾祖父因為從未上過學而【不識字】，所以他用一個簡單的記號來簽名。",
+  "isHead": false,
+  "level": null,
+  "family": "literacy"
+ },
+ {
+  "word": "literature",
+  "answer": "literature",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "文學",
+  "en_def": "written works such as novels, poems, and plays",
+  "sentence": "She is studying English {{BLANK}} at university and spends most of her time reading novels by Dickens and Austen.",
+  "cn": "她在大學讀英國文學，大部分時間都在讀狄更斯和奧斯汀的小說。",
+  "cnMarked": "她在大學讀英國【文學】，大部分時間都在讀狄更斯和奧斯汀的小說。",
+  "isHead": false,
+  "level": 4,
+  "family": "literacy"
+ },
+ {
+  "word": "livestock",
+  "answer": "livestock",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "家畜；牲畜",
+  "en_def": "farm animals such as cows, sheep, and pigs",
+  "sentence": "Before the typhoon arrived, the farmers moved their {{BLANK}} into the barns so that the animals would be safe from the wind.",
+  "cn": "颱風來臨前，農民把牲畜移到穀倉裡，好讓動物不會受到強風傷害。",
+  "cnMarked": "颱風來臨前，農民把【牲畜】移到穀倉裡，好讓動物不會受到強風傷害。",
+  "isHead": true,
+  "level": 6,
+  "family": "livestock"
+ },
+ {
+  "word": "stock",
+  "answer": "stock",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "存貨；庫存",
+  "en_def": "goods kept in a shop for sale",
+  "sentence": "The shop has run out of {{BLANK}} of the popular toy, and the next delivery will not arrive until next week.",
+  "cn": "這家店那款熱門玩具的存貨已經賣完了，下一批貨要到下週才會到。",
+  "cnMarked": "這家店那款熱門玩具的【存貨】已經賣完了，下一批貨要到下週才會到。",
+  "isHead": false,
+  "level": 5,
+  "family": "livestock"
+ },
+ {
+  "word": "in stock",
+  "answer": "in stock",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "有現貨",
+  "en_def": "available to buy in a shop now",
+  "sentence": "Do you have this jacket {{BLANK}} in a medium size? The one on the shelf is too large for me.",
+  "cn": "這件外套中號的有現貨嗎？架上那件對我來說太大了。",
+  "cnMarked": "這件外套中號的【有現貨】嗎？架上那件對我來說太大了。",
+  "isHead": false,
+  "level": null,
+  "family": "livestock"
+ },
+ {
+  "word": "livelihood",
+  "answer": "livelihood",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "生計",
+  "en_def": "the way a person earns money to live",
+  "sentence": "Fishing is the main {{BLANK}} of the people in this village, so the new rules about the sea worry them a lot.",
+  "cn": "捕魚是這個村子居民主要的生計，所以新的海洋規定讓他們非常擔心。",
+  "cnMarked": "捕魚是這個村子居民主要的【生計】，所以新的海洋規定讓他們非常擔心。",
+  "isHead": false,
+  "level": null,
+  "family": "livestock"
+ },
+ {
+  "word": "lizard",
+  "answer": "lizard",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "蜥蜴",
+  "en_def": "a small reptile with four legs and a long tail",
+  "sentence": "A small green {{BLANK}} ran across the warm wall of the garden and disappeared into a crack before the cat could catch it.",
+  "cn": "一隻綠色的小蜥蜴跑過花園溫暖的牆面，在貓抓到牠之前鑽進裂縫裡消失了。",
+  "cnMarked": "一隻綠色的小【蜥蜴】跑過花園溫暖的牆面，在貓抓到牠之前鑽進裂縫裡消失了。",
+  "isHead": true,
+  "level": 6,
+  "family": "lizard"
+ },
+ {
+  "word": "reptile",
+  "answer": "reptiles",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "爬蟲類動物",
+  "en_def": "a cold-blooded animal such as a snake, lizard, or crocodile",
+  "sentence": "Snakes, lizards, and crocodiles are all {{BLANK}}, which means they are cold-blooded and usually lay eggs.",
+  "cn": "蛇、蜥蜴和鱷魚都是爬蟲類，也就是說牠們是冷血動物，而且通常會下蛋。",
+  "cnMarked": "蛇、蜥蜴和鱷魚都是【爬蟲類】，也就是說牠們是冷血動物，而且通常會下蛋。",
+  "isHead": false,
+  "level": 6,
+  "family": "lizard"
+ },
+ {
+  "word": "gecko",
+  "answer": "gecko",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "壁虎",
+  "en_def": "a small lizard that can walk on walls and ceilings",
+  "sentence": "In Taiwan, you often hear a {{BLANK}} making clicking sounds on the ceiling at night, and it helps by eating mosquitoes.",
+  "cn": "在台灣，晚上常常聽到壁虎在天花板上發出喀喀聲，牠會吃蚊子，對我們有幫助。",
+  "cnMarked": "在台灣，晚上常常聽到【壁虎】在天花板上發出喀喀聲，牠會吃蚊子，對我們有幫助。",
+  "isHead": false,
+  "level": null,
+  "family": "lizard"
+ },
+ {
+  "word": "locker",
+  "answer": "locker",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "置物櫃",
+  "en_def": "a small cupboard with a lock, at school or at a gym",
+  "sentence": "Students keep their textbooks and sports clothes in a {{BLANK}} at school so that their bags are not too heavy.",
+  "cn": "學生把課本和運動服放在學校的置物櫃裡，這樣書包才不會太重。",
+  "cnMarked": "學生把課本和運動服放在學校的【置物櫃】裡，這樣書包才不會太重。",
+  "isHead": true,
+  "level": 6,
+  "family": "locker"
+ },
+ {
+  "word": "lock",
+  "answer": "lock",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "鎖上",
+  "en_def": "to close something with a key",
+  "sentence": "Please remember to {{BLANK}} the door and turn off the lights when you are the last person to leave the office.",
+  "cn": "當你是最後一個離開辦公室的人時，請記得鎖門並關燈。",
+  "cnMarked": "當你是最後一個離開辦公室的人時，請記得【鎖】門並關燈。",
+  "isHead": false,
+  "level": 3,
+  "family": "locker"
+ },
+ {
+  "word": "lock",
+  "answer": "lock",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "鎖",
+  "en_def": "a device that keeps a door or box closed",
+  "sentence": "The {{BLANK}} on my bicycle is broken, so I have to carry the bike up to my apartment every night.",
+  "cn": "我腳踏車的鎖壞了，所以我每晚都得把車搬上公寓。",
+  "cnMarked": "我腳踏車的【鎖】壞了，所以我每晚都得把車搬上公寓。",
+  "isHead": false,
+  "level": 3,
+  "family": "locker"
+ },
+ {
+  "word": "locker room",
+  "answer": "locker room",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "更衣室",
+  "en_def": "a room where people change clothes and keep things in lockers",
+  "sentence": "After the game, the coach gathered the players in the {{BLANK}} and told them how proud he was of their effort.",
+  "cn": "比賽結束後，教練把球員集合在更衣室，告訴他們自己有多為他們的努力感到驕傲。",
+  "cnMarked": "比賽結束後，教練把球員集合在【更衣室】，告訴他們自己有多為他們的努力感到驕傲。",
+  "isHead": false,
+  "level": null,
+  "family": "locker"
+ },
+ {
+  "word": "unlock",
+  "answer": "unlock",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "開鎖；解鎖",
+  "en_def": "to open something that was locked",
+  "sentence": "You can {{BLANK}} this phone with your fingerprint, so you do not need to remember a long password.",
+  "cn": "你可以用指紋解鎖這支手機，所以不需要記一長串密碼。",
+  "cnMarked": "你可以用指紋【解鎖】這支手機，所以不需要記一長串密碼。",
+  "isHead": false,
+  "level": 5,
+  "family": "locker"
+ },
+ {
+  "word": "lodge",
+  "answer": "lodge",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "小屋；山莊",
+  "en_def": "a small house in the countryside, used by hunters, hikers, or skiers",
+  "sentence": "We stayed at a mountain {{BLANK}} near the trail, where the owner cooked hot soup for the tired hikers every evening.",
+  "cn": "我們住在步道附近的一間山間小屋，屋主每晚都為疲憊的登山客煮熱湯。",
+  "cnMarked": "我們住在步道附近的一間山間【小屋】，屋主每晚都為疲憊的登山客煮熱湯。",
+  "isHead": true,
+  "level": 6,
+  "family": "lodge"
+ },
+ {
+  "word": "lodge",
+  "answer": "lodge",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "投宿；寄宿",
+  "en_def": "to stay in someone's house and pay rent",
+  "sentence": "During the exchange program, the students will {{BLANK}} with local families instead of staying in a hotel.",
+  "cn": "在交換計畫期間，學生們將寄宿在當地家庭，而不是住飯店。",
+  "cnMarked": "在交換計畫期間，學生們將【寄宿】在當地家庭，而不是住飯店。",
+  "isHead": false,
+  "level": 6,
+  "family": "lodge"
+ },
+ {
+  "word": "lodge a complaint",
+  "answer": "lodge a complaint",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "提出申訴",
+  "en_def": "to make a formal complaint",
+  "sentence": "Several neighbors decided to {{BLANK}} with the city about the loud music coming from the bar every night.",
+  "cn": "幾位鄰居決定向市政府提出申訴，抗議那家酒吧每晚傳來的吵鬧音樂。",
+  "cnMarked": "幾位鄰居決定向市政府【提出申訴】，抗議那家酒吧每晚傳來的吵鬧音樂。",
+  "isHead": false,
+  "level": null,
+  "family": "lodge"
+ },
+ {
+  "word": "lodging",
+  "answer": "lodging",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "住宿；寄宿處",
+  "en_def": "a place to stay for a short time",
+  "sentence": "The job offers free {{BLANK}} and meals, so the young workers can save most of their salary for the future.",
+  "cn": "這份工作提供免費住宿和餐點，所以年輕員工可以把大部分薪水存起來。",
+  "cnMarked": "這份工作提供免費【住宿】和餐點，所以年輕員工可以把大部分薪水存起來。",
+  "isHead": false,
+  "level": null,
+  "family": "lodge"
+ },
+ {
+  "word": "lofty",
+  "answer": "lofty",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "高聳的；崇高的",
+  "en_def": "very high; (of ideas) noble but hard to achieve",
+  "sentence": "The young doctor had the {{BLANK}} goal of building a free hospital for the poor, and she worked toward it for thirty years.",
+  "cn": "這位年輕醫生有一個崇高的目標——為窮人建一所免費醫院，她為此努力了三十年。",
+  "cnMarked": "這位年輕醫生有一個【崇高的】目標——為窮人建一所免費醫院，她為此努力了三十年。",
+  "isHead": true,
+  "level": 6,
+  "family": "lofty"
+ },
+ {
+  "word": "loft",
+  "answer": "loft",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "閣樓",
+  "en_def": "a room or space under the roof of a building",
+  "sentence": "We turned the dusty {{BLANK}} under the roof into a cozy reading room with a small window and soft cushions.",
+  "cn": "我們把屋頂下積滿灰塵的閣樓改造成一間舒適的閱讀室，有小窗戶和柔軟的坐墊。",
+  "cnMarked": "我們把屋頂下積滿灰塵的【閣樓】改造成一間舒適的閱讀室，有小窗戶和柔軟的坐墊。",
+  "isHead": false,
+  "level": null,
+  "family": "lofty"
+ },
+ {
+  "word": "aloft",
+  "answer": "aloft",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "在高處；在空中",
+  "en_def": "high up in the air",
+  "sentence": "The eagle held the fish {{BLANK}} in its claws as it flew back to its nest high on the cliff.",
+  "cn": "老鷹用爪子把魚高高地抓在空中，飛回懸崖高處的巢。",
+  "cnMarked": "老鷹用爪子把魚【高高地】抓在空中，飛回懸崖高處的巢。",
+  "isHead": false,
+  "level": null,
+  "family": "lofty"
+ },
+ {
+  "word": "logo",
+  "answer": "logo",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "商標；標誌",
+  "en_def": "a symbol or design that a company uses as its sign",
+  "sentence": "The sports company's famous {{BLANK}} is a simple curved line, and you can see it on shoes all over the world.",
+  "cn": "這家運動公司著名的商標是一條簡單的弧線，你可以在世界各地的鞋子上看到它。",
+  "cnMarked": "這家運動公司著名的【商標】是一條簡單的弧線，你可以在世界各地的鞋子上看到它。",
+  "isHead": true,
+  "level": 6,
+  "family": "logo"
+ },
+ {
+  "word": "logo design",
+  "answer": "logo design",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "標誌設計",
+  "en_def": "the work of creating a logo",
+  "sentence": "The club held a {{BLANK}} contest, and the winning picture of a blue bird will be printed on all the new T-shirts.",
+  "cn": "社團舉辦了標誌設計比賽，獲勝的藍鳥圖案將印在所有的新T恤上。",
+  "cnMarked": "社團舉辦了【標誌設計】比賽，獲勝的藍鳥圖案將印在所有的新T恤上。",
+  "isHead": false,
+  "level": null,
+  "family": "logo"
+ },
+ {
+  "word": "slogan",
+  "answer": "slogan",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "口號；標語",
+  "en_def": "a short phrase that is easy to remember, used in advertising",
+  "sentence": "The company's new {{BLANK}}, \"Think green, live clean,\" appears under the logo on every bus in the city.",
+  "cn": "這家公司的新標語「思考綠色，生活乾淨」出現在市內每輛公車的商標下方。",
+  "cnMarked": "這家公司的新【標語】「思考綠色，生活乾淨」出現在市內每輛公車的商標下方。",
+  "isHead": false,
+  "level": 4,
+  "family": "logo"
+ },
+ {
+  "word": "lonesome",
+  "answer": "lonesome",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "寂寞的",
+  "en_def": "sad because you are alone",
+  "sentence": "The old dog looked {{BLANK}} sitting by the gate every afternoon, waiting for the children to come home from school.",
+  "cn": "那隻老狗每天下午坐在門口看起來很寂寞，等著孩子們放學回家。",
+  "cnMarked": "那隻老狗每天下午坐在門口看起來很【寂寞】，等著孩子們放學回家。",
+  "isHead": true,
+  "level": 6,
+  "family": "lonesome"
+ },
+ {
+  "word": "lonely",
+  "answer": "lonely",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "孤獨的；寂寞的",
+  "en_def": "unhappy because you have no friends or people to talk to",
+  "sentence": "Moving to a new city can be {{BLANK}} at first, but joining a club is a good way to make new friends.",
+  "cn": "搬到新城市一開始可能會很孤單，但加入社團是交新朋友的好方法。",
+  "cnMarked": "搬到新城市一開始可能會很【孤單】，但加入社團是交新朋友的好方法。",
+  "isHead": false,
+  "level": 1,
+  "family": "lonesome"
+ },
+ {
+  "word": "loneliness",
+  "answer": "loneliness",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "孤獨；寂寞",
+  "en_def": "the feeling of being alone and sad",
+  "sentence": "Many old people suffer from {{BLANK}} after their children move away, so weekly visits from volunteers mean a lot to them.",
+  "cn": "許多老人在孩子搬走後飽受孤獨之苦，所以志工每週的探訪對他們意義重大。",
+  "cnMarked": "許多老人在孩子搬走後飽受【孤獨】之苦，所以志工每週的探訪對他們意義重大。",
+  "isHead": false,
+  "level": null,
+  "family": "lonesome"
+ },
+ {
+  "word": "alone",
+  "answer": "alone",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "獨自地",
+  "en_def": "without other people",
+  "sentence": "I prefer to study {{BLANK}} in the library because my roommate always plays music while he does his homework.",
+  "cn": "我比較喜歡獨自在圖書館讀書，因為我室友做功課時總是放音樂。",
+  "cnMarked": "我比較喜歡【獨自】在圖書館讀書，因為我室友做功課時總是放音樂。",
+  "isHead": false,
+  "level": 2,
+  "family": "lonesome"
+ },
+ {
+  "word": "all alone",
+  "answer": "all alone",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "獨自一人",
+  "en_def": "completely by yourself",
+  "sentence": "The little boy was {{BLANK}} in the park, so the police officer stayed with him until his mother came.",
+  "cn": "小男孩獨自一人在公園裡，所以警察陪著他直到他媽媽來。",
+  "cnMarked": "小男孩【獨自一人】在公園裡，所以警察陪著他直到他媽媽來。",
+  "isHead": false,
+  "level": null,
+  "family": "lonesome"
+ },
+ {
+  "word": "longevity",
+  "answer": "longevity",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "長壽；長久",
+  "en_def": "long life; lasting a long time",
+  "sentence": "Scientists believe that the {{BLANK}} of people in Okinawa comes from their simple diet and active social life.",
+  "cn": "科學家認為沖繩人的長壽來自他們簡單的飲食和活躍的社交生活。",
+  "cnMarked": "科學家認為沖繩人的【長壽】來自他們簡單的飲食和活躍的社交生活。",
+  "isHead": true,
+  "level": 6,
+  "family": "longevity"
+ },
+ {
+  "word": "long-lived",
+  "answer": "long-lived",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "長壽的",
+  "en_def": "living or lasting a long time",
+  "sentence": "Some turtles are extremely {{BLANK}}; one famous giant tortoise reached the age of about one hundred and ninety.",
+  "cn": "有些烏龜非常長壽；一隻著名的巨型陸龜活到了大約一百九十歲。",
+  "cnMarked": "有些烏龜非常【長壽】；一隻著名的巨型陸龜活到了大約一百九十歲。",
+  "isHead": false,
+  "level": null,
+  "family": "longevity"
+ },
+ {
+  "word": "prolong",
+  "answer": "prolong",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "延長",
+  "en_def": "to make something last longer",
+  "sentence": "Regular exercise and a good diet can {{BLANK}} your life by several years, according to a recent study.",
+  "cn": "根據最近的一項研究，規律運動和良好的飲食可以延長你好幾年的壽命。",
+  "cnMarked": "根據最近的一項研究，規律運動和良好的飲食可以【延長】你好幾年的壽命。",
+  "isHead": false,
+  "level": 5,
+  "family": "longevity"
+ },
+ {
+  "word": "longitude",
+  "answer": "longitude",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "經度",
+  "en_def": "the distance of a place east or west of an imaginary line through Greenwich",
+  "sentence": "Taiwan lies at about 121 degrees east {{BLANK}}, which is why its clocks are eight hours ahead of London.",
+  "cn": "台灣位於東經大約一百二十一度，這就是為什麼它的時鐘比倫敦快八小時。",
+  "cnMarked": "台灣位於東【經】大約一百二十一度，這就是為什麼它的時鐘比倫敦快八小時。",
+  "isHead": true,
+  "level": 6,
+  "family": "longitude"
+ },
+ {
+  "word": "latitude",
+  "answer": "latitude",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "緯度",
+  "en_def": "the distance of a place north or south of the equator",
+  "sentence": "Because of its low {{BLANK}}, Singapore is hot and humid all year round, with almost no difference between seasons.",
+  "cn": "由於緯度低，新加坡全年又熱又濕，四季幾乎沒有差別。",
+  "cnMarked": "由於【緯度】低，新加坡全年又熱又濕，四季幾乎沒有差別。",
+  "isHead": false,
+  "level": 6,
+  "family": "longitude"
+ },
+ {
+  "word": "longitudinal",
+  "answer": "longitudinal",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "縱向的；長期追蹤的",
+  "en_def": "(of a study) following the same people over a long period of time",
+  "sentence": "The researchers carried out a {{BLANK}} study, following the same group of children from kindergarten until they finished university.",
+  "cn": "研究人員進行了一項長期追蹤研究，從幼兒園一直追蹤同一群孩子到他們大學畢業。",
+  "cnMarked": "研究人員進行了一項【長期追蹤】研究，從幼兒園一直追蹤同一群孩子到他們大學畢業。",
+  "isHead": false,
+  "level": null,
+  "family": "longitude"
+ },
+ {
+  "word": "lotion",
+  "answer": "lotion",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "乳液；護膚液",
+  "en_def": "a liquid that you put on your skin to protect it or make it soft",
+  "sentence": "After a day at the beach, put some cooling {{BLANK}} on your shoulders, or the sunburn will hurt all night.",
+  "cn": "在海邊玩了一天之後，在肩膀上擦點清涼的乳液，否則曬傷會痛一整晚。",
+  "cnMarked": "在海邊玩了一天之後，在肩膀上擦點清涼的【乳液】，否則曬傷會痛一整晚。",
+  "isHead": true,
+  "level": 6,
+  "family": "lotion"
+ },
+ {
+  "word": "body lotion",
+  "answer": "body lotion",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "身體乳液",
+  "en_def": "lotion used on the skin of the body",
+  "sentence": "In winter my skin gets very dry, so I use {{BLANK}} every night after my shower to keep it soft.",
+  "cn": "冬天我的皮膚會變得很乾，所以我每晚洗完澡都擦身體乳液來保持柔嫩。",
+  "cnMarked": "冬天我的皮膚會變得很乾，所以我每晚洗完澡都擦【身體乳液】來保持柔嫩。",
+  "isHead": false,
+  "level": null,
+  "family": "lotion"
+ },
+ {
+  "word": "suntan lotion",
+  "answer": "suntan lotion",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "防曬乳",
+  "en_def": "lotion that protects the skin from the sun",
+  "sentence": "Do not forget to bring {{BLANK}} to the pool, because the sun is very strong at noon in July.",
+  "cn": "別忘了帶防曬乳去游泳池，因為七月中午的太陽非常強烈。",
+  "cnMarked": "別忘了帶【防曬乳】去游泳池，因為七月中午的太陽非常強烈。",
+  "isHead": false,
+  "level": null,
+  "family": "lotion"
+ }
+];
+const MCQS = [
+ {
+  "q": "This cleaning product is safe to use, but you must never mix it with bleach. Together they make a gas that can be ______ in a small, closed room.",
+  "options": [
+   "lethal",
+   "lifelong",
+   "lofty",
+   "literal"
+  ],
+  "answer": 0,
+  "vocabIndex": 0
+ },
+ {
+  "q": "Old wooden houses with no fire alarms are dangerous. They are ______ to burn down quickly if a candle or a cigarette is left burning by accident.",
+  "options": [
+   "lonesome",
+   "literate",
+   "lofty",
+   "liable"
+  ],
+  "answer": 3,
+  "vocabIndex": 4
+ },
+ {
+  "q": "The animals had lived in small cages at the zoo for years. A group of workers was finally sent to ______ them and move them to a wide, open park.",
+  "options": [
+   "linger",
+   "prolong",
+   "liberate",
+   "lodge"
+  ],
+  "answer": 2,
+  "vocabIndex": 8
+ },
+ {
+  "q": "For fifty years the country was ruled by a foreign army. The people still celebrate their ______ every spring with flags, songs, and a big parade.",
+  "options": [
+   "liberation",
+   "lodging",
+   "longevity",
+   "literacy"
+  ],
+  "answer": 0,
+  "vocabIndex": 9
+ },
+ {
+  "q": "Tom joined the army after college and did well in every test. Two years later he became a ______ and was put in charge of a group of thirty soldiers.",
+  "options": [
+   "liner",
+   "lizard",
+   "lieutenant",
+   "tenant"
+  ],
+  "answer": 2,
+  "vocabIndex": 13
+ },
+ {
+  "q": "My grandfather started collecting stamps when he was seven. It became a ______ interest, and even now at eighty-five he still buys new ones every single month.",
+  "options": [
+   "literal",
+   "lifelong",
+   "lethal",
+   "limp"
+  ],
+  "answer": 1,
+  "vocabIndex": 17
+ },
+ {
+  "q": "My schoolbag is so heavy that my shoulders hurt every day. The teacher said we could leave some of our books at school to ______ the load a little.",
+  "options": [
+   "lodge",
+   "linger",
+   "lock",
+   "lighten"
+  ],
+  "answer": 3,
+  "vocabIndex": 22
+ },
+ {
+  "q": "Sam hurt his left foot during the basketball game last night. Today he can only ______ slowly to class, and his coach told him to rest for a week.",
+  "options": [
+   "linger",
+   "limp",
+   "unlock",
+   "lighten"
+  ],
+  "answer": 1,
+  "vocabIndex": 27
+ },
+ {
+  "q": "The huge ship can carry three thousand passengers across the ocean in great comfort. This modern ______ even has a theater, three pools, and a shopping street.",
+  "options": [
+   "lodge",
+   "loft",
+   "liner",
+   "locker"
+  ],
+  "answer": 2,
+  "vocabIndex": 30
+ },
+ {
+  "q": "The party ended at ten, but nobody wanted to go home. Many guests continued to ______ in the garden, talking and laughing until well after midnight.",
+  "options": [
+   "liberate",
+   "linger",
+   "limp",
+   "lighten"
+  ],
+  "answer": 1,
+  "vocabIndex": 35
+ },
+ {
+  "q": "This jacket looks thin, but it is warm enough for winter. It has a thick wool ______ inside that keeps the cold wind away from your body.",
+  "options": [
+   "lotion",
+   "locker",
+   "lining",
+   "logo"
+  ],
+  "answer": 2,
+  "vocabIndex": 31
+ },
+ {
+  "q": "The recipe says we need exactly one ______ of milk for the pudding. That is the same as one of those big bottles from the supermarket.",
+  "options": [
+   "locker",
+   "lotion",
+   "lizard",
+   "liter"
+  ],
+  "answer": 3,
+  "vocabIndex": 38
+ },
+ {
+  "q": "A hundred years ago, most farmers in the area could not read or write. Free schools slowly changed that, and today the ______ rate is nearly one hundred percent.",
+  "options": [
+   "literacy",
+   "longevity",
+   "liability",
+   "longitude"
+  ],
+  "answer": 0,
+  "vocabIndex": 41
+ },
+ {
+  "q": "When Mom says \"I'm going to kill you,\" she does not really mean it. You should not take her words in their ______ sense; she is only a little angry.",
+  "options": [
+   "lethal",
+   "literal",
+   "lofty",
+   "lonesome"
+  ],
+  "answer": 1,
+  "vocabIndex": 42
+ },
+ {
+  "q": "In the past, only rich families could send their children to school. Now almost every adult in the country is ______ and can read a newspaper without help.",
+  "options": [
+   "literate",
+   "limp",
+   "liable",
+   "lifelong"
+  ],
+  "answer": 0,
+  "vocabIndex": 43
+ },
+ {
+  "q": "The farm has twenty cows, fifty sheep, and a few pigs. When the river rose, the farmer moved all the ______ to higher ground so that none would drown.",
+  "options": [
+   "lotion",
+   "livestock",
+   "lodging",
+   "lining"
+  ],
+  "answer": 1,
+  "vocabIndex": 47
+ },
+ {
+  "q": "A small green animal with a long tail was sitting on the warm rock. When I moved closer, the ______ ran into a crack between the stones and disappeared.",
+  "options": [
+   "liner",
+   "logo",
+   "lizard",
+   "lieutenant"
+  ],
+  "answer": 2,
+  "vocabIndex": 51
+ },
+ {
+  "q": "Students do not have to carry all their books home every day. Each of them has a small ______ with a key at school where they keep their things.",
+  "options": [
+   "locker",
+   "liter",
+   "lodge",
+   "loft"
+  ],
+  "answer": 0,
+  "vocabIndex": 54
+ },
+ {
+  "q": "We did not want to sleep in a tent during the cold mountain trip. Instead we stayed in a warm wooden ______ run by a friendly old couple.",
+  "options": [
+   "liner",
+   "locker",
+   "lotion",
+   "lodge"
+  ],
+  "answer": 3,
+  "vocabIndex": 59
+ },
+ {
+  "q": "When she was twelve, Amy decided she would one day find a cure for cancer. Her teachers smiled at such a ______ goal, but she never gave it up.",
+  "options": [
+   "limp",
+   "lofty",
+   "literate",
+   "lethal"
+  ],
+  "answer": 1,
+  "vocabIndex": 63
+ },
+ {
+  "q": "You can recognize the coffee shop from far away even without reading its name. Its green round ______ is printed on every cup, bag, and store window.",
+  "options": [
+   "logo",
+   "lotion",
+   "lining",
+   "locker"
+  ],
+  "answer": 0,
+  "vocabIndex": 66
+ },
+ {
+  "q": "After his wife died, the old man spent most days sitting by the window. He felt ______ and sad, so his daughter bought him a small dog for company.",
+  "options": [
+   "lethal",
+   "lofty",
+   "literal",
+   "lonesome"
+  ],
+  "answer": 3,
+  "vocabIndex": 69
+ },
+ {
+  "q": "People in this mountain village often live past one hundred. Scientists are studying their ______ and think the clean air and simple food may be the reasons.",
+  "options": [
+   "longitude",
+   "literacy",
+   "longevity",
+   "liability"
+  ],
+  "answer": 2,
+  "vocabIndex": 74
+ },
+ {
+  "q": "Taipei and Manila are both about 121 degrees east of the line that runs through Greenwich, England. Because they share nearly the same ______, their clocks show the same time.",
+  "options": [
+   "longitude",
+   "latitude",
+   "literacy",
+   "longevity"
+  ],
+  "answer": 0,
+  "vocabIndex": 77
+ },
+ {
+  "q": "My skin gets dry and itchy every winter. The doctor told me to put some ______ on my arms and legs after every shower to keep them soft.",
+  "options": [
+   "logo",
+   "lotion",
+   "lining",
+   "liter"
+  ],
+  "answer": 1,
+  "vocabIndex": 80
+ },
+ {
+  "q": "The famous statue in New York holds a torch high in the air. It was a gift from France and stands for the ______ that the new country promised its people.",
+  "options": [
+   "lodging",
+   "literature",
+   "longevity",
+   "liberty"
+  ],
+  "answer": 3,
+  "vocabIndex": 10
+ },
+ {
+  "q": "Jenny moved to a city where she did not know anyone. At first she felt very ______, but after joining a dance class she soon made many new friends.",
+  "options": [
+   "light",
+   "lonely",
+   "literate",
+   "lethal"
+  ],
+  "answer": 1,
+  "vocabIndex": 70
+ },
+ {
+  "q": "The sign at the pool says \"No running,\" and the lifeguard means it ______. Last week he sent two boys home just for jogging along the side.",
+  "options": [
+   "literally",
+   "aloft",
+   "alone",
+   "lethally"
+  ],
+  "answer": 0,
+  "vocabIndex": 44
+ },
+ {
+  "q": "My uncle eats fast food every day, never exercises, and sleeps only five hours a night. The doctor warned him that such a ______ could lead to serious health problems.",
+  "options": [
+   "livelihood",
+   "lifetime",
+   "lifespan",
+   "lifestyle"
+  ],
+  "answer": 3,
+  "vocabIndex": 20
+ },
+ {
+  "q": "The meeting should have ended an hour ago, but the manager keeps adding new topics. Please do not ______ it any further; everyone is tired and hungry.",
+  "options": [
+   "lighten",
+   "lock",
+   "prolong",
+   "lodge"
+  ],
+  "answer": 2,
+  "vocabIndex": 76
+ }
+];
+const LOOKUP = {};
+VOCAB.forEach(v => { const key = v.word.toLowerCase(); const sense = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def };
+  if (LOOKUP[key]) LOOKUP[key].combined.push(sense); else LOOKUP[key] = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def, combined: [sense] }; });
+const EXTRA_GLOSSES = {};

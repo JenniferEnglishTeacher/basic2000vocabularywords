@@ -1,0 +1,1505 @@
+// 學測6000字 Level 6 Group 11 (disable-dividend) — word-family edition
+const QUIZ_CONFIG = {
+  groupName: "6000字 L6 Group 11 - disable – dividend (word family)",
+  gasEndpoint: "https://script.google.com/macros/s/AKfycbzLUqP-nauSjmiHfPXiK3NAV65tYdjAlwqip38TcGdTKqeR_CijuzHYxZDC-sjtRVrr_w/exec"
+};
+const VOCAB = [
+ {
+  "word": "disable",
+  "answer": "disable",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使失去功能；停用；使殘廢",
+  "en_def": "to stop something from working; to injure someone so they cannot use part of their body",
+  "sentence": "You should {{BLANK}} the pop-up messages on your phone during the exam so that nothing distracts you from the questions.",
+  "cn": "考試期間你應該關閉手機上的彈出訊息，這樣才不會有東西讓你分心。",
+  "cnMarked": "考試期間你應該【關閉】手機上的彈出訊息，這樣才不會有東西讓你分心。",
+  "isHead": true,
+  "level": 6,
+  "family": "disable"
+ },
+ {
+  "word": "disabled",
+  "answer": "disabled",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "身心障礙的",
+  "en_def": "not able to use part of your body or mind fully",
+  "sentence": "The new library has wide doors and ramps so that {{BLANK}} visitors in wheelchairs can enter every room easily.",
+  "cn": "新圖書館有寬門和斜坡，讓坐輪椅的身心障礙訪客能輕鬆進入每個房間。",
+  "cnMarked": "新圖書館有寬門和斜坡，讓坐輪椅的【身心障礙】訪客能輕鬆進入每個房間。",
+  "isHead": false,
+  "level": null,
+  "family": "disable"
+ },
+ {
+  "word": "disability",
+  "answer": "disability",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "殘疾；身心障礙",
+  "en_def": "a physical or mental condition that makes it hard to do some things",
+  "sentence": "Having a {{BLANK}} did not stop my cousin from finishing university and finding a job she really loves.",
+  "cn": "有身心障礙並沒有阻止我表姊完成大學學業，並找到一份她真正熱愛的工作。",
+  "cnMarked": "有【身心障礙】並沒有阻止我表姊完成大學學業，並找到一份她真正熱愛的工作。",
+  "isHead": false,
+  "level": 4,
+  "family": "disable"
+ },
+ {
+  "word": "the disabled",
+  "answer": "the disabled",
+  "nblanks": 2,
+  "pos": "n.",
+  "cn_def": "身心障礙者",
+  "en_def": "people who have a disability",
+  "sentence": "These parking spaces near the entrance are only for {{BLANK}}, so please leave your car somewhere else.",
+  "cn": "入口附近的這些停車位只提供給身心障礙者，所以請把車停在別的地方。",
+  "cnMarked": "入口附近的這些停車位只提供給【身心障礙者】，所以請把車停在別的地方。",
+  "isHead": false,
+  "level": null,
+  "family": "disable"
+ },
+ {
+  "word": "disastrous",
+  "answer": "disastrous",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "災難性的；極糟的",
+  "en_def": "very bad; causing a lot of damage or trouble",
+  "sentence": "The school trip was {{BLANK}}: the bus broke down, it rained all day, and two students lost their bags.",
+  "cn": "這次校外教學糟透了：巴士拋錨、整天下雨，還有兩個學生弄丟了包包。",
+  "cnMarked": "這次校外教學【糟透了】：巴士拋錨、整天下雨，還有兩個學生弄丟了包包。",
+  "isHead": true,
+  "level": 6,
+  "family": "disastrous"
+ },
+ {
+  "word": "disaster",
+  "answer": "disaster",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "災難",
+  "en_def": "a terrible event that causes great damage or suffering",
+  "sentence": "After the earthquake, people from all over the island sent food and blankets to help the victims of the {{BLANK}}.",
+  "cn": "地震過後，全島各地的人們寄來食物和毛毯，幫助這場災難的受害者。",
+  "cnMarked": "地震過後，全島各地的人們寄來食物和毛毯，幫助這場【災難】的受害者。",
+  "isHead": false,
+  "level": 4,
+  "family": "disastrous"
+ },
+ {
+  "word": "natural disaster",
+  "answer": "natural disaster",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "天災；自然災害",
+  "en_def": "a terrible event caused by nature, such as a flood or earthquake",
+  "sentence": "Typhoons are the most common {{BLANK}} in Taiwan, so every family should keep a flashlight and some water ready.",
+  "cn": "颱風是台灣最常見的天災，所以每個家庭都應該準備好手電筒和一些水。",
+  "cnMarked": "颱風是台灣最常見的【天災】，所以每個家庭都應該準備好手電筒和一些水。",
+  "isHead": false,
+  "level": null,
+  "family": "disastrous"
+ },
+ {
+  "word": "disastrously",
+  "answer": "disastrously",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "災難性地；慘重地",
+  "en_def": "in a way that is very bad or harmful",
+  "sentence": "The plan went {{BLANK}} wrong when the main speaker missed his flight and nobody else was ready to give the talk.",
+  "cn": "當主講人錯過班機、又沒有人準備好代講時，這個計畫就徹底出了大錯。",
+  "cnMarked": "當主講人錯過班機、又沒有人準備好代講時，這個計畫就【徹底】出了大錯。",
+  "isHead": false,
+  "level": null,
+  "family": "disastrous"
+ },
+ {
+  "word": "disbelief",
+  "answer": "disbelief",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "不相信；懷疑",
+  "en_def": "the feeling of not being able to believe something",
+  "sentence": "The students stared at the teacher in {{BLANK}} when she said the final exam had been canceled for the whole grade.",
+  "cn": "當老師說整個年級的期末考取消時，學生們不敢相信地盯著她看。",
+  "cnMarked": "當老師說整個年級的期末考取消時，學生們【不敢相信地】盯著她看。",
+  "isHead": true,
+  "level": 6,
+  "family": "disbelief"
+ },
+ {
+  "word": "disbelieve",
+  "answer": "disbelieve",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "不相信",
+  "en_def": "to not believe someone or something",
+  "sentence": "There is no reason to {{BLANK}} her story, because three other people saw the same strange light in the sky.",
+  "cn": "沒有理由不相信她說的事，因為另外三個人也看到了天空中同樣奇怪的光。",
+  "cnMarked": "沒有理由【不相信】她說的事，因為另外三個人也看到了天空中同樣奇怪的光。",
+  "isHead": false,
+  "level": null,
+  "family": "disbelief"
+ },
+ {
+  "word": "in disbelief",
+  "answer": "in disbelief",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "不敢相信地",
+  "en_def": "in a way that shows you cannot believe something",
+  "sentence": "He shook his head {{BLANK}} when the doctor told him that the little cut on his finger needed five stitches.",
+  "cn": "當醫生告訴他手指上的小傷口需要縫五針時，他不敢相信地搖了搖頭。",
+  "cnMarked": "當醫生告訴他手指上的小傷口需要縫五針時，他【不敢相信地】搖了搖頭。",
+  "isHead": false,
+  "level": null,
+  "family": "disbelief"
+ },
+ {
+  "word": "believe",
+  "answer": "believe",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "相信",
+  "en_def": "to think that something is true",
+  "sentence": "I {{BLANK}} that hard work matters more than talent, because I have seen lazy geniuses fail many times.",
+  "cn": "我相信努力比天分更重要，因為我看過很多懶惰的天才失敗。",
+  "cnMarked": "我【相信】努力比天分更重要，因為我看過很多懶惰的天才失敗。",
+  "isHead": false,
+  "level": 1,
+  "family": "disbelief"
+ },
+ {
+  "word": "discard",
+  "answer": "discard",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "丟棄；拋棄",
+  "en_def": "to throw something away because you do not want it",
+  "sentence": "Please do not {{BLANK}} the old textbooks, because the younger students can still use them for extra practice.",
+  "cn": "請不要丟掉舊課本，因為低年級的學生還可以拿來做額外練習。",
+  "cnMarked": "請不要【丟掉】舊課本，因為低年級的學生還可以拿來做額外練習。",
+  "isHead": true,
+  "level": 6,
+  "family": "discard"
+ },
+ {
+  "word": "discarded",
+  "answer": "discarded",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "被丟棄的",
+  "en_def": "thrown away",
+  "sentence": "Volunteers collected hundreds of {{BLANK}} bottles and cans from the beach in just two hours on Sunday morning.",
+  "cn": "志工們在星期天早上短短兩小時內，就從海灘上撿了數百個被丟棄的瓶子和罐子。",
+  "cnMarked": "志工們在星期天早上短短兩小時內，就從海灘上撿了數百個【被丟棄的】瓶子和罐子。",
+  "isHead": false,
+  "level": null,
+  "family": "discard"
+ },
+ {
+  "word": "discard",
+  "answer": "discard",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "棄牌；丟棄物",
+  "en_def": "a card or thing that has been thrown away",
+  "sentence": "In this card game, each player picks up one card and then puts one {{BLANK}} face up in the middle of the table.",
+  "cn": "在這個紙牌遊戲中，每位玩家抽一張牌，然後把一張棄牌正面朝上放在桌子中間。",
+  "cnMarked": "在這個紙牌遊戲中，每位玩家抽一張牌，然後把一張【棄牌】正面朝上放在桌子中間。",
+  "isHead": false,
+  "level": 6,
+  "family": "discard"
+ },
+ {
+  "word": "discharge",
+  "answer": "discharge",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "允許離開（醫院／軍隊）；排放",
+  "en_def": "to allow someone to leave a hospital or the army; to send out gas or liquid",
+  "sentence": "The hospital will {{BLANK}} my grandmother tomorrow morning if her temperature stays normal during the night.",
+  "cn": "如果我奶奶的體溫在夜裡保持正常，醫院明天早上就會讓她出院。",
+  "cnMarked": "如果我奶奶的體溫在夜裡保持正常，醫院明天早上就會讓她【出院】。",
+  "isHead": true,
+  "level": 6,
+  "family": "discharge"
+ },
+ {
+  "word": "discharge",
+  "answer": "discharge",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "排放；出院；退伍",
+  "en_def": "the act of sending out gas or liquid; the act of letting someone leave",
+  "sentence": "The factory was fined for the {{BLANK}} of dirty water into the river, which killed many fish downstream.",
+  "cn": "這家工廠因為把髒水排放到河裡而被罰款，這造成下游許多魚死亡。",
+  "cnMarked": "這家工廠因為把髒水【排放】到河裡而被罰款，這造成下游許多魚死亡。",
+  "isHead": false,
+  "level": 6,
+  "family": "discharge"
+ },
+ {
+  "word": "be discharged from",
+  "answer": "was discharged from",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "從…出院／退伍",
+  "en_def": "to be officially allowed to leave a hospital, the army, etc.",
+  "sentence": "My brother {{BLANK}} the army last month, and now he is looking for a job in the city.",
+  "cn": "我哥哥上個月從軍隊退伍，現在他正在城裡找工作。",
+  "cnMarked": "我哥哥上個月【從】軍隊【退伍】，現在他正在城裡找工作。",
+  "isHead": false,
+  "level": null,
+  "family": "discharge"
+ },
+ {
+  "word": "disciple",
+  "answer": "disciple",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "門徒；信徒；弟子",
+  "en_def": "a person who follows and learns from a teacher or leader",
+  "sentence": "The old master taught kung fu to only one {{BLANK}}, who later opened schools all over the country.",
+  "cn": "老師父只把功夫教給一位弟子，這位弟子後來在全國各地開了武館。",
+  "cnMarked": "老師父只把功夫教給一位【弟子】，這位弟子後來在全國各地開了武館。",
+  "isHead": true,
+  "level": 6,
+  "family": "disciple"
+ },
+ {
+  "word": "discipline",
+  "answer": "discipline",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "紀律",
+  "en_def": "the practice of making people obey rules; control over your own behavior",
+  "sentence": "Good {{BLANK}} in class helps everyone learn, so the teacher explains the rules clearly on the first day.",
+  "cn": "課堂上良好的紀律有助於每個人學習，所以老師在第一天就把規則說清楚。",
+  "cnMarked": "課堂上良好的【紀律】有助於每個人學習，所以老師在第一天就把規則說清楚。",
+  "isHead": false,
+  "level": 4,
+  "family": "disciple"
+ },
+ {
+  "word": "discipline",
+  "answer": "discipline",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "懲戒；管教；訓練",
+  "en_def": "to punish someone or train them to obey rules",
+  "sentence": "Parents should {{BLANK}} their children with patience, because shouting usually teaches them to shout back.",
+  "cn": "父母應該有耐心地管教孩子，因為大吼通常只會教孩子吼回來。",
+  "cnMarked": "父母應該有耐心地【管教】孩子，因為大吼通常只會教孩子吼回來。",
+  "isHead": false,
+  "level": 4,
+  "family": "disciple"
+ },
+ {
+  "word": "self-discipline",
+  "answer": "self-discipline",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "自律",
+  "en_def": "the ability to make yourself do what you should do",
+  "sentence": "Studying at home takes a lot of {{BLANK}}, because nobody is there to stop you from watching videos all afternoon.",
+  "cn": "在家讀書需要很強的自律，因為沒有人會阻止你看一整個下午的影片。",
+  "cnMarked": "在家讀書需要很強的【自律】，因為沒有人會阻止你看一整個下午的影片。",
+  "isHead": false,
+  "level": null,
+  "family": "disciple"
+ },
+ {
+  "word": "disciplinary",
+  "answer": "disciplinary",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "紀律的；懲戒的",
+  "en_def": "connected with punishing people who break rules",
+  "sentence": "The school took {{BLANK}} action against the two boys who painted on the walls of the gym last weekend.",
+  "cn": "學校對上週末在體育館牆上塗鴉的兩個男生採取了懲戒行動。",
+  "cnMarked": "學校對上週末在體育館牆上塗鴉的兩個男生採取了【懲戒】行動。",
+  "isHead": true,
+  "level": 6,
+  "family": "disciplinary"
+ },
+ {
+  "word": "disciplined",
+  "answer": "disciplined",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "守紀律的；自律的",
+  "en_def": "able to control your behavior and follow rules",
+  "sentence": "The {{BLANK}} athlete gets up at five every morning to train, even when it is cold and dark outside.",
+  "cn": "這位自律的運動員每天早上五點起床訓練，即使外面又冷又暗。",
+  "cnMarked": "這位【自律的】運動員每天早上五點起床訓練，即使外面又冷又暗。",
+  "isHead": false,
+  "level": null,
+  "family": "disciplinary"
+ },
+ {
+  "word": "disciplinary committee",
+  "answer": "disciplinary committee",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "紀律委員會",
+  "en_def": "a group of people who decide how to punish rule-breakers",
+  "sentence": "The case was sent to the {{BLANK}}, which will decide whether the player should be banned from the next three games.",
+  "cn": "這個案件被送交紀律委員會，委員會將決定該球員是否應被禁賽接下來的三場比賽。",
+  "cnMarked": "這個案件被送交【紀律委員會】，委員會將決定該球員是否應被禁賽接下來的三場比賽。",
+  "isHead": false,
+  "level": null,
+  "family": "disciplinary"
+ },
+ {
+  "word": "disclosure",
+  "answer": "disclosure",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "揭露；公開",
+  "en_def": "the act of making secret information known",
+  "sentence": "The {{BLANK}} of the company's secret report shocked customers, who learned that their personal data had been sold.",
+  "cn": "公司秘密報告的揭露讓顧客震驚，他們得知自己的個人資料已被出售。",
+  "cnMarked": "公司秘密報告的【揭露】讓顧客震驚，他們得知自己的個人資料已被出售。",
+  "isHead": true,
+  "level": 6,
+  "family": "disclosure"
+ },
+ {
+  "word": "disclose",
+  "answer": "disclose",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "揭露；透露",
+  "en_def": "to tell people something that was secret",
+  "sentence": "The company refused to {{BLANK}} how many users were affected by the attack until the police finished their investigation.",
+  "cn": "在警方完成調查之前，這家公司拒絕透露有多少用戶受到這次攻擊的影響。",
+  "cnMarked": "在警方完成調查之前，這家公司拒絕【透露】有多少用戶受到這次攻擊的影響。",
+  "isHead": false,
+  "level": 5,
+  "family": "disclosure"
+ },
+ {
+  "word": "undisclosed",
+  "answer": "undisclosed",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "未公開的",
+  "en_def": "not made known to the public",
+  "sentence": "The singer was paid an {{BLANK}} amount of money to perform at the private party on the island.",
+  "cn": "這位歌手收了一筆未公開的金額，到島上的私人派對演出。",
+  "cnMarked": "這位歌手收了一筆【未公開的】金額，到島上的私人派對演出。",
+  "isHead": false,
+  "level": null,
+  "family": "disclosure"
+ },
+ {
+  "word": "full disclosure",
+  "answer": "full disclosure",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "完全公開；充分揭露",
+  "en_def": "giving all the facts, hiding nothing",
+  "sentence": "The new law requires {{BLANK}} of all the ingredients in food products, including the chemicals used to keep them fresh.",
+  "cn": "新法律要求完全公開食品中的所有成分，包括用來保鮮的化學物質。",
+  "cnMarked": "新法律要求【完全公開】食品中的所有成分，包括用來保鮮的化學物質。",
+  "isHead": false,
+  "level": null,
+  "family": "disclosure"
+ },
+ {
+  "word": "discomfort",
+  "answer": "discomfort",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "不適；不安",
+  "en_def": "a feeling of slight pain or of being uneasy",
+  "sentence": "You may feel some {{BLANK}} in your arm for a day after the injection, but it should go away by itself.",
+  "cn": "打針後一天內你的手臂可能會有些不適，但它應該會自己消失。",
+  "cnMarked": "打針後一天內你的手臂可能會有些【不適】，但它應該會自己消失。",
+  "isHead": true,
+  "level": 6,
+  "family": "discomfort"
+ },
+ {
+  "word": "comfort",
+  "answer": "comfort",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "舒適；安慰",
+  "en_def": "a pleasant feeling of being relaxed and free from pain or worry",
+  "sentence": "After a hard day at work, my mother finds {{BLANK}} in a hot bath and a cup of tea by the window.",
+  "cn": "辛苦工作一天後，我媽媽在熱水澡和窗邊的一杯茶中找到慰藉。",
+  "cnMarked": "辛苦工作一天後，我媽媽在熱水澡和窗邊的一杯茶中找到【慰藉】。",
+  "isHead": false,
+  "level": 3,
+  "family": "discomfort"
+ },
+ {
+  "word": "comfortable",
+  "answer": "comfortable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "舒適的；舒服的",
+  "en_def": "making you feel relaxed and free from pain",
+  "sentence": "These new shoes are so {{BLANK}} that I walked around the city for six hours without any pain.",
+  "cn": "這雙新鞋非常舒服，我在城裡走了六個小時都不會痛。",
+  "cnMarked": "這雙新鞋非常【舒服】，我在城裡走了六個小時都不會痛。",
+  "isHead": false,
+  "level": 1,
+  "family": "discomfort"
+ },
+ {
+  "word": "uncomfortable",
+  "answer": "uncomfortable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "不舒服的；不自在的",
+  "en_def": "not pleasant to wear, sit in, or be in; feeling uneasy",
+  "sentence": "I felt {{BLANK}} at the party because I did not know anyone and everybody was talking about people I had never met.",
+  "cn": "我在派對上覺得很不自在，因為我誰都不認識，而大家都在談論我從沒見過的人。",
+  "cnMarked": "我在派對上覺得很【不自在】，因為我誰都不認識，而大家都在談論我從沒見過的人。",
+  "isHead": false,
+  "level": null,
+  "family": "discomfort"
+ },
+ {
+  "word": "discreet",
+  "answer": "discreet",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "謹慎的；慎重的；不張揚的",
+  "en_def": "careful not to say or do things that might embarrass someone or give away a secret",
+  "sentence": "Please be {{BLANK}} about my birthday plans, because I want the party to be a surprise for my sister.",
+  "cn": "關於我的生日計畫請保密謹慎一點，因為我希望這個派對能給我妹妹一個驚喜。",
+  "cnMarked": "關於我的生日計畫請【保密謹慎】一點，因為我希望這個派對能給我妹妹一個驚喜。",
+  "isHead": true,
+  "level": 6,
+  "family": "discreet"
+ },
+ {
+  "word": "discreetly",
+  "answer": "discreetly",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "謹慎地；不張揚地",
+  "en_def": "in a careful and quiet way, without attracting attention",
+  "sentence": "The waiter {{BLANK}} told the man that his credit card had been refused, so that nobody else at the table could hear.",
+  "cn": "服務生低調地告訴那位先生他的信用卡被拒刷了，這樣桌上其他人都聽不到。",
+  "cnMarked": "服務生【低調地】告訴那位先生他的信用卡被拒刷了，這樣桌上其他人都聽不到。",
+  "isHead": false,
+  "level": null,
+  "family": "discreet"
+ },
+ {
+  "word": "discretion",
+  "answer": "discretion",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "自行決定權；謹慎",
+  "en_def": "the freedom to decide what to do; care in what you say and do",
+  "sentence": "Teachers may use their own {{BLANK}} when deciding whether a late homework can still receive full marks.",
+  "cn": "老師在決定遲交的作業是否還能拿滿分時，可以自行斟酌。",
+  "cnMarked": "老師在決定遲交的作業是否還能拿滿分時，可以自行【斟酌】。",
+  "isHead": false,
+  "level": null,
+  "family": "discreet"
+ },
+ {
+  "word": "indiscreet",
+  "answer": "indiscreet",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "不謹慎的；輕率的",
+  "en_def": "saying or doing things you should keep private",
+  "sentence": "It was {{BLANK}} of him to talk about his friend's family problems in front of the whole class.",
+  "cn": "他在全班面前談論朋友的家庭問題，實在是太輕率了。",
+  "cnMarked": "他在全班面前談論朋友的家庭問題，實在是太【輕率】了。",
+  "isHead": false,
+  "level": null,
+  "family": "discreet"
+ },
+ {
+  "word": "disgrace",
+  "answer": "disgrace",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "恥辱；丟臉的事",
+  "en_def": "something that is so bad that it makes people ashamed; loss of respect",
+  "sentence": "It is a {{BLANK}} that the beautiful old park is now full of trash, and the city has done nothing about it.",
+  "cn": "那座美麗的老公園現在滿是垃圾真是一種恥辱，而市政府卻什麼也沒做。",
+  "cnMarked": "那座美麗的老公園現在滿是垃圾真是一種【恥辱】，而市政府卻什麼也沒做。",
+  "isHead": true,
+  "level": 6,
+  "family": "disgrace"
+ },
+ {
+  "word": "disgrace",
+  "answer": "disgraced",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使丟臉；使蒙羞",
+  "en_def": "to make people lose respect for you or your group",
+  "sentence": "The player was sent home for cheating, and he knew he had {{BLANK}} himself and his whole team.",
+  "cn": "那位球員因作弊被遣送回家，他知道自己讓自己和整支球隊蒙羞了。",
+  "cnMarked": "那位球員因作弊被遣送回家，他知道自己【讓】自己和整支球隊【蒙羞】了。",
+  "isHead": false,
+  "level": 6,
+  "family": "disgrace"
+ },
+ {
+  "word": "disgraceful",
+  "answer": "disgraceful",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "可恥的；丟臉的",
+  "en_def": "very bad and making people feel ashamed",
+  "sentence": "The fans' {{BLANK}} behavior after the game, throwing bottles onto the field, was shown on the news all week.",
+  "cn": "球迷賽後把瓶子丟進場內的可恥行為，整個星期都在新聞上播出。",
+  "cnMarked": "球迷賽後把瓶子丟進場內的【可恥】行為，整個星期都在新聞上播出。",
+  "isHead": false,
+  "level": null,
+  "family": "disgrace"
+ },
+ {
+  "word": "in disgrace",
+  "answer": "in disgrace",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "丟臉地；失寵地",
+  "en_def": "having lost people's respect because of something bad you did",
+  "sentence": "The minister left office {{BLANK}} after reporters proved that he had lied about his spending.",
+  "cn": "在記者證明他謊報開支之後，這位部長狼狽地下台了。",
+  "cnMarked": "在記者證明他謊報開支之後，這位部長【狼狽地】下台了。",
+  "isHead": false,
+  "level": null,
+  "family": "disgrace"
+ },
+ {
+  "word": "dismay",
+  "answer": "dismay",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "沮喪；驚愕",
+  "en_def": "a feeling of shock and sadness when something bad happens",
+  "sentence": "To the {{BLANK}} of the fans, the concert was canceled only an hour before it was supposed to begin.",
+  "cn": "令粉絲沮喪的是，演唱會在原定開始前一小時才宣布取消。",
+  "cnMarked": "令粉絲【沮喪】的是，演唱會在原定開始前一小時才宣布取消。",
+  "isHead": true,
+  "level": 6,
+  "family": "dismay"
+ },
+ {
+  "word": "dismay",
+  "answer": "dismayed",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使沮喪；使驚愕",
+  "en_def": "to make someone feel shocked and sad",
+  "sentence": "The poor test results {{BLANK}} the teacher, who had spent weeks preparing the class for the exam.",
+  "cn": "糟糕的考試成績讓老師很沮喪，她花了好幾週為全班準備這次考試。",
+  "cnMarked": "糟糕的考試成績【讓】老師【很沮喪】，她花了好幾週為全班準備這次考試。",
+  "isHead": false,
+  "level": 6,
+  "family": "dismay"
+ },
+ {
+  "word": "dismayed",
+  "answer": "dismayed",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "沮喪的；驚愕的",
+  "en_def": "feeling shocked and sad",
+  "sentence": "We were {{BLANK}} to find that the museum was closed on Mondays, since we had traveled two hours to see it.",
+  "cn": "我們發現博物館星期一休館時非常沮喪，因為我們花了兩個小時的車程來參觀。",
+  "cnMarked": "我們發現博物館星期一休館時非常【沮喪】，因為我們花了兩個小時的車程來參觀。",
+  "isHead": false,
+  "level": null,
+  "family": "dismay"
+ },
+ {
+  "word": "to one's dismay",
+  "answer": "To my dismay",
+  "nblanks": 3,
+  "pos": "phr.",
+  "cn_def": "令某人沮喪的是",
+  "en_def": "used to say that something made you feel upset",
+  "sentence": "{{BLANK}}, the only cake left at the bakery was the one with raisins, which I really cannot stand.",
+  "cn": "令我沮喪的是，麵包店裡只剩下葡萄乾蛋糕，而那是我最受不了的。",
+  "cnMarked": "【令我沮喪的是】，麵包店裡只剩下葡萄乾蛋糕，而那是我最受不了的。",
+  "isHead": false,
+  "level": null,
+  "family": "dismay"
+ },
+ {
+  "word": "dispensable",
+  "answer": "dispensable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "可有可無的；非必要的",
+  "en_def": "not necessary; able to be done without",
+  "sentence": "In a small company, no worker is {{BLANK}}; when one person is sick, everyone else has to do extra work.",
+  "cn": "在小公司裡，沒有一個員工是可有可無的；當有人生病時，其他人都得多做額外的工作。",
+  "cnMarked": "在小公司裡，沒有一個員工是【可有可無的】；當有人生病時，其他人都得多做額外的工作。",
+  "isHead": true,
+  "level": 6,
+  "family": "dispensable"
+ },
+ {
+  "word": "dispense",
+  "answer": "dispense",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "分配；發放；配藥",
+  "en_def": "to give out something to people; to prepare and give medicine",
+  "sentence": "The machine in the hallway can {{BLANK}} hot drinks, snacks, and even umbrellas to students on rainy days.",
+  "cn": "走廊上的那台機器可以在下雨天提供熱飲、點心，甚至雨傘給學生。",
+  "cnMarked": "走廊上的那台機器可以在下雨天【提供】熱飲、點心，甚至雨傘給學生。",
+  "isHead": true,
+  "level": 6,
+  "family": "dispensable"
+ },
+ {
+  "word": "indispensable",
+  "answer": "indispensable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "不可或缺的",
+  "en_def": "so important that you cannot do without it",
+  "sentence": "A smartphone has become {{BLANK}} for many people, who use it to pay, to travel, and to talk to friends.",
+  "cn": "智慧型手機對許多人來說已經變得不可或缺，他們用它付款、旅行和跟朋友聊天。",
+  "cnMarked": "智慧型手機對許多人來說已經變得【不可或缺】，他們用它付款、旅行和跟朋友聊天。",
+  "isHead": false,
+  "level": 5,
+  "family": "dispensable"
+ },
+ {
+  "word": "dispense with",
+  "answer": "dispense with",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "省去；免除",
+  "en_def": "to stop using or doing something because it is not needed",
+  "sentence": "Let us {{BLANK}} the long introductions and start the meeting, because everyone here already knows each other.",
+  "cn": "我們省去冗長的自我介紹，直接開會吧，因為在場的每個人都已經互相認識了。",
+  "cnMarked": "我們【省去】冗長的自我介紹，直接開會吧，因為在場的每個人都已經互相認識了。",
+  "isHead": false,
+  "level": null,
+  "family": "dispensable"
+ },
+ {
+  "word": "dispenser",
+  "answer": "dispenser",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "自動給料機；給皂機；販賣機",
+  "en_def": "a machine or container that gives out a product",
+  "sentence": "There is a soap {{BLANK}} next to every sink in the school bathrooms, so there is no excuse for dirty hands.",
+  "cn": "學校廁所每個洗手台旁邊都有一個給皂機，所以沒有藉口不洗手。",
+  "cnMarked": "學校廁所每個洗手台旁邊都有一個【給皂機】，所以沒有藉口不洗手。",
+  "isHead": false,
+  "level": null,
+  "family": "dispensable"
+ },
+ {
+  "word": "disposable",
+  "answer": "disposable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "用完即丟的；一次性的",
+  "en_def": "made to be used once or a few times and then thrown away",
+  "sentence": "Many coffee shops now charge extra for {{BLANK}} cups, so bring your own bottle if you want to save money.",
+  "cn": "現在很多咖啡店對一次性杯子額外收費，所以如果你想省錢就自己帶瓶子。",
+  "cnMarked": "現在很多咖啡店對【一次性】杯子額外收費，所以如果你想省錢就自己帶瓶子。",
+  "isHead": true,
+  "level": 6,
+  "family": "disposable"
+ },
+ {
+  "word": "disposal",
+  "answer": "disposal",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "處理；丟棄",
+  "en_def": "the act of getting rid of something",
+  "sentence": "Proper {{BLANK}} of old batteries is important because the chemicals inside them can poison the soil and water.",
+  "cn": "妥善處理舊電池很重要，因為裡面的化學物質會污染土壤和水。",
+  "cnMarked": "妥善【處理】舊電池很重要，因為裡面的化學物質會污染土壤和水。",
+  "isHead": true,
+  "level": 6,
+  "family": "disposable"
+ },
+ {
+  "word": "dispose",
+  "answer": "dispose",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "處理；丟掉",
+  "en_def": "to get rid of something you do not want (used with of)",
+  "sentence": "Please {{BLANK}} of your lunch boxes in the correct bin, because paper and plastic are collected separately.",
+  "cn": "請把你的便當盒丟進正確的垃圾桶，因為紙類和塑膠是分開回收的。",
+  "cnMarked": "請把你的便當盒【丟】進正確的垃圾桶，因為紙類和塑膠是分開回收的。",
+  "isHead": true,
+  "level": 6,
+  "family": "disposable"
+ },
+ {
+  "word": "dispose of",
+  "answer": "dispose of",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "處理掉；丟棄",
+  "en_def": "to throw away or get rid of something",
+  "sentence": "The hotel had to {{BLANK}} hundreds of old mattresses when it replaced all the beds last summer.",
+  "cn": "去年夏天飯店更換所有床鋪時，必須處理掉數百張舊床墊。",
+  "cnMarked": "去年夏天飯店更換所有床鋪時，必須【處理掉】數百張舊床墊。",
+  "isHead": false,
+  "level": null,
+  "family": "disposable"
+ },
+ {
+  "word": "at one's disposal",
+  "answer": "at their disposal",
+  "nblanks": 3,
+  "pos": "phr.",
+  "cn_def": "可供某人隨意使用",
+  "en_def": "available for someone to use whenever they want",
+  "sentence": "During the project, the students had the computer lab {{BLANK}} every afternoon after four o'clock.",
+  "cn": "在這個專題期間，學生們每天下午四點以後都可以隨意使用電腦教室。",
+  "cnMarked": "在這個專題期間，學生們每天下午四點以後都可以【隨意使用】電腦教室。",
+  "isHead": false,
+  "level": null,
+  "family": "disposable"
+ },
+ {
+  "word": "dissent",
+  "answer": "dissent",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "異議；反對",
+  "en_def": "strong disagreement with an official opinion or decision",
+  "sentence": "The new rule passed without any {{BLANK}}, because every member of the club agreed that the change was necessary.",
+  "cn": "新規定在沒有任何異議的情況下通過了，因為社團每位成員都同意這項改變是必要的。",
+  "cnMarked": "新規定在沒有任何【異議】的情況下通過了，因為社團每位成員都同意這項改變是必要的。",
+  "isHead": true,
+  "level": 6,
+  "family": "dissent"
+ },
+ {
+  "word": "dissent",
+  "answer": "dissent",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "持異議；不同意",
+  "en_def": "to say that you disagree with an official opinion",
+  "sentence": "Two judges chose to {{BLANK}} from the decision, saying that the evidence against the man was too weak.",
+  "cn": "兩位法官選擇對這項判決提出異議，說對那名男子不利的證據太薄弱。",
+  "cnMarked": "兩位法官選擇對這項判決【提出異議】，說對那名男子不利的證據太薄弱。",
+  "isHead": false,
+  "level": 6,
+  "family": "dissent"
+ },
+ {
+  "word": "dissenting",
+  "answer": "dissenting",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "持異議的；反對的",
+  "en_def": "disagreeing with the official or majority view",
+  "sentence": "The only {{BLANK}} voice at the meeting came from Mr. Lin, who thought the new uniform was too expensive.",
+  "cn": "會議上唯一反對的聲音來自林先生，他認為新制服太貴了。",
+  "cnMarked": "會議上唯一【反對的】聲音來自林先生，他認為新制服太貴了。",
+  "isHead": false,
+  "level": null,
+  "family": "dissent"
+ },
+ {
+  "word": "distraction",
+  "answer": "distraction",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "使人分心的事物",
+  "en_def": "something that takes your attention away from what you are doing",
+  "sentence": "Social media is a big {{BLANK}} for students, so I turn off my phone when I need to finish an essay.",
+  "cn": "社群媒體對學生來說是很大的干擾，所以當我需要完成作文時我會把手機關掉。",
+  "cnMarked": "社群媒體對學生來說是很大的【干擾】，所以當我需要完成作文時我會把手機關掉。",
+  "isHead": true,
+  "level": 6,
+  "family": "distraction"
+ },
+ {
+  "word": "distract",
+  "answer": "distract",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使分心",
+  "en_def": "to take someone's attention away from what they are doing",
+  "sentence": "Please do not {{BLANK}} the driver by talking to him while he is turning onto the busy highway.",
+  "cn": "請不要在司機轉上繁忙的高速公路時跟他說話，以免讓他分心。",
+  "cnMarked": "請不要在司機轉上繁忙的高速公路時跟他說話，以免【讓他分心】。",
+  "isHead": false,
+  "level": 5,
+  "family": "distraction"
+ },
+ {
+  "word": "distracted",
+  "answer": "distracted",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "分心的；心不在焉的",
+  "en_def": "not able to pay attention because you are thinking about something else",
+  "sentence": "The {{BLANK}} student kept looking out of the window and did not hear the teacher call his name twice.",
+  "cn": "那個心不在焉的學生一直望著窗外，沒聽到老師叫了他兩次名字。",
+  "cnMarked": "那個【心不在焉的】學生一直望著窗外，沒聽到老師叫了他兩次名字。",
+  "isHead": false,
+  "level": null,
+  "family": "distraction"
+ },
+ {
+  "word": "distracting",
+  "answer": "distracting",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "令人分心的",
+  "en_def": "taking your attention away from what you are doing",
+  "sentence": "The music from the next apartment is so {{BLANK}} that I cannot concentrate on my homework at all.",
+  "cn": "隔壁公寓傳來的音樂太令人分心了，我完全無法專心寫作業。",
+  "cnMarked": "隔壁公寓傳來的音樂太【令人分心】了，我完全無法專心寫作業。",
+  "isHead": false,
+  "level": null,
+  "family": "distraction"
+ },
+ {
+  "word": "distress",
+  "answer": "distress",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "痛苦；悲痛；困境",
+  "en_def": "great pain, sadness, or worry; a situation of danger",
+  "sentence": "The lost child was in great {{BLANK}} until a kind police officer helped her find her parents at the station.",
+  "cn": "那個走失的孩子非常痛苦不安，直到一位好心的警察幫她在車站找到父母。",
+  "cnMarked": "那個走失的孩子非常【痛苦不安】，直到一位好心的警察幫她在車站找到父母。",
+  "isHead": true,
+  "level": 6,
+  "family": "distress"
+ },
+ {
+  "word": "distress",
+  "answer": "distressed",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使痛苦；使悲痛",
+  "en_def": "to make someone feel very upset",
+  "sentence": "The news of the accident {{BLANK}} the whole village, and people gathered at the temple to pray for the families.",
+  "cn": "這起意外的消息讓整個村子都很悲痛，人們聚集在廟裡為那些家庭祈禱。",
+  "cnMarked": "這起意外的消息【讓】整個村子【都很悲痛】，人們聚集在廟裡為那些家庭祈禱。",
+  "isHead": false,
+  "level": 6,
+  "family": "distress"
+ },
+ {
+  "word": "distressed",
+  "answer": "distressed",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "痛苦的；憂慮的",
+  "en_def": "very upset or worried",
+  "sentence": "The {{BLANK}} owner put up posters all over the neighborhood, hoping someone had seen her lost cat.",
+  "cn": "那位焦急的主人在整個社區貼滿海報，希望有人看到她走失的貓。",
+  "cnMarked": "那位【焦急的】主人在整個社區貼滿海報，希望有人看到她走失的貓。",
+  "isHead": false,
+  "level": null,
+  "family": "distress"
+ },
+ {
+  "word": "distressing",
+  "answer": "distressing",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "令人痛苦的；令人難過的",
+  "en_def": "making you feel very upset",
+  "sentence": "It was {{BLANK}} to see so many animals without homes, so my sister decided to volunteer at the shelter.",
+  "cn": "看到這麼多無家可歸的動物令人難過，所以我姊姊決定去收容所當志工。",
+  "cnMarked": "看到這麼多無家可歸的動物【令人難過】，所以我姊姊決定去收容所當志工。",
+  "isHead": false,
+  "level": null,
+  "family": "distress"
+ },
+ {
+  "word": "in distress",
+  "answer": "in distress",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "處於危難中；處於困境",
+  "en_def": "in great danger or trouble and needing help",
+  "sentence": "The coast guard received a call from a fishing boat {{BLANK}} and sent a helicopter to rescue the crew.",
+  "cn": "海巡隊接到一艘遇難漁船的求救電話，派出直升機去救援船員。",
+  "cnMarked": "海巡隊接到一艘【遇難】漁船的求救電話，派出直升機去救援船員。",
+  "isHead": false,
+  "level": null,
+  "family": "distress"
+ },
+ {
+  "word": "disturbance",
+  "answer": "disturbance",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "騷擾；干擾；騷動",
+  "en_def": "something that interrupts or upsets people; noisy or violent behavior",
+  "sentence": "The neighbors called the police about the {{BLANK}} because the party upstairs was still going at three in the morning.",
+  "cn": "鄰居打電話報警投訴這場騷擾，因為樓上的派對凌晨三點還在進行。",
+  "cnMarked": "鄰居打電話報警投訴這場【騷擾】，因為樓上的派對凌晨三點還在進行。",
+  "isHead": true,
+  "level": 6,
+  "family": "disturbance"
+ },
+ {
+  "word": "disturb",
+  "answer": "disturb",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "打擾；妨礙",
+  "en_def": "to interrupt someone or stop them from continuing what they are doing",
+  "sentence": "Please do not {{BLANK}} your father while he is on the phone with his boss about the important contract.",
+  "cn": "你爸爸正在和老闆講那份重要合約的電話，請不要打擾他。",
+  "cnMarked": "你爸爸正在和老闆講那份重要合約的電話，請不要【打擾】他。",
+  "isHead": false,
+  "level": 4,
+  "family": "disturbance"
+ },
+ {
+  "word": "disturbing",
+  "answer": "disturbing",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "令人不安的",
+  "en_def": "making you feel worried or upset",
+  "sentence": "The movie had several {{BLANK}} scenes, so the theater warned that it was not suitable for young children.",
+  "cn": "這部電影有幾個令人不安的場景，所以電影院警告它不適合幼童觀看。",
+  "cnMarked": "這部電影有幾個【令人不安的】場景，所以電影院警告它不適合幼童觀看。",
+  "isHead": false,
+  "level": null,
+  "family": "disturbance"
+ },
+ {
+  "word": "disturbed",
+  "answer": "disturbed",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "不安的；受干擾的",
+  "en_def": "worried or upset; interrupted",
+  "sentence": "She was deeply {{BLANK}} by the strange phone calls, so she changed her number the next day.",
+  "cn": "她被那些奇怪的電話弄得非常不安，所以隔天就換了電話號碼。",
+  "cnMarked": "她被那些奇怪的電話弄得非常【不安】，所以隔天就換了電話號碼。",
+  "isHead": false,
+  "level": null,
+  "family": "disturbance"
+ },
+ {
+  "word": "diversify",
+  "answer": "diversify",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使多樣化；多角化經營",
+  "en_def": "to start doing or producing a wider range of things",
+  "sentence": "The farmer decided to {{BLANK}} his crops, growing fruit and vegetables instead of only rice, to protect himself from bad prices.",
+  "cn": "這位農夫決定讓作物多樣化，除了稻米也種水果和蔬菜，以免受到價格不好的影響。",
+  "cnMarked": "這位農夫決定讓作物【多樣化】，除了稻米也種水果和蔬菜，以免受到價格不好的影響。",
+  "isHead": true,
+  "level": 6,
+  "family": "diversify"
+ },
+ {
+  "word": "diverse",
+  "answer": "diverse",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "多樣的；各式各樣的",
+  "en_def": "very different from each other; of many different kinds",
+  "sentence": "Taipei is a {{BLANK}} city where you can hear many languages and taste food from all over the world in one street.",
+  "cn": "台北是一座多元的城市，在同一條街上你可以聽到多種語言，也能嚐到來自世界各地的食物。",
+  "cnMarked": "台北是一座【多元的】城市，在同一條街上你可以聽到多種語言，也能嚐到來自世界各地的食物。",
+  "isHead": false,
+  "level": 4,
+  "family": "diversify"
+ },
+ {
+  "word": "diversity",
+  "answer": "diversity",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "多樣性；多元",
+  "en_def": "the fact of including many different kinds of people or things",
+  "sentence": "The school celebrates cultural {{BLANK}} every spring with a fair where students share food and music from their families' home countries.",
+  "cn": "學校每年春天舉辦園遊會慶祝文化多元，學生們分享來自家族母國的食物和音樂。",
+  "cnMarked": "學校每年春天舉辦園遊會慶祝文化【多元】，學生們分享來自家族母國的食物和音樂。",
+  "isHead": false,
+  "level": 4,
+  "family": "diversify"
+ },
+ {
+  "word": "diversification",
+  "answer": "diversification",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "多樣化；多角化",
+  "en_def": "the process of starting to do or produce a wider range of things",
+  "sentence": "The company's {{BLANK}} into electric bikes helped it survive when fewer people were buying cars.",
+  "cn": "這家公司多角化經營跨入電動腳踏車，幫助它在買車的人變少時存活下來。",
+  "cnMarked": "這家公司【多角化經營】跨入電動腳踏車，幫助它在買車的人變少時存活下來。",
+  "isHead": false,
+  "level": null,
+  "family": "diversify"
+ },
+ {
+  "word": "diversion",
+  "answer": "diversion",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "改道；轉移；分流",
+  "en_def": "a change in the direction that traffic or something else usually takes",
+  "sentence": "The police set up a {{BLANK}} around the accident, so we had to drive through the small streets to reach the school.",
+  "cn": "警方在事故現場周圍設了改道路線，所以我們得開過小巷才能到學校。",
+  "cnMarked": "警方在事故現場周圍設了【改道】路線，所以我們得開過小巷才能到學校。",
+  "isHead": true,
+  "level": 6,
+  "family": "diversion"
+ },
+ {
+  "word": "divert",
+  "answer": "divert",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使轉向；使改道；轉移",
+  "en_def": "to make something go in a different direction; to turn attention away",
+  "sentence": "The city plans to {{BLANK}} traffic away from the night market on weekends so that visitors can walk safely.",
+  "cn": "市政府計畫在週末把車流引導離開夜市，讓遊客可以安全地步行。",
+  "cnMarked": "市政府計畫在週末把車流【引導】離開夜市，讓遊客可以安全地步行。",
+  "isHead": true,
+  "level": 6,
+  "family": "diversion"
+ },
+ {
+  "word": "divert sb's attention from",
+  "answer": "divert the guards' attention from",
+  "nblanks": 5,
+  "pos": "v.phr.",
+  "cn_def": "轉移某人對…的注意力",
+  "en_def": "to make someone stop looking at or thinking about something",
+  "sentence": "The clever thief dropped a bag of coins to {{BLANK}} the door of the vault.",
+  "cn": "聰明的小偷丟下一袋硬幣，好轉移警衛對金庫門的注意力。",
+  "cnMarked": "聰明的小偷丟下一袋硬幣，好【轉移警衛對】金庫門【的注意力】。",
+  "isHead": false,
+  "level": null,
+  "family": "diversion"
+ },
+ {
+  "word": "diversion",
+  "answer": "diversion",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "消遣；娛樂",
+  "en_def": "an activity you do for pleasure",
+  "sentence": "Playing the guitar is a pleasant {{BLANK}} after a long day of studying, and it helps me forget my worries.",
+  "cn": "讀了一整天書之後，彈吉他是很愉快的消遣，它幫我忘掉煩惱。",
+  "cnMarked": "讀了一整天書之後，彈吉他是很愉快的【消遣】，它幫我忘掉煩惱。",
+  "isHead": false,
+  "level": 6,
+  "family": "diversion"
+ },
+ {
+  "word": "dividend",
+  "answer": "dividend",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "股利；紅利",
+  "en_def": "money that a company pays to the people who own its shares",
+  "sentence": "The company paid a {{BLANK}} of five dollars per share this year, so my grandfather received a nice check in June.",
+  "cn": "這家公司今年每股發放五美元的股利，所以我爺爺六月收到了一張不錯的支票。",
+  "cnMarked": "這家公司今年每股發放五美元的【股利】，所以我爺爺六月收到了一張不錯的支票。",
+  "isHead": true,
+  "level": 6,
+  "family": "dividend"
+ },
+ {
+  "word": "divide",
+  "answer": "divide",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "分開；分配；除",
+  "en_def": "to separate into parts; to share something between people",
+  "sentence": "Let us {{BLANK}} the class into four teams so that everyone gets a chance to speak during the game.",
+  "cn": "我們把全班分成四隊，這樣每個人在遊戲中都有機會發言。",
+  "cnMarked": "我們把全班【分成】四隊，這樣每個人在遊戲中都有機會發言。",
+  "isHead": false,
+  "level": 2,
+  "family": "dividend"
+ },
+ {
+  "word": "division",
+  "answer": "division",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "分割；部門；除法",
+  "en_def": "the act of separating into parts; a part of an organization; dividing numbers",
+  "sentence": "My little brother is learning {{BLANK}} in math class this week, and he keeps asking me to check his answers.",
+  "cn": "我弟弟這週在數學課上學除法，他一直要我幫他檢查答案。",
+  "cnMarked": "我弟弟這週在數學課上學【除法】，他一直要我幫他檢查答案。",
+  "isHead": false,
+  "level": 2,
+  "family": "dividend"
+ },
+ {
+  "word": "pay dividends",
+  "answer": "paid dividends",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "帶來好處；產生回報",
+  "en_def": "to bring good results later",
+  "sentence": "Learning to type fast in junior high {{BLANK}} later, when I had to write long reports at university.",
+  "cn": "國中時學會快速打字，後來在大學必須寫長篇報告時帶來了回報。",
+  "cnMarked": "國中時學會快速打字，後來在大學必須寫長篇報告時【帶來了回報】。",
+  "isHead": false,
+  "level": null,
+  "family": "dividend"
+ }
+];
+const MCQS = [
+ {
+  "q": "My little brother keeps buying things in games by mistake. I had to ______ the payment function on his tablet so that he cannot spend any more money.",
+  "options": [
+   "disturb",
+   "divide",
+   "discard",
+   "disable"
+  ],
+  "answer": 3,
+  "vocabIndex": 0
+ },
+ {
+  "q": "We tried to bake a cake for Mom's birthday without a recipe. The result was ______: it was burnt on the outside and still wet in the middle.",
+  "options": [
+   "disposable",
+   "discreet",
+   "disastrous",
+   "diverse"
+  ],
+  "answer": 2,
+  "vocabIndex": 4
+ },
+ {
+  "q": "Nobody expected our small school team to win the national final. When the last whistle blew, the players just stood there in ______ for a full minute.",
+  "options": [
+   "disbelief",
+   "dividend",
+   "disposal",
+   "diversity"
+  ],
+  "answer": 0,
+  "vocabIndex": 8
+ },
+ {
+  "q": "These clothes are too small for me now, but they are still in good condition. Please do not ______ them; the charity shop downtown will give them to families who need them.",
+  "options": [
+   "divert",
+   "discard",
+   "dispense",
+   "disable"
+  ],
+  "answer": 1,
+  "vocabIndex": 12
+ },
+ {
+  "q": "Grandpa's operation went very well yesterday. The doctor says the hospital will ______ him on Friday if he can walk to the end of the hall by himself.",
+  "options": [
+   "distract",
+   "disgrace",
+   "disturb",
+   "discharge"
+  ],
+  "answer": 3,
+  "vocabIndex": 15
+ },
+ {
+  "q": "The famous painter never went to art school. He learned everything as a ______ of an old master, mixing colors and cleaning brushes for him for ten years.",
+  "options": [
+   "disaster",
+   "disciple",
+   "dispenser",
+   "division"
+  ],
+  "answer": 1,
+  "vocabIndex": 18
+ },
+ {
+  "q": "Three players were caught fighting after the game on Saturday. The league will hold a ______ meeting next week to decide how long they must sit out.",
+  "options": [
+   "disposable",
+   "disastrous",
+   "disciplinary",
+   "distracting"
+  ],
+  "answer": 2,
+  "vocabIndex": 22
+ },
+ {
+  "q": "Customers were angry when they learned the truth about the company. The ______ that it had sold their phone numbers to other businesses was all over the news.",
+  "options": [
+   "disclosure",
+   "dismay",
+   "diversion",
+   "discipline"
+  ],
+  "answer": 0,
+  "vocabIndex": 25
+ },
+ {
+  "q": "The dentist said the tooth would feel strange for a while. You may have some ______ when you eat cold things, but it should stop in a few days.",
+  "options": [
+   "disgrace",
+   "discretion",
+   "discomfort",
+   "dissent"
+  ],
+  "answer": 2,
+  "vocabIndex": 29
+ },
+ {
+  "q": "I told Amy about the surprise party only because I trust her. She is very ______ and never repeats a secret, even when her friends beg her to.",
+  "options": [
+   "discreet",
+   "dissenting",
+   "disabled",
+   "distressed"
+  ],
+  "answer": 0,
+  "vocabIndex": 33
+ },
+ {
+  "q": "The beach used to be the pride of our town. Now it is a ______, covered with bottles and plastic bags that tourists leave behind every summer.",
+  "options": [
+   "disposal",
+   "disgrace",
+   "dividend",
+   "diversity"
+  ],
+  "answer": 1,
+  "vocabIndex": 37
+ },
+ {
+  "q": "All the students had prepared for the school fair for weeks. To their great ______, heavy rain forced the school to cancel it on the morning of the event.",
+  "options": [
+   "division",
+   "distraction",
+   "discipline",
+   "dismay"
+  ],
+  "answer": 3,
+  "vocabIndex": 41
+ },
+ {
+  "q": "The coach says every player on the team matters. Nobody is ______, so even the ones who sit on the bench must come to practice every day.",
+  "options": [
+   "discreet",
+   "dispensable",
+   "distressing",
+   "disturbed"
+  ],
+  "answer": 1,
+  "vocabIndex": 45
+ },
+ {
+  "q": "You do not need to wait in line at the pharmacy anymore. A new machine can ______ common medicines after you scan the paper from your doctor.",
+  "options": [
+   "dispense",
+   "distress",
+   "dispose",
+   "divert"
+  ],
+  "answer": 0,
+  "vocabIndex": 46
+ },
+ {
+  "q": "The city wants to produce less trash at outdoor events. From next year, food stands at the festival may not use ______ plates or forks of any kind.",
+  "options": [
+   "diverse",
+   "disastrous",
+   "disposable",
+   "disgraceful"
+  ],
+  "answer": 2,
+  "vocabIndex": 50
+ },
+ {
+  "q": "Old computers contain metals that can harm the environment. The safe ______ of this kind of waste is now the law in many countries, including Taiwan.",
+  "options": [
+   "dismay",
+   "dividend",
+   "disbelief",
+   "disposal"
+  ],
+  "answer": 3,
+  "vocabIndex": 51
+ },
+ {
+  "q": "Do not just throw used batteries into the kitchen trash. You should ______ of them at the special box in the supermarket so they can be recycled.",
+  "options": [
+   "dispose",
+   "dispense",
+   "divide",
+   "disturb"
+  ],
+  "answer": 0,
+  "vocabIndex": 52
+ },
+ {
+  "q": "Everyone on the committee seemed to like the new plan. The only ______ came from Mr. Wang, who worried that the budget was not big enough.",
+  "options": [
+   "discharge",
+   "dissent",
+   "disgrace",
+   "dividend"
+  ],
+  "answer": 1,
+  "vocabIndex": 55
+ },
+ {
+  "q": "I cannot study with my phone next to me. Every message is a ______ that pulls my eyes away from the book, so I leave it in another room.",
+  "options": [
+   "disposal",
+   "diversity",
+   "discipline",
+   "distraction"
+  ],
+  "answer": 3,
+  "vocabIndex": 58
+ },
+ {
+  "q": "The little girl had been separated from her mother at the night market. A police officer noticed her ______ and helped her find her family in ten minutes.",
+  "options": [
+   "dividend",
+   "discretion",
+   "distress",
+   "disclosure"
+  ],
+  "answer": 2,
+  "vocabIndex": 62
+ },
+ {
+  "q": "The neighbors were having a loud party after midnight again. Mr. Chen finally called the police to report the ______ because his baby could not sleep.",
+  "options": [
+   "disposal",
+   "disturbance",
+   "disbelief",
+   "division"
+  ],
+  "answer": 1,
+  "vocabIndex": 67
+ },
+ {
+  "q": "The shop used to sell only tea, but fewer people buy it now. The owner decided to ______ and now also sells coffee, cakes, and small gifts.",
+  "options": [
+   "disclose",
+   "discard",
+   "discharge",
+   "diversify"
+  ],
+  "answer": 3,
+  "vocabIndex": 71
+ },
+ {
+  "q": "The main road into town is closed for repairs this week. Drivers must follow the ______ through the hills, which adds twenty minutes to the trip.",
+  "options": [
+   "diversion",
+   "disgrace",
+   "disaster",
+   "discharge"
+  ],
+  "answer": 0,
+  "vocabIndex": 75
+ },
+ {
+  "q": "The river often floods the village during typhoon season. Engineers plan to ______ part of the water into a new channel that leads straight to the sea.",
+  "options": [
+   "dismay",
+   "divert",
+   "dispense",
+   "disable"
+  ],
+  "answer": 1,
+  "vocabIndex": 76
+ },
+ {
+  "q": "My aunt bought shares in a bank ten years ago. Every year the bank pays her a ______, which she uses to take the whole family on a short trip.",
+  "options": [
+   "discharge",
+   "disposal",
+   "dividend",
+   "distraction"
+  ],
+  "answer": 2,
+  "vocabIndex": 79
+ },
+ {
+  "q": "Our school play was supposed to begin at seven. The evening turned into a ______ when the lights went out and the main actor forgot all his lines.",
+  "options": [
+   "disaster",
+   "dissent",
+   "dispenser",
+   "discretion"
+  ],
+  "answer": 0,
+  "vocabIndex": 5
+ },
+ {
+  "q": "The reporter knew the name of the secret witness. However, she refused to ______ it, even when the judge warned her she could go to jail.",
+  "options": [
+   "distract",
+   "disclose",
+   "discard",
+   "dispose"
+  ],
+  "answer": 1,
+  "vocabIndex": 26
+ },
+ {
+  "q": "Dad has an important online meeting in the study right now. Please keep the TV quiet and do not ______ him until he opens the door.",
+  "options": [
+   "disturb",
+   "disable",
+   "disgrace",
+   "diversify"
+  ],
+  "answer": 0,
+  "vocabIndex": 68
+ },
+ {
+  "q": "Water is something no living thing can do without. It is ______ for plants, animals, and people, which is why we must keep our rivers clean.",
+  "options": [
+   "disposable",
+   "discreet",
+   "indispensable",
+   "distracted"
+  ],
+  "answer": 2,
+  "vocabIndex": 47
+ },
+ {
+  "q": "The new soldiers wake up at five and clean their rooms before breakfast. Strict ______ like this teaches them to follow orders quickly during an emergency.",
+  "options": [
+   "disclosure",
+   "diversion",
+   "dismay",
+   "discipline"
+  ],
+  "answer": 3,
+  "vocabIndex": 19
+ }
+];
+const LOOKUP = {};
+VOCAB.forEach(v => { const key = v.word.toLowerCase(); const sense = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def };
+  if (LOOKUP[key]) LOOKUP[key].combined.push(sense); else LOOKUP[key] = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def, combined: [sense] }; });
+const EXTRA_GLOSSES = {};

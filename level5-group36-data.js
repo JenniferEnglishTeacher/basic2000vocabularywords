@@ -1,0 +1,1505 @@
+// 學測6000字 Level 5 Group 36 (surveillance-thigh) — word-family edition
+const QUIZ_CONFIG = {
+  groupName: "6000字 L5 Group 36 - surveillance – thigh (word family)",
+  gasEndpoint: "https://script.google.com/macros/s/AKfycbzLUqP-nauSjmiHfPXiK3NAV65tYdjAlwqip38TcGdTKqeR_CijuzHYxZDC-sjtRVrr_w/exec"
+};
+const VOCAB = [
+ {
+  "word": "surveillance",
+  "answer": "surveillance",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "監視；監控",
+  "en_def": "the act of watching a person or place carefully, often secretly",
+  "sentence": "The police kept the suspect under close {{BLANK}} for two weeks before they finally arrested him at his home.",
+  "cn": "警方對嫌犯進行了兩週的嚴密監視，最後才在他家中將他逮捕。",
+  "cnMarked": "警方對嫌犯進行了兩週的嚴密【監視】，最後才在他家中將他逮捕。",
+  "isHead": true,
+  "level": 5,
+  "family": "surveillance"
+ },
+ {
+  "word": "under surveillance",
+  "answer": "under surveillance",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "在監視之下",
+  "en_def": "being watched carefully, often by the police",
+  "sentence": "The old warehouse has been {{BLANK}} since last month because the police believe stolen cars are hidden inside.",
+  "cn": "那座舊倉庫自上個月起就受到監視，因為警方認為裡面藏有失竊的汽車。",
+  "cnMarked": "那座舊倉庫自上個月起就【受到監視】，因為警方認為裡面藏有失竊的汽車。",
+  "isHead": false,
+  "level": null,
+  "family": "surveillance"
+ },
+ {
+  "word": "surveillance camera",
+  "answer": "surveillance camera",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "監視攝影機",
+  "en_def": "a camera that records what happens in a place",
+  "sentence": "A {{BLANK}} at the bank recorded the robber's face, so the police were able to find him within a day.",
+  "cn": "銀行的監視攝影機錄下了搶匪的臉，所以警方在一天內就找到了他。",
+  "cnMarked": "銀行的【監視攝影機】錄下了搶匪的臉，所以警方在一天內就找到了他。",
+  "isHead": false,
+  "level": null,
+  "family": "surveillance"
+ },
+ {
+  "word": "survey",
+  "answer": "survey",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "調查；問卷調查",
+  "en_def": "a set of questions asked to many people to find out what they think",
+  "sentence": "According to a recent {{BLANK}}, more than half of the students in our school sleep less than six hours a night.",
+  "cn": "根據最近的一項調查，我們學校超過一半的學生每晚睡不到六小時。",
+  "cnMarked": "根據最近的一項【調查】，我們學校超過一半的學生每晚睡不到六小時。",
+  "isHead": false,
+  "level": 3,
+  "family": "surveillance"
+ },
+ {
+  "word": "survey",
+  "answer": "survey",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "調查；勘測；環視",
+  "en_def": "to ask many people questions to find out what they think; to look at a whole area",
+  "sentence": "The company will {{BLANK}} two thousand customers next month to learn what they think about the new bubble tea flavors.",
+  "cn": "這家公司下個月將調查兩千名顧客，了解他們對新珍珠奶茶口味的看法。",
+  "cnMarked": "這家公司下個月將【調查】兩千名顧客，了解他們對新珍珠奶茶口味的看法。",
+  "isHead": false,
+  "level": 3,
+  "family": "surveillance"
+ },
+ {
+  "word": "suspend",
+  "answer": "suspend",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "暫停；中止；停學；停職",
+  "en_def": "to stop something for a short time; to stop someone from attending school or work",
+  "sentence": "The school decided to {{BLANK}} the student for three days after he was caught cheating on the final exam.",
+  "cn": "學校決定讓那名學生停學三天，因為他在期末考作弊被抓到。",
+  "cnMarked": "學校決定讓那名學生【停學】三天，因為他在期末考作弊被抓到。",
+  "isHead": true,
+  "level": 5,
+  "family": "suspend"
+ },
+ {
+  "word": "suspend",
+  "answer": "suspend",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "懸掛；吊",
+  "en_def": "to hang something from somewhere",
+  "sentence": "The workers will {{BLANK}} the large lantern from the ceiling of the temple before the festival begins next week.",
+  "cn": "工人們將在下週慶典開始前，把大燈籠懸掛在寺廟的天花板上。",
+  "cnMarked": "工人們將在下週慶典開始前，把大燈籠【懸掛】在寺廟的天花板上。",
+  "isHead": false,
+  "level": 5,
+  "family": "suspend"
+ },
+ {
+  "word": "suspension",
+  "answer": "suspension",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "暫停；停學；停職；懸吊",
+  "en_def": "the act of stopping something for a time; the punishment of being kept out of school or work",
+  "sentence": "The basketball player received a two-game {{BLANK}} for pushing the referee, and his team lost both games without him.",
+  "cn": "那位籃球員因為推裁判而被禁賽兩場，他的球隊在沒有他的情況下輸了兩場。",
+  "cnMarked": "那位籃球員因為推裁判而被【禁賽】兩場，他的球隊在沒有他的情況下輸了兩場。",
+  "isHead": false,
+  "level": 6,
+  "family": "suspend"
+ },
+ {
+  "word": "suspense",
+  "answer": "suspense",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "懸疑；緊張感",
+  "en_def": "a feeling of excitement or worry while waiting to find out what will happen",
+  "sentence": "The movie kept us in {{BLANK}} until the last five minutes, when we finally learned who the real killer was.",
+  "cn": "這部電影讓我們一直處於懸疑中，直到最後五分鐘我們才知道真正的兇手是誰。",
+  "cnMarked": "這部電影讓我們一直處於【懸疑】中，直到最後五分鐘我們才知道真正的兇手是誰。",
+  "isHead": false,
+  "level": 6,
+  "family": "suspend"
+ },
+ {
+  "word": "suspension bridge",
+  "answer": "suspension bridge",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "吊橋",
+  "en_def": "a bridge that hangs from strong cables",
+  "sentence": "The old {{BLANK}} swings a little when you walk across it, so some tourists are afraid to look down at the river.",
+  "cn": "這座古老的吊橋在你走過時會輕微搖晃，所以有些遊客不敢往下看河流。",
+  "cnMarked": "這座古老的【吊橋】在你走過時會輕微搖晃，所以有些遊客不敢往下看河流。",
+  "isHead": false,
+  "level": null,
+  "family": "suspend"
+ },
+ {
+  "word": "sustain",
+  "answer": "sustain",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "維持；支撐；供養",
+  "en_def": "to keep something going over a long time; to support",
+  "sentence": "The small island cannot {{BLANK}} so many tourists every summer, because there is not enough fresh water for everyone.",
+  "cn": "這座小島無法每年夏天支撐這麼多遊客，因為沒有足夠的淡水供所有人使用。",
+  "cnMarked": "這座小島無法每年夏天【支撐】這麼多遊客，因為沒有足夠的淡水供所有人使用。",
+  "isHead": true,
+  "level": 5,
+  "family": "sustain"
+ },
+ {
+  "word": "sustainable",
+  "answer": "sustainable",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "可持續的；永續的",
+  "en_def": "able to continue for a long time without harming the environment",
+  "sentence": "Solar and wind power are {{BLANK}} sources of energy, so many countries are building fewer coal power plants now.",
+  "cn": "太陽能和風力是永續的能源來源，所以許多國家現在減少興建燃煤電廠。",
+  "cnMarked": "太陽能和風力是【永續的】能源來源，所以許多國家現在減少興建燃煤電廠。",
+  "isHead": true,
+  "level": 5,
+  "family": "sustain"
+ },
+ {
+  "word": "sustain",
+  "answer": "sustain",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "遭受（傷害、損失）",
+  "en_def": "to suffer an injury or damage",
+  "sentence": "Two of the passengers managed to {{BLANK}} only minor injuries in the crash, although the car was completely destroyed.",
+  "cn": "雖然車子完全毀了，但兩名乘客在車禍中只受了輕傷。",
+  "cnMarked": "雖然車子完全毀了，但兩名乘客在車禍中只【受了】輕傷。",
+  "isHead": false,
+  "level": 5,
+  "family": "sustain"
+ },
+ {
+  "word": "sustainability",
+  "answer": "sustainability",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "永續性；可持續性",
+  "en_def": "the ability to continue without harming the environment",
+  "sentence": "Our school started a {{BLANK}} project this year, and every class now grows vegetables and recycles all of its paper.",
+  "cn": "我們學校今年開始了一個永續計畫，現在每個班級都種蔬菜並回收所有紙張。",
+  "cnMarked": "我們學校今年開始了一個【永續】計畫，現在每個班級都種蔬菜並回收所有紙張。",
+  "isHead": false,
+  "level": null,
+  "family": "sustain"
+ },
+ {
+  "word": "sustained",
+  "answer": "sustained",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "持續的；不間斷的",
+  "en_def": "continuing for a long time without stopping",
+  "sentence": "After years of {{BLANK}} effort, the scientist finally found a cheaper way to clean dirty river water.",
+  "cn": "經過多年持續的努力，這位科學家終於找到了更便宜的方法來淨化髒污的河水。",
+  "cnMarked": "經過多年【持續的】努力，這位科學家終於找到了更便宜的方法來淨化髒污的河水。",
+  "isHead": false,
+  "level": null,
+  "family": "sustain"
+ },
+ {
+  "word": "swap",
+  "answer": "swap",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "交換；調換",
+  "en_def": "to give something to someone and get something else in return",
+  "sentence": "My sister and I often {{BLANK}} clothes on weekends, so it feels like we both have twice as many outfits.",
+  "cn": "我和姊姊週末常常交換衣服穿，所以感覺我們倆的衣服都多了一倍。",
+  "cnMarked": "我和姊姊週末常常【交換】衣服穿，所以感覺我們倆的衣服都多了一倍。",
+  "isHead": true,
+  "level": 5,
+  "family": "swap"
+ },
+ {
+  "word": "swap",
+  "answer": "swap",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "交換",
+  "en_def": "the act of exchanging one thing for another",
+  "sentence": "The two students did a quick {{BLANK}} of their lunch boxes because each of them liked the other's food better.",
+  "cn": "這兩個學生快速交換了便當，因為他們都比較喜歡對方的食物。",
+  "cnMarked": "這兩個學生快速【交換】了便當，因為他們都比較喜歡對方的食物。",
+  "isHead": false,
+  "level": 5,
+  "family": "swap"
+ },
+ {
+  "word": "swap places",
+  "answer": "swap places",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "交換位置",
+  "en_def": "to change seats or positions with someone",
+  "sentence": "Could we {{BLANK}} so that I can sit next to the window and take some photos of the mountains?",
+  "cn": "我們可以交換位置嗎？這樣我就能坐在窗邊拍一些山的照片。",
+  "cnMarked": "我們可以【交換位置】嗎？這樣我就能坐在窗邊拍一些山的照片。",
+  "isHead": false,
+  "level": null,
+  "family": "swap"
+ },
+ {
+  "word": "symbolic",
+  "answer": "symbolic",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "象徵性的；象徵的",
+  "en_def": "representing something important, such as an idea or feeling",
+  "sentence": "Planting a tree on the first day of school was a {{BLANK}} act that showed the students' hope for a greener future.",
+  "cn": "在開學第一天種一棵樹是一個象徵性的舉動，顯示學生們對更綠色未來的希望。",
+  "cnMarked": "在開學第一天種一棵樹是一個【象徵性的】舉動，顯示學生們對更綠色未來的希望。",
+  "isHead": true,
+  "level": 5,
+  "family": "symbolic"
+ },
+ {
+  "word": "symbol",
+  "answer": "symbol",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "象徵；符號",
+  "en_def": "a sign, shape, or object that stands for something else",
+  "sentence": "In many cultures, the dove is a {{BLANK}} of peace, which is why you often see it on posters against war.",
+  "cn": "在許多文化中，鴿子是和平的象徵，這就是為什麼你常在反戰海報上看到牠。",
+  "cnMarked": "在許多文化中，鴿子是和平的【象徵】，這就是為什麼你常在反戰海報上看到牠。",
+  "isHead": false,
+  "level": 2,
+  "family": "symbolic"
+ },
+ {
+  "word": "symbolize",
+  "answer": "symbolize",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "象徵；代表",
+  "en_def": "to be a sign of something; to represent",
+  "sentence": "In Chinese culture, red lanterns {{BLANK}} good luck, so people hang them outside their doors during the New Year.",
+  "cn": "在華人文化中，紅燈籠象徵好運，所以人們在新年期間把它們掛在門外。",
+  "cnMarked": "在華人文化中，紅燈籠【象徵】好運，所以人們在新年期間把它們掛在門外。",
+  "isHead": false,
+  "level": 6,
+  "family": "symbolic"
+ },
+ {
+  "word": "symbolism",
+  "answer": "symbolism",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "象徵主義；象徵手法",
+  "en_def": "the use of symbols to show ideas or feelings",
+  "sentence": "Our teacher explained the {{BLANK}} in the poem, and we learned that the winter snow actually stands for death.",
+  "cn": "老師解釋了這首詩中的象徵手法，我們才知道冬天的雪其實代表死亡。",
+  "cnMarked": "老師解釋了這首詩中的【象徵手法】，我們才知道冬天的雪其實代表死亡。",
+  "isHead": false,
+  "level": null,
+  "family": "symbolic"
+ },
+ {
+  "word": "symptom",
+  "answer": "symptoms",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "症狀",
+  "en_def": "a sign in your body that shows you are ill",
+  "sentence": "A high fever and a sore throat are common {{BLANK}} of the flu, so you should stay home and rest if you have them.",
+  "cn": "發高燒和喉嚨痛是流感常見的症狀，如果你有這些症狀，就應該待在家休息。",
+  "cnMarked": "發高燒和喉嚨痛是流感常見的【症狀】，如果你有這些症狀，就應該待在家休息。",
+  "isHead": true,
+  "level": 5,
+  "family": "symptom"
+ },
+ {
+  "word": "symptom",
+  "answer": "symptom",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "徵兆；跡象",
+  "en_def": "a sign that a serious problem exists",
+  "sentence": "Heavy traffic every morning is a {{BLANK}} of a bigger problem: the city has grown faster than its roads and trains.",
+  "cn": "每天早上的塞車是一個更大問題的徵兆：這座城市的成長速度超過了它的道路和鐵路。",
+  "cnMarked": "每天早上的塞車是一個更大問題的【徵兆】：這座城市的成長速度超過了它的道路和鐵路。",
+  "isHead": false,
+  "level": 5,
+  "family": "symptom"
+ },
+ {
+  "word": "show symptoms of",
+  "answer": "show symptoms of",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "出現…的症狀",
+  "en_def": "to have signs of an illness",
+  "sentence": "Several children in the kindergarten began to {{BLANK}} the same illness, so the teachers called their parents right away.",
+  "cn": "幼兒園裡有幾個孩子開始出現同一種疾病的症狀，所以老師立刻打電話給他們的父母。",
+  "cnMarked": "幼兒園裡有幾個孩子開始【出現】同一種疾病【的症狀】，所以老師立刻打電話給他們的父母。",
+  "isHead": false,
+  "level": null,
+  "family": "symptom"
+ },
+ {
+  "word": "syndrome",
+  "answer": "syndrome",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "症候群；綜合症",
+  "en_def": "a medical condition with a group of signs that happen together",
+  "sentence": "Doctors still do not fully understand this rare {{BLANK}}, which makes children feel tired and weak all the time.",
+  "cn": "醫生仍然不完全了解這種罕見的症候群，它讓孩子們總是感到疲倦和虛弱。",
+  "cnMarked": "醫生仍然不完全了解這種罕見的【症候群】，它讓孩子們總是感到疲倦和虛弱。",
+  "isHead": true,
+  "level": 5,
+  "family": "syndrome"
+ },
+ {
+  "word": "syndrome",
+  "answer": "syndrome",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "（某種情況特有的）一組現象；心態",
+  "en_def": "a set of feelings or behaviors that are typical of a situation",
+  "sentence": "Many parents feel sad and lonely when their children leave home for college, and doctors call this feeling empty nest {{BLANK}}.",
+  "cn": "許多父母在孩子離家上大學時感到難過和孤單，醫生稱這種感覺為空巢症候群。",
+  "cnMarked": "許多父母在孩子離家上大學時感到難過和孤單，醫生稱這種感覺為空巢【症候群】。",
+  "isHead": false,
+  "level": 5,
+  "family": "syndrome"
+ },
+ {
+  "word": "Down syndrome",
+  "answer": "Down syndrome",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "唐氏症",
+  "en_def": "a condition a person is born with that affects learning and the body",
+  "sentence": "The young man with {{BLANK}} works at the coffee shop near our school, and he always greets every customer with a smile.",
+  "cn": "那位患有唐氏症的年輕人在我們學校附近的咖啡店工作，他總是微笑著迎接每位顧客。",
+  "cnMarked": "那位患有【唐氏症】的年輕人在我們學校附近的咖啡店工作，他總是微笑著迎接每位顧客。",
+  "isHead": false,
+  "level": null,
+  "family": "syndrome"
+ },
+ {
+  "word": "tackle",
+  "answer": "tackle",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "處理；應付；著手解決",
+  "en_def": "to deal with a difficult problem",
+  "sentence": "The new mayor promised to {{BLANK}} the city's traffic problems by building more bike lanes and adding extra buses.",
+  "cn": "新市長承諾要透過增建自行車道和增加公車來解決城市的交通問題。",
+  "cnMarked": "新市長承諾要透過增建自行車道和增加公車來【解決】城市的交通問題。",
+  "isHead": true,
+  "level": 5,
+  "family": "tackle"
+ },
+ {
+  "word": "tackle",
+  "answer": "tackle",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "擒抱；攔截；搶球",
+  "en_def": "in sports, to try to take the ball from another player or stop them by catching them",
+  "sentence": "In rugby, you are allowed to {{BLANK}} the player who has the ball, but you must not hit him above the shoulders.",
+  "cn": "在橄欖球中，你可以擒抱持球的球員，但不能攻擊他肩膀以上的部位。",
+  "cnMarked": "在橄欖球中，你可以【擒抱】持球的球員，但不能攻擊他肩膀以上的部位。",
+  "isHead": false,
+  "level": 5,
+  "family": "tackle"
+ },
+ {
+  "word": "tackle",
+  "answer": "tackle",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "擒抱；攔截",
+  "en_def": "the act of stopping another player in sports",
+  "sentence": "The defender made a perfect {{BLANK}} just before the striker could shoot, and the whole stadium cheered loudly.",
+  "cn": "就在前鋒要射門前，後衛做了一次完美的攔截，整個體育場都大聲歡呼。",
+  "cnMarked": "就在前鋒要射門前，後衛做了一次完美的【攔截】，整個體育場都大聲歡呼。",
+  "isHead": false,
+  "level": 5,
+  "family": "tackle"
+ },
+ {
+  "word": "fishing tackle",
+  "answer": "fishing tackle",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "釣具",
+  "en_def": "the equipment used for fishing",
+  "sentence": "Grandpa keeps all his {{BLANK}} in a green box in the garage, and he cleans every hook before each trip.",
+  "cn": "爺爺把他所有的釣具放在車庫的一個綠色箱子裡，每次出發前都會清理每個魚鉤。",
+  "cnMarked": "爺爺把他所有的【釣具】放在車庫的一個綠色箱子裡，每次出發前都會清理每個魚鉤。",
+  "isHead": false,
+  "level": null,
+  "family": "tackle"
+ },
+ {
+  "word": "tactic",
+  "answer": "tactic",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "策略；手段；戰術",
+  "en_def": "a method you use to get what you want",
+  "sentence": "Crying loudly in the toy store is a {{BLANK}} that my little brother often uses to make Mom buy him something.",
+  "cn": "在玩具店大聲哭是我弟弟常用的手段，用來讓媽媽買東西給他。",
+  "cnMarked": "在玩具店大聲哭是我弟弟常用的【手段】，用來讓媽媽買東西給他。",
+  "isHead": true,
+  "level": 5,
+  "family": "tactic"
+ },
+ {
+  "word": "tactics",
+  "answer": "tactics",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "戰術；策略",
+  "en_def": "the methods used to win a game, a battle, or an argument",
+  "sentence": "The coach changed his {{BLANK}} at halftime, asking the players to pass the ball faster and shoot from farther away.",
+  "cn": "教練在中場休息時改變了戰術，要求球員傳球更快並從更遠的地方射門。",
+  "cnMarked": "教練在中場休息時改變了【戰術】，要求球員傳球更快並從更遠的地方射門。",
+  "isHead": false,
+  "level": 5,
+  "family": "tactic"
+ },
+ {
+  "word": "tactical",
+  "answer": "tactical",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "戰術的；策略的",
+  "en_def": "connected with the methods used to reach a goal",
+  "sentence": "Moving the shop's opening time to seven in the morning was a {{BLANK}} move to catch students on their way to school.",
+  "cn": "把店的開門時間改到早上七點是一個策略性的行動，為了吸引上學途中的學生。",
+  "cnMarked": "把店的開門時間改到早上七點是一個【策略性的】行動，為了吸引上學途中的學生。",
+  "isHead": false,
+  "level": null,
+  "family": "tactic"
+ },
+ {
+  "word": "tangle",
+  "answer": "tangle",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "糾結；纏結；混亂",
+  "en_def": "a mass of threads, hair, or wires twisted together; a confused state",
+  "sentence": "After the storm, the fisherman spent the whole morning pulling his nets out of a {{BLANK}} of ropes and seaweed.",
+  "cn": "暴風雨過後，漁夫花了一整個早上把漁網從繩子和海草的糾結中拉出來。",
+  "cnMarked": "暴風雨過後，漁夫花了一整個早上把漁網從繩子和海草的【糾結】中拉出來。",
+  "isHead": true,
+  "level": 5,
+  "family": "tangle"
+ },
+ {
+  "word": "tangle",
+  "answer": "tangle",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使纏結；糾纏",
+  "en_def": "to become twisted together in a messy way",
+  "sentence": "If you leave your earphones loose in your pocket, the wires will {{BLANK}} and you will waste minutes untying them.",
+  "cn": "如果你把耳機隨便放在口袋裡，線會纏在一起，你就得浪費好幾分鐘解開它們。",
+  "cnMarked": "如果你把耳機隨便放在口袋裡，線會【纏在一起】，你就得浪費好幾分鐘解開它們。",
+  "isHead": false,
+  "level": 5,
+  "family": "tangle"
+ },
+ {
+  "word": "tangled",
+  "answer": "tangled",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "纏結的；糾結的",
+  "en_def": "twisted together in a messy way",
+  "sentence": "Her long hair was so {{BLANK}} after the beach trip that it took her mother half an hour to brush it.",
+  "cn": "去海邊玩之後她的長髮糾結得很嚴重，媽媽花了半小時才梳開。",
+  "cnMarked": "去海邊玩之後她的長髮【糾結】得很嚴重，媽媽花了半小時才梳開。",
+  "isHead": false,
+  "level": null,
+  "family": "tangle"
+ },
+ {
+  "word": "get tangled up in",
+  "answer": "got tangled up in",
+  "nblanks": 4,
+  "pos": "v.phr.",
+  "cn_def": "被…纏住；捲入",
+  "en_def": "to become caught in something; to become involved in a difficult situation",
+  "sentence": "The young sea turtle {{BLANK}} an old fishing net, and the volunteers worked for an hour to set it free.",
+  "cn": "小海龜被一張舊漁網纏住，志工們花了一個小時才把牠救出來。",
+  "cnMarked": "小海龜【被】一張舊漁網【纏住】，志工們花了一個小時才把牠救出來。",
+  "isHead": false,
+  "level": null,
+  "family": "tangle"
+ },
+ {
+  "word": "tempt",
+  "answer": "tempt",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "誘惑；引誘",
+  "en_def": "to make someone want to do or have something, especially something they should not",
+  "sentence": "The smell of fresh bread from the bakery may {{BLANK}} you to buy more than you planned, so bring only a little money.",
+  "cn": "麵包店飄出的新鮮麵包香味可能會誘惑你買得比預計的多，所以只帶一點錢就好。",
+  "cnMarked": "麵包店飄出的新鮮麵包香味可能會【誘惑】你買得比預計的多，所以只帶一點錢就好。",
+  "isHead": true,
+  "level": 5,
+  "family": "tempt"
+ },
+ {
+  "word": "temptation",
+  "answer": "temptation",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "誘惑",
+  "en_def": "a strong wish to do or have something, especially something bad",
+  "sentence": "During the exam, he felt a strong {{BLANK}} to look at his neighbor's paper, but he kept his eyes on his own desk.",
+  "cn": "考試期間，他感到一股強烈的誘惑想看鄰座的考卷，但他的眼睛一直盯著自己的桌子。",
+  "cnMarked": "考試期間，他感到一股強烈的【誘惑】想看鄰座的考卷，但他的眼睛一直盯著自己的桌子。",
+  "isHead": true,
+  "level": 5,
+  "family": "tempt"
+ },
+ {
+  "word": "be tempted to",
+  "answer": "was tempted to",
+  "nblanks": 3,
+  "pos": "v.phr.",
+  "cn_def": "很想…；受誘惑去做…",
+  "en_def": "to want to do something even though it may be wrong",
+  "sentence": "I {{BLANK}} skip my morning run when it rained, but I put on my jacket and went out anyway.",
+  "cn": "下雨時我很想跳過晨跑，但我還是穿上外套出門了。",
+  "cnMarked": "下雨時我【很想】跳過晨跑，但我還是穿上外套出門了。",
+  "isHead": false,
+  "level": null,
+  "family": "tempt"
+ },
+ {
+  "word": "tempting",
+  "answer": "tempting",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "誘人的；吸引人的",
+  "en_def": "attractive and making you want to have or do something",
+  "sentence": "The offer of a free trip to Japan sounded very {{BLANK}}, but we had to read the small print carefully first.",
+  "cn": "免費日本之旅的優惠聽起來非常誘人，但我們必須先仔細閱讀小字說明。",
+  "cnMarked": "免費日本之旅的優惠聽起來非常【誘人】，但我們必須先仔細閱讀小字說明。",
+  "isHead": false,
+  "level": null,
+  "family": "tempt"
+ },
+ {
+  "word": "resist temptation",
+  "answer": "resist temptation",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "抵抗誘惑",
+  "en_def": "to stop yourself from doing something you want to do",
+  "sentence": "It is hard to {{BLANK}} when there is a box of chocolates on the table, especially late at night.",
+  "cn": "桌上放著一盒巧克力時很難抵抗誘惑，尤其是在深夜。",
+  "cnMarked": "桌上放著一盒巧克力時很難【抵抗誘惑】，尤其是在深夜。",
+  "isHead": false,
+  "level": null,
+  "family": "tempt"
+ },
+ {
+  "word": "terminal",
+  "answer": "Terminal",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "航廈；航站；終點站",
+  "en_def": "a large building at an airport, bus station, or port",
+  "sentence": "Our flight to Tokyo leaves from {{BLANK}} two, so we need to take the airport train from the first building.",
+  "cn": "我們飛往東京的班機從第二航廈出發，所以我們需要從第一航廈搭機場捷運過去。",
+  "cnMarked": "我們飛往東京的班機從第二【航廈】出發，所以我們需要從第一航廈搭機場捷運過去。",
+  "isHead": true,
+  "level": 5,
+  "family": "terminal"
+ },
+ {
+  "word": "terminal",
+  "answer": "terminal",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "末期的；無法治癒的",
+  "en_def": "describing an illness that cannot be cured and will cause death",
+  "sentence": "Although the old man had a {{BLANK}} illness, he spent his last months traveling and laughing with his grandchildren.",
+  "cn": "雖然老先生患有末期疾病，但他把最後幾個月用來旅行，並和孫子們一起歡笑。",
+  "cnMarked": "雖然老先生患有【末期】疾病，但他把最後幾個月用來旅行，並和孫子們一起歡笑。",
+  "isHead": false,
+  "level": 5,
+  "family": "terminal"
+ },
+ {
+  "word": "terminal",
+  "answer": "terminal",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "終端機",
+  "en_def": "a computer screen and keyboard connected to a larger computer system",
+  "sentence": "Each worker in the warehouse uses a small {{BLANK}} to check how many boxes are left on every shelf.",
+  "cn": "倉庫裡的每位工人都使用一台小型終端機來查看每個貨架上還剩多少箱子。",
+  "cnMarked": "倉庫裡的每位工人都使用一台小型【終端機】來查看每個貨架上還剩多少箱子。",
+  "isHead": false,
+  "level": 5,
+  "family": "terminal"
+ },
+ {
+  "word": "terminate",
+  "answer": "terminate",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "終止；結束",
+  "en_def": "to end something; to bring something to an end",
+  "sentence": "The company decided to {{BLANK}} the contract with the cleaning service because the offices were still dirty every morning.",
+  "cn": "這家公司決定終止與清潔公司的合約，因為辦公室每天早上仍然很髒。",
+  "cnMarked": "這家公司決定【終止】與清潔公司的合約，因為辦公室每天早上仍然很髒。",
+  "isHead": false,
+  "level": null,
+  "family": "terminal"
+ },
+ {
+  "word": "termination",
+  "answer": "termination",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "終止；結束",
+  "en_def": "the act of ending something",
+  "sentence": "The sudden {{BLANK}} of the bus service left many elderly people in the village with no way to get to the hospital.",
+  "cn": "公車服務突然終止，讓村裡許多老人沒有辦法去醫院。",
+  "cnMarked": "公車服務突然【終止】，讓村裡許多老人沒有辦法去醫院。",
+  "isHead": false,
+  "level": null,
+  "family": "terminal"
+ },
+ {
+  "word": "terrify",
+  "answer": "terrify",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "使驚嚇；使恐懼",
+  "en_def": "to make someone extremely frightened",
+  "sentence": "Loud fireworks {{BLANK}} my dog every New Year's Eve, so we close all the windows and play soft music.",
+  "cn": "每年除夕夜，響亮的煙火都會嚇壞我的狗，所以我們會關上所有窗戶並播放輕柔的音樂。",
+  "cnMarked": "每年除夕夜，響亮的煙火都會【嚇壞】我的狗，所以我們會關上所有窗戶並播放輕柔的音樂。",
+  "isHead": true,
+  "level": 5,
+  "family": "terrify"
+ },
+ {
+  "word": "terrified",
+  "answer": "terrified",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "非常害怕的；驚恐的",
+  "en_def": "extremely frightened",
+  "sentence": "She was {{BLANK}} of the dark as a child, so her parents always left a small lamp on in the hallway.",
+  "cn": "她小時候非常害怕黑暗，所以父母總是在走廊留一盞小燈。",
+  "cnMarked": "她小時候【非常害怕】黑暗，所以父母總是在走廊留一盞小燈。",
+  "isHead": false,
+  "level": null,
+  "family": "terrify"
+ },
+ {
+  "word": "terrifying",
+  "answer": "terrifying",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "可怕的；令人恐懼的",
+  "en_def": "making you feel extremely frightened",
+  "sentence": "The earthquake last night was the most {{BLANK}} experience of my life, and I could not sleep until the sun came up.",
+  "cn": "昨晚的地震是我一生中最可怕的經歷，我直到太陽升起才睡著。",
+  "cnMarked": "昨晚的地震是我一生中最【可怕的】經歷，我直到太陽升起才睡著。",
+  "isHead": false,
+  "level": null,
+  "family": "terrify"
+ },
+ {
+  "word": "terror",
+  "answer": "terror",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "恐懼；驚駭",
+  "en_def": "a feeling of great fear",
+  "sentence": "The children screamed in {{BLANK}} when the lights suddenly went out during the ghost story at camp.",
+  "cn": "露營時講鬼故事的時候燈突然熄滅，孩子們驚恐地尖叫。",
+  "cnMarked": "露營時講鬼故事的時候燈突然熄滅，孩子們【驚恐地】尖叫。",
+  "isHead": false,
+  "level": 4,
+  "family": "terrify"
+ },
+ {
+  "word": "testify",
+  "answer": "testify",
+  "nblanks": 1,
+  "pos": "v.",
+  "cn_def": "作證",
+  "en_def": "to say in a court of law what you know is true",
+  "sentence": "The shop owner agreed to {{BLANK}} in court about what she saw on the night of the robbery.",
+  "cn": "店主同意在法庭上就她在搶案當晚看到的事情作證。",
+  "cnMarked": "店主同意在法庭上就她在搶案當晚看到的事情【作證】。",
+  "isHead": true,
+  "level": 5,
+  "family": "testify"
+ },
+ {
+  "word": "testimony",
+  "answer": "testimony",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "證詞；證言",
+  "en_def": "a formal statement about what is true, given in a court",
+  "sentence": "The judge listened carefully to the {{BLANK}} of the young witness, who described the accident in great detail.",
+  "cn": "法官仔細聆聽那位年輕證人的證詞，他非常詳細地描述了那起事故。",
+  "cnMarked": "法官仔細聆聽那位年輕證人的【證詞】，他非常詳細地描述了那起事故。",
+  "isHead": false,
+  "level": null,
+  "family": "testify"
+ },
+ {
+  "word": "testify against",
+  "answer": "testify against",
+  "nblanks": 2,
+  "pos": "v.phr.",
+  "cn_def": "作證指控…",
+  "en_def": "to give evidence in court that shows someone did something wrong",
+  "sentence": "Nobody in the village was brave enough to {{BLANK}} the powerful businessman, so the case was finally dropped.",
+  "cn": "村裡沒有人敢出庭指證那位有權勢的商人，所以案件最終被撤銷。",
+  "cnMarked": "村裡沒有人敢【出庭指證】那位有權勢的商人，所以案件最終被撤銷。",
+  "isHead": false,
+  "level": null,
+  "family": "testify"
+ },
+ {
+  "word": "texture",
+  "answer": "texture",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "質地；口感；紋理",
+  "en_def": "the way something feels when you touch it, or the way food feels in your mouth",
+  "sentence": "I love the soft {{BLANK}} of this cake, which is light and creamy without being too sweet.",
+  "cn": "我喜歡這個蛋糕柔軟的口感，它輕盈滑順又不會太甜。",
+  "cnMarked": "我喜歡這個蛋糕柔軟的【口感】，它輕盈滑順又不會太甜。",
+  "isHead": true,
+  "level": 5,
+  "family": "texture"
+ },
+ {
+  "word": "textile",
+  "answer": "textile",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "紡織品；布料",
+  "en_def": "any type of cloth made by weaving",
+  "sentence": "Taiwan's {{BLANK}} industry was very strong in the 1970s, and many factories in Taichung made clothes for the whole world.",
+  "cn": "台灣的紡織業在一九七○年代非常強盛，台中許多工廠為全世界製作衣服。",
+  "cnMarked": "台灣的【紡織】業在一九七○年代非常強盛，台中許多工廠為全世界製作衣服。",
+  "isHead": false,
+  "level": 6,
+  "family": "texture"
+ },
+ {
+  "word": "textured",
+  "answer": "textured",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "有紋理的；質感粗糙的",
+  "en_def": "having a surface that is not smooth",
+  "sentence": "The {{BLANK}} wallpaper in the hotel room looks like real stone, but it feels soft when you touch it.",
+  "cn": "飯店房間裡有紋理的壁紙看起來像真的石頭，但摸起來很柔軟。",
+  "cnMarked": "飯店房間裡【有紋理的】壁紙看起來像真的石頭，但摸起來很柔軟。",
+  "isHead": false,
+  "level": null,
+  "family": "texture"
+ },
+ {
+  "word": "theft",
+  "answer": "theft",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "偷竊；盜竊",
+  "en_def": "the crime of stealing something",
+  "sentence": "Bicycle {{BLANK}} is common near the train station, so always lock your bike to something solid and never leave it overnight.",
+  "cn": "火車站附近常發生腳踏車偷竊，所以一定要把腳踏車鎖在堅固的東西上，而且絕不要放一整晚。",
+  "cnMarked": "火車站附近常發生腳踏車【偷竊】，所以一定要把腳踏車鎖在堅固的東西上，而且絕不要放一整晚。",
+  "isHead": true,
+  "level": 5,
+  "family": "theft"
+ },
+ {
+  "word": "thief",
+  "answer": "thief",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "小偷；竊賊",
+  "en_def": "a person who steals things",
+  "sentence": "The {{BLANK}} climbed in through an open window while the family was watching television in the living room.",
+  "cn": "一家人在客廳看電視時，小偷從一扇開著的窗戶爬了進來。",
+  "cnMarked": "一家人在客廳看電視時，【小偷】從一扇開著的窗戶爬了進來。",
+  "isHead": false,
+  "level": 2,
+  "family": "theft"
+ },
+ {
+  "word": "identity theft",
+  "answer": "identity theft",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "身分盜用",
+  "en_def": "the crime of using someone else's personal information to steal money",
+  "sentence": "To protect yourself from {{BLANK}}, never share your ID number or bank password with people you do not know.",
+  "cn": "為了保護自己免於身分盜用，絕不要把你的身分證字號或銀行密碼告訴不認識的人。",
+  "cnMarked": "為了保護自己免於【身分盜用】，絕不要把你的身分證字號或銀行密碼告訴不認識的人。",
+  "isHead": false,
+  "level": null,
+  "family": "theft"
+ },
+ {
+  "word": "theology",
+  "answer": "theology",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "神學",
+  "en_def": "the study of religion and God",
+  "sentence": "My cousin is studying {{BLANK}} at a university in Rome because he hopes to become a priest one day.",
+  "cn": "我表哥在羅馬的一所大學研讀神學，因為他希望有一天能成為神父。",
+  "cnMarked": "我表哥在羅馬的一所大學研讀【神學】，因為他希望有一天能成為神父。",
+  "isHead": true,
+  "level": 5,
+  "family": "theology"
+ },
+ {
+  "word": "theological",
+  "answer": "theological",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "神學的",
+  "en_def": "connected with the study of religion",
+  "sentence": "The two professors had a long {{BLANK}} discussion about why a good God would allow so much suffering in the world.",
+  "cn": "兩位教授針對為何良善的神會允許世上有這麼多苦難，進行了長時間的神學討論。",
+  "cnMarked": "兩位教授針對為何良善的神會允許世上有這麼多苦難，進行了長時間的【神學】討論。",
+  "isHead": false,
+  "level": null,
+  "family": "theology"
+ },
+ {
+  "word": "theologian",
+  "answer": "theologian",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "神學家",
+  "en_def": "a person who studies religion and God",
+  "sentence": "The famous {{BLANK}} wrote more than twenty books about faith, and some of them are still read in churches today.",
+  "cn": "這位著名的神學家寫了二十多本關於信仰的書，其中一些至今仍在教會中被閱讀。",
+  "cnMarked": "這位著名的【神學家】寫了二十多本關於信仰的書，其中一些至今仍在教會中被閱讀。",
+  "isHead": false,
+  "level": null,
+  "family": "theology"
+ },
+ {
+  "word": "theoretical",
+  "answer": "theoretical",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "理論的；理論上的",
+  "en_def": "based on ideas rather than practice or experience",
+  "sentence": "The course is too {{BLANK}} for me, because we read about engines all day but never actually fix one.",
+  "cn": "這門課對我來說太理論了，因為我們整天讀引擎的資料，卻從來沒有真正修過一台。",
+  "cnMarked": "這門課對我來說太【理論】了，因為我們整天讀引擎的資料，卻從來沒有真正修過一台。",
+  "isHead": true,
+  "level": 5,
+  "family": "theoretical"
+ },
+ {
+  "word": "theory",
+  "answer": "theory",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "理論；學說",
+  "en_def": "an idea that tries to explain why something happens",
+  "sentence": "Some scientists have a new {{BLANK}} that explains why the dinosaurs disappeared so quickly millions of years ago.",
+  "cn": "一些科學家有一個新的理論，解釋為什麼恐龍在數百萬年前這麼快就消失了。",
+  "cnMarked": "一些科學家有一個新的【理論】，解釋為什麼恐龍在數百萬年前這麼快就消失了。",
+  "isHead": false,
+  "level": 3,
+  "family": "theoretical"
+ },
+ {
+  "word": "theoretically",
+  "answer": "Theoretically",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "理論上",
+  "en_def": "according to ideas, although it may not work in real life",
+  "sentence": "{{BLANK}}, the train should arrive at nine, but it is usually ten minutes late because the line is so busy.",
+  "cn": "理論上火車應該九點到，但因為這條線太繁忙，它通常會晚十分鐘。",
+  "cnMarked": "【理論上】火車應該九點到，但因為這條線太繁忙，它通常會晚十分鐘。",
+  "isHead": false,
+  "level": null,
+  "family": "theoretical"
+ },
+ {
+  "word": "in theory",
+  "answer": "In theory",
+  "nblanks": 2,
+  "pos": "phr.",
+  "cn_def": "理論上",
+  "en_def": "according to ideas, but perhaps not in practice",
+  "sentence": "{{BLANK}}, anyone can learn to cook, but in practice many people simply do not have the time or patience.",
+  "cn": "理論上任何人都能學會做菜，但實際上許多人就是沒有時間或耐心。",
+  "cnMarked": "【理論上】任何人都能學會做菜，但實際上許多人就是沒有時間或耐心。",
+  "isHead": false,
+  "level": null,
+  "family": "theoretical"
+ },
+ {
+  "word": "therapist",
+  "answer": "therapist",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "治療師",
+  "en_def": "a person trained to help people with physical or emotional problems",
+  "sentence": "After the accident, a {{BLANK}} visited my grandfather twice a week to help him learn to walk again.",
+  "cn": "意外之後，一位治療師每週探視我爺爺兩次，幫助他重新學習走路。",
+  "cnMarked": "意外之後，一位【治療師】每週探視我爺爺兩次，幫助他重新學習走路。",
+  "isHead": true,
+  "level": 5,
+  "family": "therapist"
+ },
+ {
+  "word": "therapy",
+  "answer": "therapy",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "治療；療法",
+  "en_def": "the treatment of a physical or emotional problem over a period of time",
+  "sentence": "Music {{BLANK}} has helped many children with special needs to relax and express their feelings in a safe way.",
+  "cn": "音樂治療幫助許多有特殊需求的孩子放鬆，並以安全的方式表達他們的感受。",
+  "cnMarked": "音樂【治療】幫助許多有特殊需求的孩子放鬆，並以安全的方式表達他們的感受。",
+  "isHead": true,
+  "level": 5,
+  "family": "therapist"
+ },
+ {
+  "word": "physical therapy",
+  "answer": "physical therapy",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "物理治療",
+  "en_def": "treatment that uses exercise and movement to help the body recover",
+  "sentence": "The football player needed six months of {{BLANK}} before his knee was strong enough for him to play again.",
+  "cn": "這位足球員需要六個月的物理治療，膝蓋才強壯到足以再次上場。",
+  "cnMarked": "這位足球員需要六個月的【物理治療】，膝蓋才強壯到足以再次上場。",
+  "isHead": false,
+  "level": null,
+  "family": "therapist"
+ },
+ {
+  "word": "therapeutic",
+  "answer": "therapeutic",
+  "nblanks": 1,
+  "pos": "adj.",
+  "cn_def": "有療效的；治療的",
+  "en_def": "helping to treat an illness or make you feel better",
+  "sentence": "Many people find gardening {{BLANK}}, because working with plants helps them forget their worries for a while.",
+  "cn": "許多人覺得園藝有療癒效果，因為照顧植物能讓他們暫時忘記煩惱。",
+  "cnMarked": "許多人覺得園藝【有療癒效果】，因為照顧植物能讓他們暫時忘記煩惱。",
+  "isHead": false,
+  "level": null,
+  "family": "therapist"
+ },
+ {
+  "word": "thereby",
+  "answer": "thereby",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "藉此；因此",
+  "en_def": "in that way; as a result of that",
+  "sentence": "The factory now reuses its waste water, {{BLANK}} saving millions of liters of fresh water every single year.",
+  "cn": "這家工廠現在重複使用廢水，藉此每年節省數百萬公升的淡水。",
+  "cnMarked": "這家工廠現在重複使用廢水，【藉此】每年節省數百萬公升的淡水。",
+  "isHead": true,
+  "level": 5,
+  "family": "thereby"
+ },
+ {
+  "word": "therefore",
+  "answer": "therefore",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "因此；所以",
+  "en_def": "for that reason; so",
+  "sentence": "The roads were covered with ice this morning, and {{BLANK}} all the schools in the area were closed for the day.",
+  "cn": "今天早上道路被冰覆蓋，因此該地區所有學校當天都停課。",
+  "cnMarked": "今天早上道路被冰覆蓋，【因此】該地區所有學校當天都停課。",
+  "isHead": false,
+  "level": 2,
+  "family": "thereby"
+ },
+ {
+  "word": "thereafter",
+  "answer": "thereafter",
+  "nblanks": 1,
+  "pos": "adv.",
+  "cn_def": "此後；之後",
+  "en_def": "after that time",
+  "sentence": "The company opened its first store in Taipei in 1990, and shortly {{BLANK}} it had branches in every major city.",
+  "cn": "這家公司一九九○年在台北開了第一家店，此後不久就在每個主要城市都有分店。",
+  "cnMarked": "這家公司一九九○年在台北開了第一家店，【此後】不久就在每個主要城市都有分店。",
+  "isHead": false,
+  "level": 6,
+  "family": "thereby"
+ },
+ {
+  "word": "thesis",
+  "answer": "thesis",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "論文（學位論文）",
+  "en_def": "a long piece of writing done for a university degree",
+  "sentence": "My brother spent two years writing his master's {{BLANK}} on how social media changes the way teenagers make friends.",
+  "cn": "我哥哥花了兩年撰寫他的碩士論文，主題是社群媒體如何改變青少年交朋友的方式。",
+  "cnMarked": "我哥哥花了兩年撰寫他的碩士【論文】，主題是社群媒體如何改變青少年交朋友的方式。",
+  "isHead": true,
+  "level": 5,
+  "family": "thesis"
+ },
+ {
+  "word": "thesis",
+  "answer": "thesis",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "論點；主旨",
+  "en_def": "the main idea or argument of an essay or speech",
+  "sentence": "The {{BLANK}} of her speech was simple: every student should learn to cook before leaving high school.",
+  "cn": "她演講的論點很簡單：每個學生在高中畢業前都應該學會做菜。",
+  "cnMarked": "她演講的【論點】很簡單：每個學生在高中畢業前都應該學會做菜。",
+  "isHead": false,
+  "level": 5,
+  "family": "thesis"
+ },
+ {
+  "word": "thesis statement",
+  "answer": "thesis statement",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "主旨句；論點陳述",
+  "en_def": "the sentence that tells the main idea of an essay",
+  "sentence": "A good {{BLANK}} should appear at the end of your first paragraph so that readers know what you are going to argue.",
+  "cn": "好的主旨句應該出現在第一段的結尾，這樣讀者才知道你要論證什麼。",
+  "cnMarked": "好的【主旨句】應該出現在第一段的結尾，這樣讀者才知道你要論證什麼。",
+  "isHead": false,
+  "level": null,
+  "family": "thesis"
+ },
+ {
+  "word": "hypothesis",
+  "answer": "hypothesis",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "假設；假說",
+  "en_def": "an idea that is suggested as an explanation but has not been proved yet",
+  "sentence": "The students tested their {{BLANK}} that plants grow faster with music by playing songs to half of the bean plants.",
+  "cn": "學生們透過對一半的豆苗播放歌曲，來驗證他們「植物聽音樂長得更快」的假設。",
+  "cnMarked": "學生們透過對一半的豆苗播放歌曲，來驗證他們「植物聽音樂長得更快」的【假設】。",
+  "isHead": false,
+  "level": 5,
+  "family": "thesis"
+ },
+ {
+  "word": "thigh",
+  "answer": "thigh",
+  "nblanks": 1,
+  "pos": "n.",
+  "cn_def": "大腿",
+  "en_def": "the top part of your leg, between your knee and your hip",
+  "sentence": "The runner felt a sharp pain in her right {{BLANK}} halfway through the race, but she still managed to finish.",
+  "cn": "這位跑者在比賽中途感到右大腿一陣劇痛，但她還是設法跑完了。",
+  "cnMarked": "這位跑者在比賽中途感到右【大腿】一陣劇痛，但她還是設法跑完了。",
+  "isHead": true,
+  "level": 5,
+  "family": "thigh"
+ },
+ {
+  "word": "chicken thigh",
+  "answer": "chicken thigh",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "雞腿肉（大腿部分）",
+  "en_def": "the meat from the upper part of a chicken's leg",
+  "sentence": "This recipe uses {{BLANK}} instead of breast meat, because it stays soft and juicy after an hour in the oven.",
+  "cn": "這個食譜用雞腿肉而不是雞胸肉，因為在烤箱裡烤一小時後它仍然柔軟多汁。",
+  "cnMarked": "這個食譜用【雞腿肉】而不是雞胸肉，因為在烤箱裡烤一小時後它仍然柔軟多汁。",
+  "isHead": false,
+  "level": null,
+  "family": "thigh"
+ },
+ {
+  "word": "thigh bone",
+  "answer": "thigh bone",
+  "nblanks": 2,
+  "pos": "n.phr.",
+  "cn_def": "大腿骨；股骨",
+  "en_def": "the long bone in the upper part of your leg",
+  "sentence": "The {{BLANK}} is the longest and strongest bone in the human body, and it can support many times your weight.",
+  "cn": "大腿骨是人體中最長、最強壯的骨頭，它可以支撐你體重的好幾倍。",
+  "cnMarked": "【大腿骨】是人體中最長、最強壯的骨頭，它可以支撐你體重的好幾倍。",
+  "isHead": false,
+  "level": null,
+  "family": "thigh"
+ }
+];
+const MCQS = [
+ {
+  "q": "The police think the man is selling drugs from his apartment. They have put the building under ______ and are watching everyone who goes in and out of it.",
+  "options": [
+   "suspension",
+   "surveillance",
+   "symptom",
+   "texture"
+  ],
+  "answer": 1,
+  "vocabIndex": 0
+ },
+ {
+  "q": "Two students were caught fighting in the hallway after lunch. The principal decided to ______ both of them from school for three days as a punishment.",
+  "options": [
+   "suspend",
+   "swap",
+   "sustain",
+   "tempt"
+  ],
+  "answer": 0,
+  "vocabIndex": 5
+ },
+ {
+  "q": "The small town has only one well, and it is drying up quickly. It can no longer ______ the hundreds of new families that have moved there this year.",
+  "options": [
+   "terrify",
+   "sustain",
+   "tackle",
+   "testify"
+  ],
+  "answer": 1,
+  "vocabIndex": 10
+ },
+ {
+  "q": "Cutting down the whole forest for wood will leave nothing for our grandchildren. We need a more ______ way to use the trees without destroying them.",
+  "options": [
+   "sustainable",
+   "theoretical",
+   "terminal",
+   "symbolic"
+  ],
+  "answer": 0,
+  "vocabIndex": 11
+ },
+ {
+  "q": "I do not like the sandwich my mother made for me today. Would you like to ______ lunches with me? I think you will enjoy the egg and cheese.",
+  "options": [
+   "terrify",
+   "suspend",
+   "sustain",
+   "swap"
+  ],
+  "answer": 3,
+  "vocabIndex": 15
+ },
+ {
+  "q": "The two leaders shook hands in front of the cameras after years of war. It was only a ______ act, but it gave people on both sides new hope for peace.",
+  "options": [
+   "tangled",
+   "symbolic",
+   "terminal",
+   "theoretical"
+  ],
+  "answer": 1,
+  "vocabIndex": 18
+ },
+ {
+  "q": "My brother has had a high fever and a sore throat since yesterday morning. The doctor says that a fever is the most common ______ of the flu and told him to rest at home.",
+  "options": [
+   "symptom",
+   "tactic",
+   "theory",
+   "textile"
+  ],
+  "answer": 0,
+  "vocabIndex": 22
+ },
+ {
+  "q": "Some people feel sad and lonely for months after they stop working. Doctors say this group of feelings is so common that they have given it a name: retirement ______.",
+  "options": [
+   "thigh",
+   "thesis",
+   "terminal",
+   "syndrome"
+  ],
+  "answer": 3,
+  "vocabIndex": 25
+ },
+ {
+  "q": "Traffic in the city gets worse every year, and people are tired of waiting in their cars. The new mayor says she will ______ the problem by adding more buses.",
+  "options": [
+   "terrify",
+   "tackle",
+   "testify",
+   "tempt"
+  ],
+  "answer": 1,
+  "vocabIndex": 28
+ },
+ {
+  "q": "Our coach has a clever ______ for beating stronger teams. He tells us to pass the ball quickly and never let the other players rest for even a minute.",
+  "options": [
+   "tactic",
+   "theft",
+   "tangle",
+   "texture"
+  ],
+  "answer": 0,
+  "vocabIndex": 32
+ },
+ {
+  "q": "I put my earphones in my pocket without rolling them up this morning. Now the wires are a terrible ______ , and it will take ten minutes to untie them.",
+  "options": [
+   "terminal",
+   "tangle",
+   "thesis",
+   "tactic"
+  ],
+  "answer": 1,
+  "vocabIndex": 35
+ },
+ {
+  "q": "The bakery puts its freshest cakes right in the window on purpose. The sweet smell and the beautiful colors ______ people to walk inside and buy something.",
+  "options": [
+   "tempt",
+   "tackle",
+   "testify",
+   "terminate"
+  ],
+  "answer": 0,
+  "vocabIndex": 39
+ },
+ {
+  "q": "During the test, Mark could see the answers on Lisa's paper very clearly. He felt a strong ______ to copy them, but he decided to be honest and look away.",
+  "options": [
+   "survey",
+   "symbolism",
+   "temptation",
+   "testimony"
+  ],
+  "answer": 2,
+  "vocabIndex": 40
+ },
+ {
+  "q": "Our plane to Osaka leaves at nine, so we need to arrive at the airport early. Which ______ does the airline use? I want to make sure we go to the right building.",
+  "options": [
+   "surveillance",
+   "theology",
+   "thigh",
+   "terminal"
+  ],
+  "answer": 3,
+  "vocabIndex": 44
+ },
+ {
+  "q": "Big dogs ______ my little sister, so she always hides behind our mother when one comes near. We are trying to help her feel braver by visiting a friend's gentle puppy.",
+  "options": [
+   "swap",
+   "terrify",
+   "suspend",
+   "sustain"
+  ],
+  "answer": 1,
+  "vocabIndex": 49
+ },
+ {
+  "q": "Mrs. Lin saw the car accident happen right in front of her shop. The lawyer has asked her to ______ in court next month about exactly what she saw that night.",
+  "options": [
+   "tackle",
+   "tempt",
+   "testify",
+   "terminate"
+  ],
+  "answer": 2,
+  "vocabIndex": 53
+ },
+ {
+  "q": "This homemade bread has a wonderful ______. The outside is hard and crunchy, but the inside is so soft that it almost melts in your mouth.",
+  "options": [
+   "theft",
+   "texture",
+   "survey",
+   "tactic"
+  ],
+  "answer": 1,
+  "vocabIndex": 56
+ },
+ {
+  "q": "More and more bicycles have been stolen near the train station this year. Because of this rise in ______ , the police have put new cameras around the parking area.",
+  "options": [
+   "theft",
+   "texture",
+   "therapy",
+   "theology"
+  ],
+  "answer": 0,
+  "vocabIndex": 59
+ },
+ {
+  "q": "My uncle wanted to understand the Bible more deeply and perhaps become a priest. He is now studying ______ at a famous old university in Europe.",
+  "options": [
+   "therapy",
+   "surveillance",
+   "theology",
+   "thesis"
+  ],
+  "answer": 2,
+  "vocabIndex": 62
+ },
+ {
+  "q": "The students learned a lot about how engines work from their textbooks. However, the lessons were too ______ , and nobody was able to fix a real motorcycle.",
+  "options": [
+   "sustainable",
+   "theoretical",
+   "symbolic",
+   "terrified"
+  ],
+  "answer": 1,
+  "vocabIndex": 65
+ },
+ {
+  "q": "After the car accident, my aunt could not move her left arm very well. A ______ came to her house every week to help her exercise it until it was strong again.",
+  "options": [
+   "thief",
+   "survey",
+   "therapist",
+   "theologian"
+  ],
+  "answer": 2,
+  "vocabIndex": 69
+ },
+ {
+  "q": "My cousin was badly hurt in a bicycle accident last spring. After six months of ______ , he can finally walk without a stick and even run a little.",
+  "options": [
+   "theft",
+   "tactic",
+   "theory",
+   "therapy"
+  ],
+  "answer": 3,
+  "vocabIndex": 70
+ },
+ {
+  "q": "The company now turns off every computer and light at eight in the evening. It saves a lot of electricity and ______ cuts its power bill by almost a third.",
+  "options": [
+   "theoretically",
+   "thereafter",
+   "thereby",
+   "therefore"
+  ],
+  "answer": 2,
+  "vocabIndex": 73
+ },
+ {
+  "q": "My sister has been in the library every day for the past two months. She must hand in her master's ______ next week, and it is already over one hundred pages long.",
+  "options": [
+   "theory",
+   "therapy",
+   "theft",
+   "thesis"
+  ],
+  "answer": 3,
+  "vocabIndex": 76
+ },
+ {
+  "q": "The runner fell down in pain halfway through the race. The doctor said that she had pulled a muscle in her left ______ , just above the knee.",
+  "options": [
+   "theft",
+   "thief",
+   "thigh",
+   "terminal"
+  ],
+  "answer": 2,
+  "vocabIndex": 80
+ },
+ {
+  "q": "Our school asked all the students what they thought about the new lunch menu. According to the ______ , most of them want more fruit and less fried food.",
+  "options": [
+   "survey",
+   "syndrome",
+   "theory",
+   "symbol"
+  ],
+  "answer": 0,
+  "vocabIndex": 3
+ },
+ {
+  "q": "In many countries, a red rose is a ______ of love. That is why so many people give roses to the person they love on Valentine's Day.",
+  "options": [
+   "tangle",
+   "symptom",
+   "thesis",
+   "symbol"
+  ],
+  "answer": 3,
+  "vocabIndex": 19
+ },
+ {
+  "q": "The company was not happy with the cleaning service because the offices were still dirty. They decided to ______ the contract at the end of this month.",
+  "options": [
+   "terminate",
+   "testify",
+   "sustain",
+   "tempt"
+  ],
+  "answer": 0,
+  "vocabIndex": 47
+ },
+ {
+  "q": "The little boy was ______ when he saw the big dog running toward him. He screamed and climbed up onto the nearest table as fast as he could.",
+  "options": [
+   "theoretical",
+   "tangled",
+   "tempting",
+   "terrified"
+  ],
+  "answer": 3,
+  "vocabIndex": 50
+ },
+ {
+  "q": "Nobody has proved yet why the bees are disappearing so quickly. The most popular ______ is that new chemicals used on farms are making them sick.",
+  "options": [
+   "theft",
+   "thigh",
+   "theory",
+   "therapy"
+  ],
+  "answer": 2,
+  "vocabIndex": 66
+ }
+];
+const LOOKUP = {};
+VOCAB.forEach(v => { const key = v.word.toLowerCase(); const sense = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def };
+  if (LOOKUP[key]) LOOKUP[key].combined.push(sense); else LOOKUP[key] = { pos: v.pos, en_def: v.en_def, cn_def: v.cn_def, combined: [sense] }; });
+const EXTRA_GLOSSES = {};
